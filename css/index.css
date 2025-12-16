@@ -192,52 +192,77 @@ body {
 
 .Header{
     width: 90%;
-    margin: 1rem auto;
-
-
+    margin:  auto;
     display: flex;
     justify-content:space-between;
     align-items: center;
   position: relative;
- 
+ padding: 1rem 0;
 }
 .Header-menu{
     width: 3rem;
 
 }
 .Header-logo{
-    width: 5rem;
+    width: 6rem;
     
+}
+
+.Header-logo .Preloader-svg--letter-s path {
+
+  animation-delay: 5s;
+}
+
+.Header-logo .Preloader-svg--letter-o path {
+
+  animation-delay: 5.2s;
+}
+
+.Header-logo .Preloader-svg--letter-j path {
+
+  animation-delay: 5.4s;
+}
+
+.Header-logo .Preloader-svg--letter-i path {
+
+  animation-delay: 5.6s;
+}
+
+.Header-logo .Preloader-svg--letter-dot1 path {
+  animation-delay: 6s;
+}
+
+.Header-logo .Preloader-svg--letter-dot2 path {
+  animation-delay: 6.2s;
 }
 
 .Header-nav{
     background-color: #ffdc49;
-    padding:  2rem 2rem 1rem 1rem;
-    border-radius: 1rem;
+    padding:  1rem 2rem 1rem 1rem;
+  
 
     position: absolute;
   left: 0;
-  top: 3rem;
+  top: 1rem;
 
     opacity: 0;
-   visibility: hidden;
+
    pointer-events: none;
  
 
-transform: translateZ(-300px) scale(0);
+transform: scaleY(0);
 transform-origin: top left;
 transition: 
-transform 1s ease,
- opacity .3s ease
+transform 0.6s ease,
+opacity .6s ease 
 }
 
 .Header-menu:hover ~  .Header-nav,
 .Header-nav:hover{
         opacity: 1;
-        visibility: visible;
+       
         pointer-events: auto;
-
-    transform: translateZ(0) scale(1);   
+    transform: scaleY(1);   
 }
 
 
@@ -249,13 +274,40 @@ transform 1s ease,
 }
 .Header-li{
     font-size: 1.4rem;
+    transition: background-color .4s ease;
 }
 .Header-li:hover{
     font-weight: 600;
     transform: translateX(12px);  
-    color: white;
+    color: black;
+    background-color: rgb(255, 255, 255);
 }
 .Header-cart{
-    width: 3rem;
+    width: 3.5rem;
 
+}
+
+.Cart-svg{
+}
+
+.Header-cart:hover .Cart-svg--wheel1,
+.Header-cart:hover .Cart-svg--wheel2{
+  animation: bounce .6s ease forwards;
+}
+.Header-cart:hover .Cart-svg--wheel2{
+  animation-delay: 0.3s;
+}
+@keyframes bounce {
+  0% {
+     transform: translateY(0);
+  
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  
+  }
 }
