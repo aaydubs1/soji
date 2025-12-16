@@ -86,7 +86,14 @@ body {
   font-smooth : always;
   -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing : grayscale;
+   font-family: "Tauri", sans-serif;
 }
+
+
+
+
+
+/*Preloader*/
 
 .Preloader{
     width: 100%;
@@ -94,6 +101,11 @@ body {
     background-color: #ffdc49;
     display: flex;
     justify-content: center;
+    z-index: 1;
+
+    position: fixed;
+    top: 0;
+    left: 0;
   
     animation: slideUp 1s ease forwards  4.05s;
 }
@@ -112,7 +124,8 @@ body {
 }
 .Preloader-svg--letter path{
     opacity: 0;
-    animation: fall 1s ease-out forwards ;
+    animation: fall 1s ease-out forwards;
+    
 }
 .Preloader-svg--letter-s path{
    
@@ -173,4 +186,76 @@ body {
     100%{
         transform: scale(1); opacity: 1;
     }
+}
+
+/*Header*/
+
+.Header{
+    width: 90%;
+    margin: 1rem auto;
+
+
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  position: relative;
+ 
+}
+.Header-menu{
+    width: 3rem;
+
+}
+.Header-logo{
+    width: 5rem;
+    
+}
+
+.Header-nav{
+    background-color: #ffdc49;
+    padding:  2rem 2rem 1rem 1rem;
+    border-radius: 1rem;
+
+    position: absolute;
+  left: 0;
+  top: 3rem;
+
+    opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+ 
+
+transform: translateZ(-300px) scale(0);
+transform-origin: top left;
+transition: 
+transform 1s ease,
+ opacity .3s ease
+}
+
+.Header-menu:hover ~  .Header-nav,
+.Header-nav:hover{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+    transform: translateZ(0) scale(1);   
+}
+
+
+.Header-ul{
+    text-align: left;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+.Header-li{
+    font-size: 1.4rem;
+}
+.Header-li:hover{
+    font-weight: 600;
+    transform: translateX(12px);  
+    color: white;
+}
+.Header-cart{
+    width: 3rem;
+
 }
