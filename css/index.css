@@ -93,53 +93,84 @@ body {
     min-height: 100vh;
     background-color: #ffdc49;
     display: flex;
+    justify-content: center;
+  
+    animation: slideUp 1s ease forwards  4.05s;
+}
+@keyframes slideUp{
+    to{
+        transform: translateY(-100%);
+    }
 }
 .Preloader-logo{
- 
+      display: flex;
     width: 60%;
-    margin: auto;
+
+ 
 }
 .Preloader-svg{
 }
 .Preloader-svg--letter path{
-    animation: fade 1.3s ease-in-out infinite ;
+    opacity: 0;
+    animation: fall 1s ease-out forwards ;
 }
 .Preloader-svg--letter-s path{
-
-    animation-delay: .2s;
+   
+       animation-delay: 1.2s;
 }
 .Preloader-svg--letter-o path{
    
-       animation-delay: .4s;
+    animation-delay: 1.2s;
 }
 .Preloader-svg--letter-j path{
 
-       animation-delay: .6s;
+       animation-delay: 1.4s;
 }
 .Preloader-svg--letter-i path{
   
-       animation-delay: .8s;
+       animation-delay: 1.6s;
 }
 .Preloader-svg--letter-dot1 path{
- 
-       animation-delay: .6s;
+    fill: white;
+    opacity: 0;
+    transform: scale(0);
+    animation: inflate 1s ease-out forwards;
+       animation-delay: 2.5s;
 }
 .Preloader-svg--letter-dot2 path{
- 
-       animation-delay: .8s;
+     fill: white;
+     opacity: 0;
+     transform: scale(0);
+     animation: inflate 1s ease-out forwards;
+       animation-delay: 2.8s;
 }
 
-@keyframes fade{
+@keyframes fall{
     0%{
-     opacity: 0.2;
+     transform: translateY(-100vh); opacity: 0;
     }  
-    20%{
-     opacity:1;
+    70%{
+        transform: translateY(0);opacity: 1;;
     }
-    40%{
-     opacity: 0.2;
+    85%{
+        transform: translateY(-40px);
     }
     100%{
-     opacity: 0.2;
+      transform: translateY(0); opacity:1;
+    }
+}
+
+@keyframes inflate{
+    0%{
+        transform: scale(0);opacity: 0;
+    }
+    60%{
+        transform: scale(1.3); opacity: 1;
+    }
+    80%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1); opacity: 1;
     }
 }
