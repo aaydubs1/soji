@@ -3,6 +3,9 @@
   font-family : system-ui, sans-serif;
   scroll-behavior : smooth;
 }
+
+ * { -ms-overflow-style: none;  scrollbar-width: none;  } 
+ *::-webkit-scrollbar { display: none; }
 * , *::before , *::after {
   margin : 0;
   padding : 0;
@@ -44,6 +47,8 @@ h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , e
   overflow-wrap : break-word;
   text-wrap : pretty;
 }
+
+
 mark {
   background-color : transparent;
 }
@@ -86,7 +91,8 @@ body {
   font-smooth : always;
   -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing : grayscale;
-   font-family: "Tauri", sans-serif;
+     font-family: "Montserrat", sans-serif;
+       font-optical-sizing: auto;
 }
 
 
@@ -101,7 +107,7 @@ body {
     background-color: #ffdc49;
     display: flex;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
 
     position: fixed;
     top: 0;
@@ -191,17 +197,19 @@ body {
 /*Header*/
 
 .Header{
-    width: 90%;
-    margin:  auto;
+    width: 100%;
+background-color: white;
     display: flex;
     justify-content:space-between;
     align-items: center;
-  position: relative;
+    position: fixed;
+    top: 0;
  padding: 1rem 0;
+ z-index: 1;
 }
 .Header-menu{
     width: 3rem;
-
+    margin: 0 0 0 2rem;
 }
 .Header-logo{
     width: 6rem;
@@ -210,36 +218,36 @@ body {
 
 .Header-logo .Preloader-svg--letter-s path {
 
-  animation-delay: 5s;
+  animation-delay: 4s;
 }
 
 .Header-logo .Preloader-svg--letter-o path {
 
-  animation-delay: 5.2s;
+  animation-delay: 4.2s;
 }
 
 .Header-logo .Preloader-svg--letter-j path {
 
-  animation-delay: 5.4s;
+  animation-delay: 4.4s;
 }
 
 .Header-logo .Preloader-svg--letter-i path {
 
-  animation-delay: 5.6s;
+  animation-delay: 4.6s;
 }
 
 .Header-logo .Preloader-svg--letter-dot1 path {
-  animation-delay: 6s;
+  animation-delay: 5s;
 }
 
 .Header-logo .Preloader-svg--letter-dot2 path {
-  animation-delay: 6.2s;
+  animation-delay: 5.2s;
 }
 
 .Header-nav{
     background-color: #ffdc49;
     padding:  1rem 2rem 1rem 1rem;
-  
+    margin: 0 0 0 2rem;
 
     position: absolute;
   left: 0;
@@ -284,7 +292,7 @@ opacity .6s ease
 }
 .Header-cart{
     width: 3.5rem;
-
+       margin: 0 2rem 0 0;
 }
 
 .Cart-svg{
@@ -313,23 +321,110 @@ opacity .6s ease
 }
 
 .Intro{
-    width: 100%;
-    height: 38rem;
-    background-color: #ffdc49;
-  overflow: hidden;
+    
+    margin: 6rem 0;
+  
+     position: relative;
+   display: flex;
+   flex-flow: row nowrap;
+   justify-content: center;
+   align-items: center;
+   height: 38rem;
+   overflow: hidden;
+
+     animation: fallIntro 1.8s ease-out forwards;
+     animation-delay: 4s;
+}
+
+@keyframes fallIntro{
+    0%{
+     transform: translateY(-100vh); opacity: 0;
+    }  
+    70%{
+        transform: translateY(0);opacity: 1;;
+    }
+    85%{
+        transform: translateY(-20px);
+    }
+    100%{
+      transform: translateY(0); opacity:1;
+    }
 }
 
 .Intro-grid{
-    background-color: bisque;
-    display: grid;
-    grid-template-columns: repeat(8,1fr);
-    grid-template-rows: repeat(5,1fr) ;
+ 
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-flow: column;
+
+    animation: vertical 17s linear infinite;
     
+ 
+}
+
+
+
+@keyframes vertical{
+    from{
+        transform:translateY(0%);
+    }
+    to{
+        transform:translateY(40%);
+    }
+}
+
+
+
+
+@keyframes vertical{
+    from{
+        transform:translateY(0%);
+    }
+    to{
+        transform:translateY(-40%);
+    }
 }
 .Intro-mosaic{
     background-color: rgb(255, 255, 255);
-   
+
+    width: 4rem;
+  
 }
 .Intro-img{
+
+object-fit: scale-down;
+
+}
+
+.Intro-article{
+    background-color: rgb(255, 255, 255);
+    width: 25rem;
+    min-height: 10rem;
+    padding: 1rem;
  
+  position: absolute;
+    bottom: calc(50% - 8rem);
+    left: calc(50% - 12.5rem);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+       animation: fallIntro 2.5s ease-out forwards;
+       animation-delay: 4s;
+}
+
+.Intro-p{
+    font-size: 2.3rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 2.7rem;
+    
+}
+
+.Intro-logo{
+    width: 4rem;
+
 }
