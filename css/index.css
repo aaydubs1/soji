@@ -49,6 +49,7 @@ h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , e
 }
 
 
+
 mark {
   background-color : transparent;
 }
@@ -84,7 +85,7 @@ svg {
   fill : currentColor;
 }
 body {
-  min-height : 100vh;
+  min-height : 200vh;
   line-height : 1.5em;
   color : inherit;
   hyphens : auto;
@@ -93,6 +94,12 @@ body {
   -moz-osx-font-smoothing : grayscale;
      font-family: "Montserrat", sans-serif;
        font-optical-sizing: auto;
+}
+
+.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 
@@ -421,33 +428,69 @@ object-fit: scale-down;
 
 .Intro-article{
     background-color: rgb(255, 255, 255);
-    width: 25rem;
-    min-height: 10rem;
-    padding: 1rem;
+    width: 18rem;
+    min-height: 12rem;
+    padding: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
  
   position: absolute;
-    bottom: calc(50% - 8rem);
-    left: calc(50% - 12.5rem);
+    bottom: calc(50% - 9rem);
+    left: calc(50% - 9rem);
 
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+
 
        animation: fallIntro 2.5s ease-out forwards;
        animation-delay: 4.1s;
+
+ transition: width .5s ease-out, height .5s ease-out, bottom .5s ease-out, left .5s ease-out;}
+.Intro-article.expand{
+     width: 100vw;
+    height: 100vh;
+    bottom: -80vh;
+    left: 0;
+    box-shadow: none;
 }
 
+ .expanded-content {
+            display: none;
+            margin-top: 2rem;
+        }
 .Intro-p{
-    font-size: 2.3rem;
-    font-weight: 500;
+  
+    font-weight: 600;
     text-align: center;
     line-height: 2.7rem;
-    
+  
+
+
 }
 
-.Intro-logo{
-    width: 4rem;
 
+
+.Intro-logo{
+    width: 7rem;
+display: flex;
+align-items: center;
+
+}
+
+.Intro-span{
+   font-size: 2rem;
+   font-weight: 700;
+}
+
+.korea{
+ font-weight: 800;
+
+}
+
+.Ingridients{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffdc49;
+    margin: 40rem 0 0 0;
 }
