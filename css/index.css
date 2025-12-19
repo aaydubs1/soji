@@ -352,14 +352,14 @@ opacity .6s ease
 
 .Intro{
     
-    margin: 6rem 0;
+   
   
      position: relative;
    display: flex;
    flex-flow: row nowrap;
    justify-content: center;
    align-items: center;
-   height: 38rem;
+  height: 100vh;
    overflow: hidden;
     
      animation: fallIntro 1.8s ease-out forwards;
@@ -429,18 +429,15 @@ object-fit: scale-down;
 .Intro-article{
     background-color: rgb(255, 255, 255);
     width: 18rem;
-    min-height: 12rem;
-    padding: 2rem;
+    padding: 2rem 0 0 0;
+
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
- 
+   
   position: absolute;
     bottom: calc(50% - 9rem);
     left: calc(50% - 9rem);
 
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+  
 
 
        animation: fallIntro 2.5s ease-out forwards;
@@ -455,22 +452,29 @@ object-fit: scale-down;
     box-shadow: none;
 }
 
- .expanded-content {
-            display: none;
-            margin-top: 2rem;
-        }
+ .Intro-article--wrapper{
+  display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+
+    overflow: hidden;
+ }
+
+ .Intro-article--wrapper.none{
+    display: none;
+ }
+
 .Intro-p{
   
     font-weight: 600;
     text-align: center;
-    line-height: 2.7rem;
+
   
 
 
 }
-
-
-
 .Intro-logo{
     width: 7rem;
 display: flex;
@@ -487,7 +491,18 @@ align-items: center;
  font-weight: 800;
 
 }
+.Intro-button{
+    padding: 0.5rem;
+    background-color: #ffdc49;
+   width: 100%;
+    font-size: 1.1rem;
+   transform: translateY(100%);
+   transition: all .4s ease;
+}
 
+.Intro-article:hover .Intro-button{
+    transform: translateY(0);
+}
 .Ingridients{
     width: 100%;
     min-height: 100vh;
