@@ -206,16 +206,24 @@ body {
 .Header{
     width: 100%;
 background-color: white;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
     justify-content:space-between;
     align-items: center;
-    position: fixed;
+ 
     top: 0;
  padding: 1rem 0;
  z-index: 1;
-
- animation: fallHeader 1.8s ease-out forwards ;
+  position: fixed;
+ animation: fallHeader 1.8s ease-out ease ;
  animation-delay: 4.1s;
+
+ transition: transform .4s ease;
+}
+
+.Header.invisible{
+    transform: translateY(-100%);
+
 }
 
 @keyframes fallHeader{
@@ -237,7 +245,7 @@ background-color: white;
     margin: 0 0 0 2rem;
 }
 .Header-logo{
-    width: 6rem;
+    width: 5rem;
     
 }
 
@@ -295,12 +303,13 @@ transform 0.6s ease,
 opacity .6s ease 
 }
 
-.Header-menu:hover ~  .Header-nav,
+.Header-menu:hover ~  .Header-nav, 
 .Header-nav:hover{
         opacity: 1;
        
         pointer-events: auto;
     transform: scaleY(1);   
+  
 }
 
 
@@ -312,16 +321,18 @@ opacity .6s ease
 }
 .Header-li{
     font-size: 1.4rem;
-    transition: background-color .4s ease;
+    transition: all .4s ease;
 }
 .Header-li:hover{
     font-weight: 600;
     transform: translateX(12px);  
     color: black;
     background-color: rgb(255, 255, 255);
+    
+    
 }
 .Header-cart{
-    width: 3.5rem;
+    width: 3rem;
        margin: 0 2rem 0 0;
 }
 
@@ -353,7 +364,7 @@ opacity .6s ease
 .Intro{
     
    
-  
+
      position: relative;
    display: flex;
    flex-flow: row nowrap;
@@ -383,10 +394,9 @@ opacity .6s ease
 
 .Intro-grid{
  
-    background-color: rgb(255, 255, 255);
+
     display: flex;
     flex-flow: column;
-
     animation: vertical 17s linear infinite;
     
  
@@ -415,15 +425,19 @@ opacity .6s ease
     }
 }
 .Intro-mosaic{
-    background-color: rgb(255, 255, 255);
+
 
     width: 4rem;
   
 }
 .Intro-img{
-
 object-fit: scale-down;
+  transition: filter 1s ease;
 
+}
+
+.Intro-img.blur{
+  filter: blur(5px);
 }
 
 .Intro-article{
@@ -440,14 +454,14 @@ object-fit: scale-down;
   
 
 
-       animation: fallIntro 2.5s ease-out forwards;
+       animation: fallIntro 2.5s ease forwards;
        animation-delay: 4.1s;
 
- transition: width .5s ease-out, height .5s ease-out, bottom .5s ease-out, left .5s ease-out;}
+ transition: width .6s ease, height .6s ease, bottom .6s ease, left .6s ease;}
 .Intro-article.expand{
      width: 100vw;
     height: 100vh;
-    bottom: -80vh;
+    bottom: -100vh;
     left: 0;
     box-shadow: none;
 }
@@ -493,19 +507,49 @@ align-items: center;
 }
 .Intro-button{
     padding: 0.5rem;
-    background-color: #ffdc49;
    width: 100%;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
    transform: translateY(100%);
    transition: all .4s ease;
+}
+.Intro-button--span{
+  border: 2px solid #ffdc49;
+  padding: 0.3rem 0.8rem;
 }
 
 .Intro-article:hover .Intro-button{
     transform: translateY(0);
 }
-.Ingridients{
+.Ingredients{
     width: 100%;
     min-height: 100vh;
-    background-color: #ffdc49;
-    margin: 40rem 0 0 0;
+    background-color:rgb(104, 44, 44);
+   
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.Ingredients_video{
+
+    opacity: 0;
+  transition:  all 1s ease;
+  transform: translateY(-20rem);
+
+  pointer-events: none;
+
+}
+.Ingredients_video.visible{
+  opacity: 1;
+  transform: translateY(0);
+      pointer-events: auto;
+
+}
+
+.Ingredients_video.visibleTranslateReverse{
+  transform: translateY(20rem);
+
+
 }
