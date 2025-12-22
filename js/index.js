@@ -43,7 +43,7 @@ window.addEventListener(`scroll`, ()=>{
     })
 }
 
-    if(actualPosition> 500){
+    if(actualPosition> 400){
         bottle.classList.add(`visible`)
         bottle.classList.remove(`visibleTranslateReverse`)
     }else {  (actualPosition< lastPosition)
@@ -55,6 +55,13 @@ window.addEventListener(`scroll`, ()=>{
     lastPosition = actualPosition
 })
 
-//Botella aparece en un translate como el scroll 
+//Cuando mouseover video pausa cuando mouse out video play
+const video = document.querySelector(`.Ingredients_video--video`)
 
+video.addEventListener(`mouseover`,()=>{
+    video.pause()
+})
+video.addEventListener(`mouseout`, ()=>{
+    video.play()
+})
 
