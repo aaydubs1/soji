@@ -55,13 +55,16 @@ window.addEventListener(`scroll`, ()=>{
     lastPosition = actualPosition
 })
 
-//Cuando mouseover video pausa cuando mouse out video play
-const video = document.querySelector(`.Ingredients_video--video`)
+//When mouseover en Intro-article (expandBox), Intro-img (mosaic) add style blur 5px
 
-video.addEventListener(`mouseover`,()=>{
-    video.pause()
-})
-video.addEventListener(`mouseout`, ()=>{
-    video.play()
+expandBox.addEventListener(`mouseover`, ()=>{
+    mosaic.forEach((_,i)=>{
+        mosaic[i].classList.add(`blur`)
+    })
 })
 
+expandBox.addEventListener(`mouseout`, ()=>{
+    mosaic.forEach((_,i)=>{
+        mosaic[i].classList.remove(`blur`)
+    })
+})

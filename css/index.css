@@ -205,8 +205,8 @@ body {
 
 .Header{
     width: 100%;
-background-color: white;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+backdrop-filter: (5px);
+
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -241,17 +241,16 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 }
 .Header-menu{
-    width: 3rem;
+    width: 4rem;
     margin: 0 0 0 2rem;
+    padding: 0.5rem;
+    background-color:#ffdc49;
+    
 }
 .Header-logo{
     width: 5rem;
+    display: none;
     
-}
-
-.Header-logo:hover{
-    color: #ffdc49;
-    scale: 1.05;
 }
 
 .Header-logo .Preloader-svg--letter-s path {
@@ -285,11 +284,11 @@ box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 .Header-nav{
     background-color: #ffdc49;
     padding:  1rem 2rem 1rem 1rem;
-    margin: 0 0 0 2rem;
+    margin: 0 1rem 0 2rem;
 
     position: absolute;
   left: 0;
-  top: 2rem;
+  top: 1rem;
 
     opacity: 0;
 
@@ -334,6 +333,7 @@ opacity .6s ease
 .Header-cart{
     width: 3rem;
        margin: 0 2rem 0 0;
+       
 }
 
 .Cart-svg{
@@ -363,15 +363,14 @@ opacity .6s ease
 
 .Intro{
     
-   
-
      position: relative;
    display: flex;
    flex-flow: row nowrap;
    justify-content: center;
    align-items: center;
   height: 100vh;
-   overflow: hidden;
+    overflow: hidden;
+
     
      animation: fallIntro 1.8s ease-out forwards;
      animation-delay: 4.1s;
@@ -393,17 +392,23 @@ opacity .6s ease
 }
 
 .Intro-grid{
- 
-
-    display: flex;
-    flex-flow: column;
-    animation: vertical 17s linear infinite;
+    animation: vertical 25s linear infinite;
     
  
 }
 
-
-
+.fast{
+    animation-duration: 15s;
+}
+.fast14{
+    animation-duration: 14s;
+}
+.fast18{
+    animation-duration: 18s;
+}
+.fast20{
+    animation-duration: 20s;
+}
 @keyframes vertical{
     from{
         transform:translateY(0%);
@@ -425,15 +430,17 @@ opacity .6s ease
     }
 }
 .Intro-mosaic{
-
-
-    width: 4rem;
+    margin: 3rem 2rem;
+    width: 6rem;
   
 }
 .Intro-img{
 object-fit: scale-down;
   transition: filter 1s ease;
+}
 
+.Intro.img.blur{
+  filter: blur(5px);
 }
 
 .Intro-img.blur{
@@ -443,10 +450,14 @@ object-fit: scale-down;
 .Intro-article{
     background-color: rgb(255, 255, 255);
     width: 18rem;
-    padding: 2rem 0 0 0;
+    padding: 3rem 0 0 0;
 
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-   
+  box-shadow:
+  rgba(0, 0, 0, 0.25) 0px 8px 16px,
+  rgba(0, 0, 0, 0.22) 0px 16px 32px,
+  rgba(0, 0, 0, 0.20) 0px 32px 64px,
+  rgba(0, 0, 0, 0.18) 0px 64px 128px; 
+
   position: absolute;
     bottom: calc(50% - 9rem);
     left: calc(50% - 9rem);
@@ -506,7 +517,7 @@ align-items: center;
 
 }
 .Intro-button{
-    padding: 0.5rem;
+    padding: 0.8rem;
    width: 100%;
     font-size: 0.9rem;
    transform: translateY(100%);
@@ -520,10 +531,11 @@ align-items: center;
 .Intro-article:hover .Intro-button{
     transform: translateY(0);
 }
+
 .Ingredients{
     width: 100%;
     min-height: 100vh;
-    background-color:rgb(104, 44, 44);
+
 
    
     position: absolute;
@@ -534,13 +546,13 @@ align-items: center;
 
 }
 .Ingredients_video{
-
+  
     opacity: 0;
   transition:  all 1s ease;
   transform: translateY(-20rem);
   margin: 5rem 0 0 0;
   pointer-events: none;
-
+width: 300px;
 }
 .Ingredients_video.visible{
   opacity: 1;
