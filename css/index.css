@@ -571,6 +571,7 @@ justify-content: center;
 
 
 .Ingredients-arrow{
+  background-color: #ffdc49;
   }
 .Ingredients-box{
   width: 450px;
@@ -578,18 +579,17 @@ justify-content: center;
   top: 50rem;
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .Ingredients-arrow--180{
 order: -1;
-margin: 0 1rem 0 0  ;
  
 }
 .Ingredients-arrow--svg{
   opacity: 0;
  transition: all .3s ease ;
- margin: 3rem 0 0 0;
+
 }
 .Ingredients-arrow.arrowOpacity{
   opacity: 1;
