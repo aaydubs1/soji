@@ -546,13 +546,18 @@ align-items: center;
 .Ingredients-img{
     opacity: 0;
   transition:  all 1s ease;
-
-background-color: ;
-  pointer-events: none;
-width: 300px;
- 
 position: relative;
+
+width: 50%;
+
+display: flex;
+justify-content: center;
 }
+
+.Ingredients-img--img{
+  width: 20rem;
+}
+
 .Ingredients-img.visible{
   opacity: 1;
   transform: translateY(0);
@@ -564,21 +569,27 @@ position: relative;
   transform: translateY(5rem);    
 }
 
+
 .Ingredients-arrow{
-    position: absolute;
-    bottom: -25rem;
-   right: 27rem;
+  }
+.Ingredients-box{
+  width: 450px;
+  position: absolute;
+  top: 50rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
 }
 
 .Ingredients-arrow--180{
- bottom: -28rem;
- right: 50rem ;
-
+order: -1;
+margin: 0 1rem 0 0  ;
+ 
 }
 .Ingredients-arrow--svg{
   opacity: 0;
  transition: all .3s ease ;
- 
+ margin: 3rem 0 0 0;
 }
 .Ingredients-arrow.arrowOpacity{
   opacity: 1;
