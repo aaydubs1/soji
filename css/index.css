@@ -537,32 +537,81 @@ align-items: center;
     min-height: 100vh;
 
 
-   
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
    
 
 }
-.Ingredients_video{
-  
+.Ingredients-img{
     opacity: 0;
   transition:  all 1s ease;
-  transform: translateY(-20rem);
-  margin: 5rem 0 0 0;
+
+
   pointer-events: none;
 width: 300px;
+ 
+position: relative;
 }
-.Ingredients_video.visible{
+.Ingredients-img.visible{
   opacity: 1;
   transform: translateY(0);
       pointer-events: auto;
+  
+}
+
+.Ingredients-img.visibleTranslateReverse{
+  transform: translateY(10rem);    
+}
+
+.Ingredients-arrow{
+    position: absolute;
+    bottom: -25rem;
+   right: 27rem;
+}
+
+.Ingredients-arrow--180{
+ bottom: -28rem;
+ right: 50rem ;
+
+}
+.Ingredients-arrow--svg{
+  opacity: 0;
+ transition: all .3s ease ;
+ 
+}
+.Ingredients-arrow.arrowOpacity{
+  opacity: 1;
 
 }
 
-.Ingredients_video.visibleTranslateReverse{
-  transform: translateY(20rem);
+.Ingredients-arrow--svg.arrowOpacity{
+  opacity: 1;
 
+}
+.Ingredients-arrow--svg-1{
+  transition-delay: .1s ;
+}
 
+.Ingredients-arrow--svg-2{
+  transition-delay: .2s ;
+}
+
+.Ingredients-arrow--svg-3{
+  transition-delay: .3s ;
+}
+
+.Ingredients-arrow--svg-4{
+  transition-delay: .4s ;
+}
+
+.Ingredients-arrow--svg-5{
+  transition-delay: .5s ;
+}
+
+.Ingredients-arrow--svg-6{
+  transition-delay: .6s ;
+}
+.Ingredients-arrow--svg-7{
+  transition-delay: .7s ;
 }
