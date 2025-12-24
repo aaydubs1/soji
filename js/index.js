@@ -47,7 +47,6 @@ window.addEventListener(`scroll`, () => {
         bottle.classList.add(`visible`)
         bottle.classList.remove(`visibleTranslateReverse`)
     } else {
-        (actualPosition < lastPosition)
         bottle.classList.remove(`visible`)
         bottle.classList.add(`visibleTranslateReverse`)
     }

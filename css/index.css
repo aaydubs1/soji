@@ -547,7 +547,7 @@ align-items: center;
     opacity: 0;
   transition:  all 1s ease;
 
-
+background-color: ;
   pointer-events: none;
 width: 300px;
  
@@ -561,7 +561,7 @@ position: relative;
 }
 
 .Ingredients-img.visibleTranslateReverse{
-  transform: translateY(10rem);    
+  transform: translateY(5rem);    
 }
 
 .Ingredients-arrow{
