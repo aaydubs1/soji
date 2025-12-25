@@ -23,6 +23,9 @@ const bottle = document.querySelector(`.Ingredients-img`)
 const mosaic = document.querySelectorAll(`.Intro-img`)
 console.log(mosaic)
 
+const ingredients = document.querySelector('.Ingredients');
+
+
 let lastPosition = window.scrollY
 
 window.addEventListener(`scroll`, () => {
@@ -75,21 +78,21 @@ const arrow = document.querySelectorAll(`.Ingredients-arrow`)
 const paths = document.querySelectorAll('.Ingredients-arrow--svg');
 
 window.addEventListener(`scroll`, () => {
-    let actualPosition = window.scrollY;      // posición del scroll
-    let windowHeight = window.innerHeight;    // altura visible de la ventana
+    let scrollBottom = window.scrollY + window.innerHeight //window.scrollY = cuánto se baja //window.innerHeight = altura visible de la pantalla // scrollBottom = el punto más bajo que  se ve en el momento del scroll
+    let ingredientsBottom = ingredients.offsetTop + ingredients.offsetHeight //offsetTop = distancia desde arriba de la página hasta el inicio de ingredients. //offsetHeight → altura total de ingridients
 
-    if (actualPosition >= windowHeight) {
+    if (scrollBottom >= ingredientsBottom) {
         arrow.forEach((_, i) => {
             arrow[i].classList.add(`arrowOpacity`)
         })
-        paths.forEach((_,i)=>{
+        paths.forEach((_, i) => {
             paths[i].classList.add(`arrowOpacity`)
         })
     } else {
         arrow.forEach((_, i) => {
             arrow[i].classList.remove(`arrowOpacity`)
         })
-          paths.forEach((_,i)=>{
+        paths.forEach((_, i) => {
             paths[i].classList.remove(`arrowOpacity`)
         })
     }
