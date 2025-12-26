@@ -85,7 +85,8 @@ svg {
   fill : currentColor;
 }
 body {
-  min-height : 200vh;
+  min-height : 100vh;
+
   line-height : 1.5em;
   color : inherit;
   hyphens : auto;
@@ -366,10 +367,13 @@ transition: all .6s ease;
   
   }
 }
+main{
+ 
 
+}
 .Intro{
-    
-     position: relative;
+    width: 100%;
+   overflow: hidden;
    display: flex;
    flex-flow: row nowrap;
    justify-content: center;
@@ -399,7 +403,7 @@ transition: all .6s ease;
 
 .Intro-grid{
     animation: vertical 25s linear infinite;
-    
+   
  
 }
 
@@ -438,7 +442,6 @@ transition: all .6s ease;
 .Intro-mosaic{
     margin: 3rem 2rem;
     width: 6rem;
-  
 }
 .Intro-img{
 object-fit: scale-down;
@@ -482,6 +485,7 @@ object-fit: scale-down;
     bottom: -100vh;
     left: 0;
     box-shadow: none;
+   
 }
 
  .Intro-article--wrapper{
@@ -539,16 +543,24 @@ align-items: center;
     transform: translateY(0);
 }
 
+.Ingredients-wrapper { 
+  width: 100%; 
+  height: 100vh; 
+  overflow: hidden; 
+  position: relative;
+}
+.Ingredients-carrousel{
+width: 300%;
+ height: 100%; 
+ display: flex; 
+ transition: transform .6s ease;
+}
 .Ingredients{
-    width: 100%;
-    min-height: 100vh;
-
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-
+width: calc(100% / 3);
+height: 100vh; 
+display: flex; 
+justify-content: center; 
+align-items: center;
 }
 .Ingredients-img{
     opacity: 0;
