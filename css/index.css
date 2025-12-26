@@ -544,16 +544,18 @@ align-items: center;
 }
 
 .Ingredients-wrapper { 
-  width: 100%; 
+
   height: 100vh; 
   overflow: hidden; 
   position: relative;
+ 
+
 }
 .Ingredients-carrousel{
 width: 300%;
  height: 100%; 
- display: flex; 
- transition: transform .6s ease;
+ display: flex;
+transition: transform .5s ease;
 }
 .Ingredients{
 width: calc(100% / 3);
@@ -562,6 +564,7 @@ display: flex;
 justify-content: center; 
 align-items: center;
 }
+
 .Ingredients-img{
     opacity: 0;
   transition:  all 1s ease;
@@ -613,7 +616,7 @@ width: 50%;
 .Ingredients-box{
   width: 28.125rem;
   position: absolute;
-  top: 50rem;
+
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 0 5rem;
@@ -681,13 +684,12 @@ width: 50%;
 
 .Ingredients-textFlex{
 position: absolute;
-
-width: 100%;
-min-height: 32rem;
+min-height: 35rem;
 display: flex;
 justify-content: space-around;
 margin: 3rem 0 0 0;
 gap: 2rem;
+
 
 
 }
@@ -746,3 +748,30 @@ background-color: #ffdc49;
  visibility: visible;
  
 }
+
+.Ingredients-move {
+
+  width: 6rem;
+ 
+  position: absolute;
+  top: calc(50% - 3rem);
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all .2s ease;
+}
+.Ingredients-move :hover{
+transform: rotate(8deg);
+}
+
+.Ingredients-move.left {
+  left: 2rem;
+}
+
+.Ingredients-move.right {
+  right: 2rem;
+}
+
+

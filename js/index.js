@@ -23,7 +23,7 @@ const bottle = document.querySelector(`.Ingredients-img`)
 const mosaic = document.querySelectorAll(`.Intro-img`)
 console.log(mosaic)
 
-const ingredients = document.querySelector('.Ingredients');
+const ingredients = document.querySelector('.Ingredients-wrapper');
 
 
 let lastPosition = window.scrollY
@@ -132,3 +132,54 @@ textIngredients.forEach((_,i)=>{
  })
 
 })
+
+'use strict';
+
+// ELEMENTOS
+const carrousel = document.querySelector('.Ingredients-carrousel');
+const slides = document.querySelectorAll('.Ingredients');
+const btnNext = document.querySelector('.right');
+const btnPrev = document.querySelector('.left');
+
+// CONTADOR
+let counter = 0;
+const numSlides = slides.length;
+
+// ANCHO DE la contenedora(300% si hay 3 slides)
+carrousel.style.width = `${100 * numSlides}%`;
+
+// MOVER CARRUSEL
+const moverCarrousel = () => {
+  carrousel.style.translate = `-${(100 / numSlides) * counter}%`;
+};
+
+// SIGUIENTE
+const nextSlide = () => {
+  counter++
+  if (counter === numSlides) {
+    counter = 0;
+    } 
+};
+
+// ANTERIOR
+const prevSlide = () => {
+  counter--
+  if (counter < 0){
+    counter = numSlides - 1
+  } 
+};
+//btnNext
+btnNext.addEventListener('click', () => {
+  nextSlide();
+  moverCarrousel();
+})
+//btnPrev
+btnPrev.addEventListener('click', () => {
+  prevSlide();
+  moverCarrousel();
+})
+
+
+// EVENTOS
+btnNext.addEventListener('click', nextSlide);
+btnPrev.addEventListener('click', prevSlide);
