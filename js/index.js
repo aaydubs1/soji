@@ -74,26 +74,61 @@ expandBox.addEventListener(`mouseout`, () => {
 
 //When scroll hasta window bottom, Ingredients-arrow--svg add class .arrowOpacity
 
-const arrow = document.querySelectorAll(`.Ingredients-arrow`)
-const paths = document.querySelectorAll('.Ingredients-arrow--svg');
+const paths = document.querySelectorAll('.Ingredients-arrow--svg')
+const textIngredients = document.querySelectorAll(`.Ingredients-h3`)
+const IngredientsP = document.querySelectorAll(`.Ingredients-p`)
 
 window.addEventListener(`scroll`, () => {
     let scrollBottom = window.scrollY + window.innerHeight //window.scrollY = cuánto se baja //window.innerHeight = altura visible de la pantalla // scrollBottom = el punto más bajo que  se ve en el momento del scroll
-    let ingredientsBottom = ingredients.offsetTop + ingredients.offsetHeight //offsetTop = distancia desde arriba de la página hasta el inicio de ingredients. //offsetHeight → altura total de ingridients
+    let ingredientsBottom = ingredients.offsetTop + ingredients.offsetHeight //offsetTop = distancia desde arriba de la página hasta el inicio de ingredients. //offsetHeight = altura total de ingridients
 
     if (scrollBottom >= ingredientsBottom) {
-        arrow.forEach((_, i) => {
-            arrow[i].classList.add(`arrowOpacity`)
-        })
+
         paths.forEach((_, i) => {
             paths[i].classList.add(`arrowOpacity`)
         })
-    } else {
-        arrow.forEach((_, i) => {
-            arrow[i].classList.remove(`arrowOpacity`)
+
+        textIngredients.forEach((_, i) => {
+            textIngredients[i].classList.add(`text-transition`)
         })
+    } else {
+
         paths.forEach((_, i) => {
             paths[i].classList.remove(`arrowOpacity`)
         })
+
+        textIngredients.forEach((_, i) => {
+            textIngredients[i].classList.remove(`text-transition`)
+        })
     }
+})
+
+//Ingredients text
+textIngredients.forEach((_,i)=>{
+ textIngredients[i].addEventListener(`mouseover`,()=>{
+    textIngredients.forEach((_,i)=>{
+        textIngredients[i].classList.remove(`text-decoration`)
+        textIngredients[i].classList.add(`hidden`)
+       
+        paths.forEach((_,i)=>{
+            paths[i].classList.add(`hidden`)
+        })
+    
+    })
+     textIngredients[i].classList.toggle(`text-decoration`)
+      textIngredients[i].classList.toggle(`hidden`)
+       IngredientsP[i].classList.toggle(`visible`)
+ })
+
+  textIngredients[i].addEventListener(`mouseout`,()=>{
+    textIngredients.forEach((_,i)=>{
+        textIngredients[i].classList.remove(`text-decoration`)
+        textIngredients[i].classList.remove(`hidden`)
+    })
+    IngredientsP[i].classList.remove(`visible`)
+    paths.forEach((_,i)=>{
+            paths[i].classList.remove(`hidden`)
+        })
+ })
+
 })

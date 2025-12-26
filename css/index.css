@@ -474,7 +474,7 @@ object-fit: scale-down;
        animation: fallIntro 2.5s ease forwards;
        animation-delay: 4.1s;
 
- transition: all 1s ease
+ transition: all .5s ease
 }
 .Intro-article.expand{
      width: 100vw;
@@ -543,7 +543,7 @@ align-items: center;
     width: 100%;
     min-height: 100vh;
 
-    background-color: #ffdc49;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -551,13 +551,11 @@ align-items: center;
 
 }
 .Ingredients-img{
-  background-color: #ffdc49;
     opacity: 0;
   transition:  all 1s ease;
 
 position: relative;
 width: 50%;
-
 
 }
 
@@ -601,7 +599,7 @@ width: 50%;
 
   }
 .Ingredients-box{
-  width: 450px;
+  width: 28.125rem;
   position: absolute;
   top: 50rem;
   display: grid;
@@ -621,6 +619,11 @@ width: 50%;
 
 }
 
+.Ingredients-arrow--svg.hidden{
+  visibility: hidden;
+  opacity: 0;
+  transition: none;
+}
 .Ingredients-arrow--left{
 
   transform: rotate(180deg);
@@ -654,4 +657,80 @@ width: 50%;
 }
 .Ingredients-arrow--svg-7{
   transition-delay: .7s ;
+}
+
+.svg-box { 
+   transition: all .6s ease;
+   transform: translateX(0);
+} 
+.svg-box.animated{
+ transform: translateX(-100%);
+}
+
+.Ingredients-textFlex{
+position: absolute;
+
+width: 100%;
+min-height: 32rem;
+display: flex;
+justify-content: space-around;
+margin: 3rem 0 0 0;
+gap: 2rem;
+
+
+}
+.Ingredients-column{
+ 
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+
+
+}
+.Ingredients-text{
+display: flex;
+flex-flow: column nowrap;
+align-items: center;
+
+ font-size: 1.2rem;
+ gap: 1rem;
+
+}
+
+
+.Ingredients-h3{
+display: flex;
+transition: opacity 1.5s ease, background-color .1s ease;
+opacity: 0;
+cursor: pointer;
+justify-content: center;
+
+}
+
+.Ingredients-h3.transform-right{
+  transform-origin: right;
+}
+.Ingredients-h3.text-transition{
+opacity: 1;
+
+}
+.Ingredients-h3.text-decoration{
+background-color: #ffdc49;
+
+}
+.Ingredients-h3.hidden{
+  visibility: hidden;
+}
+
+.Ingredients-p{
+  visibility: hidden;
+  pointer-events: none;
+  width: 60%;
+  line-height: 1.5rem;
+  font-size: 1rem;
+
+}
+.Ingredients-p.visible{
+ visibility: visible;
+ 
 }
