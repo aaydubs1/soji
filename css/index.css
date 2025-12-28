@@ -252,14 +252,13 @@ backdrop-filter: (5px);
     margin: 0 0 0 2rem;
     padding: 0.5rem;
     background-color:#ffdc49;
-
     transition: all .3s ease ;
     transform-origin: top left;
     
 }
 .Header-logo{
     width: 5rem;
-    display: none;
+   
     
 }
 
@@ -319,7 +318,7 @@ transition: all .6s ease;
   
 }
 .Header-menu:hover{
- transform: scaleY(0);
+ opacity: 0;
 
 }
 
@@ -336,7 +335,7 @@ transition: all .6s ease;
 }
 .Header-li:hover{
     font-weight: 600;
-    transform: translateX(12px);  
+    transform: translateX(5px);  
     color: black;
     background-color: rgb(255, 255, 255);
     
@@ -378,15 +377,14 @@ main{
 }
 .Intro{
     width: 100%;
-   overflow: hidden;
    display: flex;
-   flex-flow: row nowrap;
-   justify-content: center;
-   align-items: center;
   height: 100vh;
-    overflow: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content:  center;
+  align-items: center;
 
-    
+    background-color: #ffdc49;
      animation: fallIntro 1.8s ease-out forwards;
      animation-delay: 4.1s;
 }
@@ -406,36 +404,6 @@ main{
     }
 }
 
-.Intro-grid{
-    animation: vertical 25s linear infinite;
-   
- 
-}
-
-.fast{
-    animation-duration: 15s;
-}
-.fast14{
-    animation-duration: 14s;
-}
-.fast18{
-    animation-duration: 18s;
-}
-.fast20{
-    animation-duration: 20s;
-}
-@keyframes vertical{
-    from{
-        transform:translateY(0%);
-    }
-    to{
-        transform:translateY(40%);
-    }
-}
-
-
-
-
 @keyframes vertical{
     from{
         transform:translateY(0%);
@@ -444,14 +412,7 @@ main{
         transform:translateY(-40%);
     }
 }
-.Intro-mosaic{
-    margin: 3rem 2rem;
-    width: 6rem;
-}
-.Intro-img{
-object-fit: scale-down;
-  transition: filter 1s ease;
-}
+
 
 .Intro.img.blur{
   filter: blur(5px);
@@ -463,21 +424,14 @@ object-fit: scale-down;
 
 .Intro-article{
     background-color: rgb(255, 255, 255);
-    width: 18rem;
-    padding: 3rem 0 0 0;
+    
+    padding: 3rem 3rem 0 3rem;
 
   box-shadow:
   rgba(0, 0, 0, 0.25) 0px 8px 16px,
   rgba(0, 0, 0, 0.22) 0px 16px 32px,
   rgba(0, 0, 0, 0.20) 0px 32px 64px,
   rgba(0, 0, 0, 0.18) 0px 64px 128px; 
-
-  position: absolute;
-    bottom: calc(50% - 9rem);
-    left: calc(50% - 9rem);
-
-  
-
 
        animation: fallIntro 2.5s ease forwards;
        animation-delay: 4.1s;
@@ -498,7 +452,7 @@ object-fit: scale-down;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+ 
 
     overflow: hidden;
  }
@@ -508,13 +462,10 @@ object-fit: scale-down;
  }
 
 .Intro-p{
-  
+    line-height: 1.7;
     font-weight: 600;
     text-align: center;
-
-  
-
-
+  font-size: 1.6rem;
 }
 .Intro-logo{
     width: 7rem;
@@ -528,25 +479,65 @@ align-items: center;
    font-weight: 700;
 }
 
-.korea{
+.b{
  font-weight: 800;
 
 }
 .Intro-button{
-    padding: 0.8rem;
+    padding: 2.5rem;
    width: 100%;
-    font-size: 0.9rem;
+    font-size: 1.6rem;
    transform: translateY(100%);
    transition: all .4s ease;
 }
 .Intro-button--span{
-  border: 2px solid #ffdc49;
+  border: 4px solid #ffdc49;
   padding: 0.3rem 0.8rem;
 }
 
 .Intro-article:hover .Intro-button{
     transform: translateY(0);
 }
+.Intro-flavors{
+
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+ animation: bounce 2s infinite;
+}
+.Intro-span--flavors{
+   line-height: 1.3; 
+}
+
+@keyframes bounce {
+ 0%{ 
+  transform: translateY(0); 
+} 
+  60%{ 
+  transform: translateY(10px); 
+} 
+  100%{ 
+  transform: translateY(0); 
+}
+}
+
+.Intro-arrow{
+  width: 7rem;
+   
+}
+
+
+
+
+
 
 .Ingredients-wrapper { 
 
