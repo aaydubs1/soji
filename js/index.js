@@ -19,6 +19,8 @@ window.addEventListener('scroll', () => {
 const header = document.querySelector(`.Header`)
 
 const bottle = document.querySelector(`.Ingredients-img`)
+const bottlethai = document.querySelector(`.Ingredients-img--thailand`)
+const bottlejapon = document.querySelector(`.Ingredients-img--japon`)
 
 const mosaic = document.querySelectorAll(`.Intro-img`)
 console.log(mosaic)
@@ -53,6 +55,23 @@ window.addEventListener(`scroll`, () => {
         bottle.classList.remove(`visible`)
         bottle.classList.add(`visibleTranslateReverse`)
     }
+
+    if (actualPosition > 400) {
+        bottlethai.classList.add(`visible`)
+        bottlethai.classList.remove(`visibleTranslateReverse`)
+    } else {
+        bottlethai.classList.remove(`visible`)
+        bottlethai.classList.add(`visibleTranslateReverse`)
+    }
+
+      if (actualPosition > 400) {
+        bottlejapon.classList.add(`visible`)
+        bottlejapon.classList.remove(`visibleTranslateReverse`)
+    } else {
+        bottlejapon.classList.remove(`visible`)
+        bottlejapon.classList.add(`visibleTranslateReverse`)
+    }
+
 
 
     lastPosition = actualPosition

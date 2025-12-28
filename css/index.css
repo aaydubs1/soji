@@ -103,6 +103,11 @@ body {
   font-style: normal;
 }
 
+.barriecito-regular {
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 
@@ -566,26 +571,25 @@ align-items: center;
 }
 
 .Ingredients-img{
+  height: 100%; 
     opacity: 0;
   transition:  all 1s ease;
 
-position: relative;
+display: flex;
+  flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
 width: 50%;
-
 }
-
 .Ingredients-img--img{
   width: 20rem;
-  position: absolute;
-   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+position: absolute;
   margin: auto;
 
-  z-index: 1;
+  z-index: 2;
   
 }
+
 
 .Ingredients-img.visible{
   opacity: 1;
@@ -598,10 +602,72 @@ width: 50%;
   transform: translateY(5rem);    
 }
 
+.Ingredients-img--thailand.visible{
+    opacity: 1;
+  transform: translateY(0);
+      pointer-events: auto;
+}
+.Ingredients-img--thailand{
+    opacity: 0;
+  transition:  all 1s ease;
+width: 50%;
+  height: 100vh; 
+
+  display: flex;
+  flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
+ 
+}
+.Ingredients-h2{
+
+  font-size: 1.8rem;
+
+
+}
+.Ingredients-titleflag{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  flex-flow: row nowrap;
+  margin: 1rem 0 0 0;
+}
+.Ingredients-flag{
+width: 5rem;
+}
+.Ingredients-img--thailand.visibleTranslateReverse{
+  transform: translateY(5rem);    
+}
+
+.Ingredients-img--japon{
+      opacity: 0 ;
+      position: relative;
+  transition:  all 1s ease;
+width: 50%;
+  height: 100vh; 
+
+  display: flex;
+  flex-flow: column nowrap;
+justify-content: center;
+align-items: center;
+  
+}
+
+.Ingredients-img--japon.visible{
+    opacity: 1;
+  transform: translateY(0);
+      pointer-events: auto;
+}
+
+.Ingredients-img--japon.visibleTranslateReverse{
+  transform: translateY(5rem);    
+}
+
 
 .Ingredients-decor--svg{
     width: 20rem;
-    position: absolute;
+  
       top: 0;
   left: 0;
   right: 0;
