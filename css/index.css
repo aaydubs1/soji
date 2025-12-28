@@ -86,7 +86,6 @@ svg {
 }
 body {
   min-height : 100vh;
-
   line-height : 1.5em;
   color : inherit;
   hyphens : auto;
@@ -95,6 +94,7 @@ body {
   -moz-osx-font-smoothing : grayscale;
      font-family: "Montserrat", sans-serif;
        font-optical-sizing: auto;
+
 }
 
 .satisfy-regular {
@@ -126,7 +126,7 @@ body {
     top: 0;
     left: 0;
   
-    animation: slideUp 1s ease forwards  4.05s;
+    animation: slideUp 0.7s ease forwards  4.05s;
 }
 @keyframes slideUp{
     to{
@@ -221,7 +221,6 @@ backdrop-filter: (5px);
  padding: 1rem 0;
  z-index: 1;
   position: fixed;
- animation: fallHeader 1.8s ease-out ease ;
  animation-delay: 4.1s;
 
  transition: transform .4s ease ;
@@ -233,20 +232,7 @@ backdrop-filter: (5px);
 
 }
 
-@keyframes fallHeader{
-    0%{
-     transform: translateY(-100vh); opacity: 0;
-    }  
-    70%{
-        transform: translateY(0);opacity: 1;;
-    }
-    85%{
-        transform: translateY(-20px);
-    }
-    100%{
-      transform: translateY(0); opacity:1;
-    }
-}
+
 .Header-menu{
     width: 4rem;
     margin: 0 0 0 2rem;

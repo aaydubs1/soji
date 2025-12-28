@@ -1,4 +1,6 @@
 'use strict'
+
+
 // Expansion de la caja de introducción (Intro-article) al hacer scroll
 const expandBox = document.querySelector(`.Intro-article`)
 const contentBox = document.querySelector(`.Intro-article--wrapper`)
