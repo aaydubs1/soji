@@ -38,16 +38,9 @@ window.addEventListener(`scroll`, () => {
     if (actualPosition > lastPosition) {
         header.classList.add(`invisible`)
 
-        mosaic.forEach((_, i) => {
-            mosaic[i].classList.add(`blur`)
-        })
-
 
     } else {
         header.classList.remove(`invisible`)
-        mosaic.forEach((_, i) => {
-            mosaic[i].classList.remove(`blur`)
-        })
     }
 
     if (actualPosition > 400) {
@@ -79,19 +72,7 @@ window.addEventListener(`scroll`, () => {
     lastPosition = actualPosition
 })
 
-//When mouseover en Intro-article (expandBox), Intro-img (mosaic) add style blur 5px
 
-expandBox.addEventListener(`mouseover`, () => {
-    mosaic.forEach((_, i) => {
-        mosaic[i].classList.add(`blur`)
-    })
-})
-
-expandBox.addEventListener(`mouseout`, () => {
-    mosaic.forEach((_, i) => {
-        mosaic[i].classList.remove(`blur`)
-    })
-})
 
 //When scroll hasta window bottom, Ingredients-arrow--svg add class .arrowOpacity
 
