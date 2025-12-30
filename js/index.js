@@ -8,7 +8,7 @@ console.log(contentBox)
 
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 20) {
+    if (window.scrollY > 0) {
         expandBox.classList.add(`expand`)
         contentBox.classList.add(`none`)
     } else {
@@ -40,7 +40,7 @@ window.addEventListener(`scroll`, () => {
         header.classList.remove(`invisible`)
     }
 
-    if (actualPosition > 0) {
+    if (actualPosition > 400) {
         bottle.classList.add(`visible`)
         bottle.classList.remove(`visibleTranslateReverse`)
     } else {

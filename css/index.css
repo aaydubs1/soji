@@ -332,11 +332,52 @@ transition: all .6s ease;
     padding: 0.5rem;
        margin: 0 2rem 0 0;
        background-color: #000000;
- 
+ position: relative;
 }
 
-.Cart-svg{
-  
+.Shop-Cart{
+  position: absolute;
+  top: 0;
+  right: 0;
+   margin: 1rem 2rem 0 0;
+  padding: 1rem;
+}
+.Cart-item{
+display: flex;
+
+}
+.Cart-text{
+  display: flex;
+  flex-flow: column;
+  background-color: beige;
+  gap: 1rem;
+
+}
+.Cart-total--text{
+  background-color: azure;
+  text-align: end;
+}
+.Cart-close{
+  width: 100%;
+ background-color: #ffdc49;
+ display: flex;
+ justify-content: right;
+}
+.Cart-close--svg{
+  width: 2rem;
+}
+
+.Cart-span{
+  font-size: 1.6rem;
+}
+.Cart-item--image{
+background-color: #ffdc49;
+width: 60%;
+}
+.Cart-item--img{
+  width: 6rem;
+  padding: 0.5rem;
+  margin: auto;
 }
 
 .Header-cart:hover .Cart-svg--wheel1,
@@ -360,10 +401,7 @@ transition: all .6s ease;
   
   }
 }
-main{
- 
 
-}
 .Intro{
     width: 100%;
    display: flex;
@@ -821,19 +859,9 @@ transform: rotate(8deg);
 .Shop{
   min-height: 100vh;
   width: 100%;
-  background-color: #ffdc49;
-  display: flex;
-  flex-flow: column nowrap;
 
 }
-.Shop-h2{
-width: 100%;
 
-margin: 3rem 0 0 0;
-font-size: 5rem;
-font-weight: 500;
-text-align: center;
-}
 
 .Shop-grid{
   width: 100%;
@@ -842,7 +870,8 @@ text-align: center;
     grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
     gap: 1rem;
     margin: auto;
-    padding: 1rem;
+    padding: 8rem 2rem 0 2rem;
+
 }
 
 .Shop-article{
@@ -869,11 +898,15 @@ text-align: center;
   
   font-size: 1.3rem;
   padding: 0 0 0 .5rem;
+ 
 }
 .Shop-price{
   padding: 0 0 0 .5rem;
-
+  width:4rem;
  font-size: 1.1rem;
+ padding: .3rem;
+ background-color: #ffdc49;
+
 }
 
 .Shop-button{
@@ -897,4 +930,15 @@ justify-content: end;
   transform: translateY(-37px);
   scale: 3.5;
     
+}
+
+.Cart{
+  background-color: aqua;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+
 }

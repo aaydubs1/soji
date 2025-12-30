@@ -18,7 +18,7 @@
 <script src="js/index.js" defer></script>
 
 <body>
-<!--
+  <!--
     <div class="Preloader">
         <div class="Preloader-logo">
             <svg class= "Prealoader-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 1024 624" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
@@ -97,9 +97,9 @@
     </div>
   -->
     <div class="Header-cart">
-      <a href="#cart" class="Header-cart--a">
+      <button href="#cart" class="Header-cart--a">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"   ></g>
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
           <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
           <g id="SVGRepo_iconCarrier">
             <path class="Cart-svg Cart-svg--wheel1 "
@@ -118,40 +118,84 @@
               fill="#ffdc49"></path>
           </g>
         </svg>
-      </a>
+      </button>
+      <div class="Shop-Cart Cart">
+        <div class="Cart-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Cart-close--svg"
+            viewBox="0 0 16 16">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </div>
+         <span class="Cart-span">Cart</span>
 
+        <ul class="Cart-list">
+          <li class="Cart-item">
+            <div class="Cart-item--image">
+              <img class="Cart-item--img" src="assets/sweet-chili.png" alt="">
+            </div>
+            <div class="Cart-text">
+              <span class="Cart-item--name">Gochu flavour Soy Sauce</span>
+            <span class="Cart-item--price">6.99€</span>
+          
+            </div>
+          </li>
+          <li class="Cart-item">
+            <div class="Cart-item--image">
+              <img class="Cart-item--img" src="assets/miso.png" alt="">
+            </div>
+            <div class="Cart-text">
+              <span class="Cart-item--name">Gochu flavour Soy Sauce</span>
+            <span class="Cart-item--price">6.99€</span>
+       
+            </div>
+          </li>
+          <li class="Cart-item">
+            <div class="Cart-item--image">
+              <img class="Cart-item--img" src="assets/gochu.png" alt="">
+            </div>
+            <div class="Cart-text">
+              <span class="Cart-item--name">Gochu flavour Soy Sauce</span>
+            <span class="Cart-item--price">6.99€</span>
+            
+            </div>
+          </li>
+          <h5 class="Cart-total--text">Total: 6.99€</h5>
+        </ul>
+      </div>
+      </a>
     </div>
   </header>
   <main>
     <div class="Intro">
-      
-  
-<article class="Intro-article">
-      <div class="Intro-article--wrapper">
-        <div class="Intro-logo">
 
-          <img src="assets/logo.svg" alt="logo">
 
+      <article class="Intro-article">
+        <div class="Intro-article--wrapper">
+          <div class="Intro-logo">
+
+            <img src="assets/logo.svg" alt="logo">
+
+          </div>
+          <p class="Intro-p">
+            Made for Those Inspired by
+            <br> <b class="b">Asian Street Food</b>
+          </p>
+
+          <a href="#flavors" class="Intro-button"><span class="Intro-button--span">Shop the Flavors!</span></a>
         </div>
-        <p class="Intro-p">
-          Made for Those Inspired by
-          <br> <b class="b">Asian Street Food</b>
-        </p>
-      
-        <a href="#flavors" class="Intro-button"><span class="Intro-button--span">Shop the Flavors!</span></a>
+      </article>
+      <div class="Intro-flavors">
+        <span class="Intro-span--flavors">Check out our <br> Ingredients</span>
+        <div class="Intro-arrow"><img src="assets/arrow-12.svg" alt=""></div>
       </div>
-    </article>
-    <div class="Intro-flavors">
-      <span class="Intro-span--flavors">Check out our <br> Ingredients</span>
-     <div class="Intro-arrow"><img src="assets/arrow-12.svg" alt=""></div>
     </div>
-    </div>
-    
+
     <div class="Ingredients-wrapper">
       <div class="Ingredients-carrousel">
         <article class="Ingredients corea">
           <div class="Ingredients-img">
-             <div class="Ingredients-titleflag">
+            <div class="Ingredients-titleflag">
               <img class="Ingredients-flag" src="assets/corea-del-sur.png" alt="thailand flag">
               <h2 class="Ingredients-h2 barriecito-regular">Gochu Flavour</h2>
             </div>
@@ -489,7 +533,7 @@
             <div class="Ingredients-titleflag">
               <img class="Ingredients-flag" src="assets/tailandia.png" alt="thailand flag">
               <h2 class="Ingredients-h2 barriecito-regular">Sweet Chili <br> & Lime</h2>
-              
+
             </div>
             <img class="Ingredients-img--img" src="assets/sweet-chili.png"></img>
           </div>
@@ -786,12 +830,14 @@
             <ul class="Ingredients-column">
               <li class="Ingredients-text soybeans">
                 <h3 class="Ingredients-h3">Bird’s Eye Chili</h3>
-                <p class="Ingredients-p">Small, fiery Thai chilies that deliver the authentic, vibrant heat found in Thai cuisine.
+                <p class="Ingredients-p">Small, fiery Thai chilies that deliver the authentic, vibrant heat found in
+                  Thai cuisine.
                 </p>
               </li>
               <li class="Ingredients-text gochujang">
                 <h3 class="Ingredients-h3">Kaffir Lime Juice</h3>
-                <p class="Ingredients-p">Traditional citrus with an intense, aromatic flavor, here lightly smoked for depth.
+                <p class="Ingredients-p">Traditional citrus with an intense, aromatic flavor, here lightly smoked for
+                  depth.
                 </p>
               </li>
               <li class="Ingredients-text garlic">
@@ -808,12 +854,14 @@
               </li>
               <li class="Ingredients-text rice">
                 <h3 class="Ingredients-h3 transform-right ">Coconut Sugar</h3>
-                <p class="Ingredients-p">Gently sweet, caramel-like sugar typical in Thai cooking, balancing heat and citrus.
+                <p class="Ingredients-p">Gently sweet, caramel-like sugar typical in Thai cooking, balancing heat and
+                  citrus.
                 </p>
               </li>
               <li class="Ingredients-text sesame">
                 <h3 class="Ingredients-h3 transform-right">Galangal</h3>
-                <p class="Ingredients-p">A zesty, aromatic root that adds bright, citrusy warmth typical of Thai cooking.
+                <p class="Ingredients-p">A zesty, aromatic root that adds bright, citrusy warmth typical of Thai
+                  cooking.
                 </p>
               </li>
             </ul>
@@ -822,7 +870,7 @@
         </article>
         <article class="Ingredients japon">
           <div class="Ingredients-img--japon">
-             <div class="Ingredients-titleflag">
+            <div class="Ingredients-titleflag">
               <img class="Ingredients-flag" src="assets/japon.png" alt="japon flag">
               <h2 class="Ingredients-h2 barriecito-regular">White Miso <br> Umami Sauce</h2>
             </div>
@@ -1131,7 +1179,8 @@
               </li>
               <li class="Ingredients-text garlic">
                 <h3 class="Ingredients-h3">Mirin</h3>
-                <p class="Ingredients-p">A traditional Japanese sweet rice wine that delivers gentle sweetness and balance.
+                <p class="Ingredients-p">A traditional Japanese sweet rice wine that delivers gentle sweetness and
+                  balance.
                 </p>
               </li>
             </ul>
@@ -1159,46 +1208,47 @@
       <button class="Ingredients-move left"><img src="assets/arrow-1.svg" alt="left" class=""></button>
       <button class="Ingredients-move right"><img src="assets/arrow-1-right.svg" alt="right"></button>
     </div>
-    <section id="flavors"class="Shop">
+    <section id="flavors" class="Shop">
+
       <ul class="Shop-grid">
         <li>
-        <article class="Shop-article">
-          <div class="Shop-image">
-            <img src="assets/gochu.png" class="Shop-image--img" alt="product 1">
-            <div class="Shop-button">
-              <button class="Shop-button--button">+</button>
-            </div>
-          </div>
-          <h3 class="Shop-h3">Gochu flavour Soy Sauce</h3>
-          <span class="Shop-price">6.99€</span>
-          
-        </article>
-        </li>
-         <li>
-        <article class="Shop-article">
-          <div class="Shop-image">
-            <img src="assets/sweet-chili.png" class="Shop-image--img" alt="product 1">
+          <article class="Shop-article">
+            <div class="Shop-image">
+              <img src="assets/gochu.png" class="Shop-image--img" alt="product 1">
               <div class="Shop-button">
-              <button class="Shop-button--button">+</button>
+                <button class="Shop-button--button">+</button>
+              </div>
             </div>
-          </div>
-          <h3 class="Shop-h3">Sweet Chili & Lime Soy Sauce</h3>
-          <span class="Shop-price">6.99€</span>
-        
-        </article>
+            <h3 class="Shop-h3">Gochu flavour Soy Sauce</h3>
+            <span class="Shop-price">6.99€</span>
+
+          </article>
         </li>
-         <li>
-        <article class="Shop-article">
-          <div class="Shop-image" >
-            <img src="assets/miso.png" class="Shop-image--img" alt="product 1">
-            <div class="Shop-button">
-              <button class="Shop-button--button">+</button>
+        <li>
+          <article class="Shop-article">
+            <div class="Shop-image">
+              <img src="assets/sweet-chili.png" class="Shop-image--img" alt="product 1">
+              <div class="Shop-button">
+                <button class="Shop-button--button">+</button>
+              </div>
             </div>
-          </div>
-          <h3 class="Shop-h3">White Miso Soy Sauce</h3>
-          <span class="Shop-price">6.99€</span>
-  
-        </article>
+            <h3 class="Shop-h3">Sweet Chili & Lime Soy Sauce</h3>
+            <span class="Shop-price">6.99€</span>
+
+          </article>
+        </li>
+        <li>
+          <article class="Shop-article">
+            <div class="Shop-image">
+              <img src="assets/miso.png" class="Shop-image--img" alt="product 1">
+              <div class="Shop-button">
+                <button class="Shop-button--button">+</button>
+              </div>
+            </div>
+            <h3 class="Shop-h3">White Miso Soy Sauce</h3>
+            <span class="Shop-price">6.99€</span>
+
+          </article>
         </li>
       </ul>
     </section>
