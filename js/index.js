@@ -24,9 +24,6 @@ const bottle = document.querySelector(`.Ingredients-img`)
 const bottlethai = document.querySelector(`.Ingredients-img--thailand`)
 const bottlejapon = document.querySelector(`.Ingredients-img--japon`)
 
-const mosaic = document.querySelectorAll(`.Intro-img`)
-console.log(mosaic)
-
 const ingredients = document.querySelector('.Ingredients-wrapper');
 
 
@@ -43,7 +40,7 @@ window.addEventListener(`scroll`, () => {
         header.classList.remove(`invisible`)
     }
 
-    if (actualPosition > 400) {
+    if (actualPosition > 0) {
         bottle.classList.add(`visible`)
         bottle.classList.remove(`visibleTranslateReverse`)
     } else {
