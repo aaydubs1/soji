@@ -182,3 +182,19 @@ btnPrev.addEventListener('click', () => {
 // EVENTOS
 btnNext.addEventListener('click', nextSlide);
 btnPrev.addEventListener('click', prevSlide);
+
+
+const cartClose = document.querySelector('.Cart-close');
+const cartMenu = document.querySelector('.Shop-cart');
+const cartIcon = document.querySelector('.Header-cart-button');
+
+
+    cartIcon.addEventListener(`click`,()=>{
+        cartMenu.classList.add(`visible`)
+    })
+
+    cartClose.addEventListener(`click`,()=>{
+        cartMenu.classList.remove(`visible`)
+    })
+    
+    

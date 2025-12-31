@@ -334,16 +334,28 @@ transition: all .6s ease;
        background-color: #000000;
  position: relative;
 }
-
-.Shop-Cart{
-  position: absolute;
-  top: 0;
+.Shop-cart{
+  background-color: aqua;
+  position: fixed;
   right: 0;
-   margin: 1rem 2rem 0 0;
+  top: 0;
+
+     margin: 1rem 2rem 0 0;
   padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.Shop-cart.visible{
+  visibility: visible;
+  
+}
+.Cart-list{
+  position: relative;
+  width: 10rem;
 }
 .Cart-item{
 display: flex;
+position:relative;
 
 }
 .Cart-text{
@@ -358,13 +370,13 @@ display: flex;
   text-align: end;
 }
 .Cart-close{
-  width: 100%;
  background-color: #ffdc49;
  display: flex;
  justify-content: right;
 }
 .Cart-close--svg{
   width: 2rem;
+  background-color: aliceblue;
 }
 
 .Cart-span{
@@ -932,13 +944,3 @@ justify-content: end;
     
 }
 
-.Cart{
-  background-color: aqua;
-  position: fixed;
-  right: 0;
-  top: 0;
-
-  display: flex;
-  flex-flow: column nowrap;
-
-}
