@@ -54,7 +54,6 @@
         <li class="Header-li"><a href="#ingredients" class="Header-a">Ingredients</a></li>
         <li class="Header-li"><a href="#our-story" class="Header-a">Our Story</a></li>
         <li class="Header-li"><a href="#recepies" class="Header-a">Recepies</a></li>
-        <li class="Header-li"><a href="#buy-now" class="Header-a"></a>Buy it!</li>
       </ul>
     </nav>
     <!--<div class="Header-logo">
@@ -109,16 +108,32 @@
         <path class="Cart-svg Cart-svg--part3" d="M17.3498 6.00005C18.9457 6.0011 20.3516 6.02515 20.7762 6.57708C21.2202 7.15417 21.0466 8.02369 20.6995 9.76275L20.1997 12.1875C19.8846 13.7164 19.727 14.4808 19.1753 14.9304C18.6236 15.38 17.8431 15.38 16.2821 15.38H15.6945L17.3498 6.00005Z" fill="#ffdc49"></path>
       </g>
     </svg>
+    <div>
+      
+    </div>
+    
   </button>
       <div class="Shop-cart Cart" >
+        <div class="Cart-div">
+          <span class="Cart-span">Cart</span>
     <button class="Cart-close" >
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Cart-close--svg" viewBox="0 0 16 16">
         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
       </svg>
     </button>
-        <span class="Cart-span">Cart</span>
-
+        </div>
+        
         <ul class="Cart-list">
+          <li class="Cart-item">
+            <div class="Cart-item--image">
+              <img class="Cart-item--img" src="assets/gochu.png" alt="">
+            </div>
+            <div class="Cart-text">
+              <span class="Cart-item--name">Gochu flavour Soy Sauce</span>
+              <span class="Cart-item--price">6.99€</span>
+              <button class="Cart-item--remove">remove</button>
+            </div>
+          </li>
           <li class="Cart-item">
             <div class="Cart-item--image">
               <img class="Cart-item--img" src="assets/sweet-chili.png" alt="">
@@ -126,7 +141,7 @@
             <div class="Cart-text">
               <span class="Cart-item--name">Gochu flavour Soy Sauce</span>
               <span class="Cart-item--price">6.99€</span>
-
+              <button class="Cart-item--remove">remove</button>
             </div>
           </li>
           <li class="Cart-item">
@@ -136,20 +151,17 @@
             <div class="Cart-text">
               <span class="Cart-item--name">Gochu flavour Soy Sauce</span>
               <span class="Cart-item--price">6.99€</span>
-
+              <button class="Cart-item--remove">remove</button>
             </div>
           </li>
-          <li class="Cart-item">
-            <div class="Cart-item--image">
-              <img class="Cart-item--img" src="assets/gochu.png" alt="">
-            </div>
-            <div class="Cart-text">
-              <span class="Cart-item--name">Gochu flavour Soy Sauce</span>
-              <span class="Cart-item--price">6.99€</span>
-
-            </div>
-          </li>
-          <h5 class="Cart-total--text">Total: 6.99€</h5>
+          <button class="Cart-checkout">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Cart-checkout--svg" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+</svg>
+            <span>Check out</span>
+            
+          </button>
         </ul>
       </div>
     </div>
@@ -166,8 +178,8 @@
 
           </div>
           <p class="Intro-p">
-            Made for Those Inspired by
-            <br> <b class="b">Asian Street Food</b>
+            Soy Sauces Inspired by
+            <br> <b class="b">Street Food Flavors</b>
           </p>
 
           <a href="#flavors" class="Intro-button"><span class="Intro-button--span">Shop the Flavors!</span></a>
@@ -179,7 +191,7 @@
       </div>
     </div>
 
-    <div class="Ingredients-wrapper">
+    <div id="ingredients" class="Ingredients-wrapper">
       <div class="Ingredients-carrousel">
         <article class="Ingredients corea">
           <div class="Ingredients-img">
@@ -1193,8 +1205,12 @@
 
         </article>
       </div>
-      <button class="Ingredients-move left"><img src="assets/arrow-1.svg" alt="left" class=""></button>
-      <button class="Ingredients-move right"><img src="assets/arrow-1-right.svg" alt="right"></button>
+      <button class="Ingredients-move left"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+</svg></button>
+      <button class="Ingredients-move right"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg></button>
     </div>
     <section id="flavors" class="Shop">
 
@@ -1235,11 +1251,49 @@
             </div>
             <h3 class="Shop-h3">White Miso Soy Sauce</h3>
             <span class="Shop-price">6.99€</span>
-
           </article>
         </li>
       </ul>
     </section>
+    <div class="Story">
+      <div class="Story Text">
+        <div class="Text-overflow">
+        <h2 class="Text-title">Our Story</h2>
+        </div>
+        <p class="Text-p">Soji was born on the road.
+<br>
+A journey through <b class="Text-colours">South Korea</b>, <b class="Text-colours">Thailand</b> & <b class="Text-colours">Japan</b>,
+          <br>
+ following real routes through markets, street food, and small local spots.
+       </p>
+     
+        <button class="Explore-p--explore">
+            Explore our Soji 
+            <br>
+            <b class="Explore-flavourJourney">Flavor Journey</b>
+        </button>
+      </div>
+      
+      <div class="Story Passport">
+        <div class="Passport-book">
+          
+          <img src="assets/pasaporte-pagina1.png" alt="passport" class="Passport-image--firstpage">
+          <div class="Page-wrapper">
+          <div>
+               <img src="assets/pasaporte-pagina2.png" alt="passport" class="Passport-image--secondpage">
+   <div class="Passport-stamps">
+          <img src="assets/sello-japon.svg" alt="japan stamp" class="Passport-stamp Passport-stamp--japan">
+          <img src="assets/sello-corea.svg" alt="korea stamp" class="Passport-stamp Passport-stamp--korea">
+          <img src="assets/sello-tailandia.svg" alt="thailand stamp" class="Passport-stamp Passport-stamp--thailand">
+        </div>
+          </div>
+
+          <img src="assets/pasaporte-portada.png" alt="passport" class=" Passport-image--cover">
+        </div>
+        </div>
+     
+      </div>
+    </div>
   </main>
 </body>
 

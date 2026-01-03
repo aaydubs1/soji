@@ -34,10 +34,10 @@ window.addEventListener(`scroll`, () => {
 
     if (actualPosition > lastPosition) {
         header.classList.add(`invisible`)
-
-
+        cartMenu.classList.add(`invisible`)
     } else {
         header.classList.remove(`invisible`)
+        cartMenu.classList.remove(`invisible`)
     }
 
     if (actualPosition > 400) {
@@ -197,4 +197,61 @@ const cartIcon = document.querySelector('.Header-cart-button');
         cartMenu.classList.remove(`visible`)
     })
     
+    const buttonPlus = document.querySelectorAll(`.Shop-button--button`)
+    const cartItem = document.querySelectorAll(`.Cart-item`)
+    const cartItemRemove = document.querySelectorAll(`.Cart-item--remove`)
+
+    buttonPlus.forEach((_, i)=>{
+        buttonPlus[i].addEventListener(`click`,()=>{
+            cartItem[i].classList.add(`visible`)
+            cartMenu.classList.add(`visible`)
+            header.classList.remove(`invisible`)
+            cartMenu.classList.remove(`invisible`)
+        })
+    })
+    cartItemRemove.forEach((_,i)=>{
+        cartItemRemove[i].addEventListener(`click`,()=>{
+            cartItem[i].classList.remove(`visible`)
+        })
+    })
+
+    //Passport book open
+
+    const cover = document.querySelector(`.Passport-image--cover`)
+    const firstPage = document.querySelector(`.Passport-image--firstpage`)
+    const pageWrapper = document.querySelector(`.Page-wrapper`)
+
+    cover.addEventListener(`click`, ()=>{
+        cover.classList.add(`openBook`)
+        firstPage.classList.add(`firstPageOpen`)
+        pageWrapper.classList.add(`center`)
+    })
+    firstPage.addEventListener(`click`, ()=>{
+        firstPage.classList.remove(`firstPageOpen`)
+        cover.classList.remove(`openBook`)
+         pageWrapper.classList.remove(`center`)
+    })
+
+const text = document.querySelector('.Text-title')
+const textP  = document.querySelector(`.Text-p`)
+const exploreText = document.querySelector(`.Explore-p--explore`)
+const exploreButton = document.querySelector(`.Explore-flavourJourney`)
+
+window.addEventListener('scroll', () => {
+  console.log(window.scrollY)
+});
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY
+
+  if (scrollY > 1700) { // ajusta el valor según necesites
+    text.classList.add('scrolled-text')
+    textP.classList.add('scrolled-text')
     
+  } else {
+    text.classList.remove('scrolled-text')
+    textP.classList.remove('scrolled-text')
+    
+  }
+})
+
