@@ -1,0 +1,199 @@
+:root {
+  font-size : 100%;
+  font-family : system-ui, sans-serif;
+  scroll-behavior : smooth;
+}
+
+ * { -ms-overflow-style: none;  scrollbar-width: none;  } 
+ *::-webkit-scrollbar { display: none; }
+* , *::before , *::after {
+  margin : 0;
+  padding : 0;
+  border : 0;
+  box-sizing : border-box;
+  vertical-align : baseline;
+}
+*::before , *::after {
+  display : block;
+}
+img , picture , video , iframe , figure , canvas {
+  max-width : 100%;
+  display : block;
+  width : 100%;
+  height : initial;
+  object-fit : cover;
+  object-position : center center;
+}
+a {
+  display : block;
+  text-decoration : none;
+  color : inherit;
+  font :  inherit;
+}
+p a {
+  display : inline;
+}
+li , menu, summary {
+  list-style-type : none;
+}
+ol {
+  counter-reset : revert;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+  font :  inherit;
+  line-height :  1em;
+  text-decoration :  none;
+  color : inherit;
+  overflow-wrap : break-word;
+  text-wrap : pretty;
+}
+
+
+
+mark {
+  background-color : transparent;
+}
+blockquote::before , blockquote::after , q::before , q::after {
+  content : none;
+}
+form , input , textarea , select , button , label {
+  font :  inherit;
+  hyphens : auto;
+  background-color : transparent;
+  color : inherit;
+  display : block;
+  appearance : none;
+}
+fieldset {
+  border : none;
+}
+::placeholder {
+  color : unset;
+}
+button , label {
+  cursor : pointer;
+}
+table , tr , td , th , tbody , thead , tfoot {
+  border-collapse : collapse;
+  border-spacing : 0;
+  font : inherit;
+}
+svg {
+  width : 100%;
+  height : initial;
+  display : block;
+  fill : currentColor;
+}
+body {
+  min-height : 100vh;
+  line-height : 1.5em;
+  color : inherit;
+  hyphens : auto;
+  font-smooth : always;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+     font-family: "Montserrat", sans-serif;
+       font-optical-sizing: auto;
+
+}
+
+/* Contenedor del carrito */
+.Cart-wrapper{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+height: 100vh;
+}
+.Cart-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+
+/* Cada producto */
+.Cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(255,255,255,0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Cart-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Imagen del producto */
+.Cart-item-img {
+  width: clamp(5rem, 12vw, 7rem);
+
+ 
+  border-radius: 0.8rem;
+  flex-shrink: 0;
+
+}
+
+/* Información del producto */
+.Cart-item-info {
+  flex: 1;
+  display: flex;
+flex-flow: column;
+}
+.Cart-item--info-row2{
+}
+.Cart-item-title {
+  margin: 0 0 0.3rem 0;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: #ee3b37;
+}
+
+.Cart-item-price {
+
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  color: #726a69;
+  font-weight: 500;
+}
+
+/* Botón eliminar */
+.Cart-remove-button {
+  padding: 0.5rem 1rem;
+  background-color: #ee3b37;
+  color: #fcbd1b;
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.Cart-remove-button:hover {
+  background-color: #f44336;
+  transform: scale(1.05);
+}
+
+/* Mensaje carrito vacío */
+.Cart-container p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #726a69;
+  margin: 2rem 0;
+}
+.Cart-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #ee3b37;
+  margin-bottom: 1rem;
+}
