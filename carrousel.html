@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asian Sauces - Ingredients</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    /* CAROUSEL CONTAINER */
+    .carousel-container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    /* ARTICLE - Cada producto */
+    .Ingredients {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .Ingredients.korea {
+      border-top: 4px solid #e74c3c;
+    }
+
+    .Ingredients.thailand {
+      border-top: 4px solid #3498db;
+    }
+
+    .Ingredients.japon {
+      border-top: 4px solid #e67e22;
+    }
+
+    /* IMAGEN Y FLAG SECTION */
+    .Ingredients-img--korea,
+    .Ingredients-img--thailand,
+    .Ingredients-img--japon {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      border-radius: 8px;
+    }
+
+    .Ingredients-titleflag {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .Ingredients-flag {
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .Ingredients-h2 {
+      font-size: 1.8rem;
+      color: #2c3e50;
+    }
+
+    .Ingredients-img--img {
+      max-width: 200px;
+      height: auto;
+    }
+
+    /* LISTA DE INGREDIENTES */
+    .Ingredients-column {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .Ingredients-text {
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .Ingredients-text:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .Ingredients-title {
+      cursor: pointer;
+      padding: 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .Ingredients-title:hover {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .Ingredients-h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+
+    .Ingredients-letters {
+      color: #e74c3c;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .Ingredients-p {
+      display: none;
+    }
+
+    /* LIGHTBOX */
+    .Lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .Lightbox.isActive {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .Lightbox-contenido {
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      text-align: center;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .Lightbox.isActive .Lightbox-contenido {
+      transform: scale(1);
+    }
+
+    .Lightbox-cerrar {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 2.5rem;
+      cursor: pointer;
+      color: #999;
+      line-height: 1;
+      padding: 0;
+      width: 35px;
+      height: 35px;
+      transition: color 0.2s ease;
+    }
+
+    .Lightbox-cerrar:hover {
+      color: #333;
+    }
+
+    .Lightbox-title {
+      font-size: 2rem;
+      margin: 0 0 0.5rem 0;
+      color: #2c3e50;
+    }
+
+    .Lightbox-korean {
+      display: block;
+      font-size: 1.5rem;
+      color: #e74c3c;
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .Lightbox-descripcion {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+      margin: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .Ingredients-column {
+        grid-template-columns: 1fr;
+      }
+
+      .Ingredients-img--korea,
+      .Ingredients-img--thailand,
+      .Ingredients-img--japon {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .Ingredients-img--img {
+        max-width: 150px;
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+      <div id="ingredients" class="Ingredients-wrapper">
+          <div class="Ingredients-carrousel">
+<article class="Ingredients korea">
+      <div class="Ingredients-img--korea">
+        <div class="Ingredients-titleflag">
+          <img class="Ingredients-flag" src="assets/korea.png" alt="korea flag">
+          <h2 class="Ingredients-h2 barriecito-regular">Korean Gochujang <br> BBQ Sauce</h2>
+        </div>
+        <img class="Ingredients-img--img" src="assets/gochujang-sombra.png" alt="Gochujang bottle">
+      </div>
+
+      <ul class="Ingredients-column">
+        <li class="Ingredients-text">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Fermented Soybeans</h3>
+            <span class="Ingredients-letters">메주</span>
+          </div>
+          <p class="Ingredients-p">The foundation of traditional Korean fermentation, delivering deep, rich umami.</p>
+        </li>
+        
+        <li class="Ingredients-text">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Artisanal Gochujang</h3>
+            <span class="Ingredients-letters">고추장</span>
+          </div>
+          <p class="Ingredients-p">Korean fermented red chili paste that adds warmth, color, and balanced heat.</p>
+        </li>
+        
+        <li class="Ingredients-text">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Garlic</h3>
+            <span class="Ingredients-letters">마늘</span>
+          </div>
+          <p class="Ingredients-p">Bold and aromatic, a cornerstone of Korean cuisine.</p>
+        </li>
+
+        <li class="Ingredients-text">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Ginger</h3>
+            <span class="Ingredients-letters">생강</span>
+          </div>
+          <p class="Ingredients-p">Provides brightness and a subtle spicy freshness to balance the fermentation.</p>
+        </li>
+        
+        <li class="Ingredients-text rice">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Rice Syrup</h3>
+            <span class="Ingredients-letters">쌀엿</span>
+          </div>
+          <p class="Ingredients-p">A traditional Korean sweetener offering natural sweetness and depth.</p>
+        </li>
+        
+        <li class="Ingredients-text sesame">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Toasted Sesame Oil</h3>
+            <span class="Ingredients-letters">참기름</span>
+          </div>
+          <p class="Ingredients-p">Intensely fragrant, adding a nutty and luxurious finish.</p>
+        </li>
+      </ul>
+    </article>
+
+    <!-- PRODUCTO 2: THAILAND -->
+    <article class="Ingredients thailand">
+      <div class="Ingredients-img--thailand">
+        <div class="Ingredients-titleflag">
+          <img class="Ingredients-flag" src="assets/tailandia.png" alt="thailand flag">
+          <h2 class="Ingredients-h2 barriecito-regular">Sweet Chili <br> & Lime Sauce</h2>
+        </div>
+        <img class="Ingredients-img--img" src="assets/sweet-chili-sombra.png" alt="Sweet Chili bottle">
+      </div>
+
+      <ul class="Ingredients-column">
+        <li class="Ingredients-text soybeans">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Bird's Eye Chili</h3>
+            <span class="Ingredients-letters">พริกขี้หนู</span>
+          </div>
+          <p class="Ingredients-p">Small, fiery Thai chilies that deliver the authentic, vibrant heat found in Thai cuisine.</p>
+        </li>
+        
+        <li class="Ingredients-text gochujang">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Kaffir Lime Juice</h3>
+            <span class="Ingredients-letters">น้ำมะกรูด</span>
+          </div>
+          <p class="Ingredients-p">Traditional citrus with an intense, aromatic flavor, here lightly smoked for depth.</p>
+        </li>
+        
+        <li class="Ingredients-text">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Nam Pla (Fish Sauce)</h3>
+            <span class="Ingredients-letters">น้ำปลา</span>
+          </div>
+          <p class="Ingredients-p">Essential Thai umami, providing depth and savory richness.</p>
+        </li>
+
+        <li class="Ingredients-text ginger">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Lemongrass</h3>
+            <span class="Ingredients-letters">ตะไคร้</span>
+          </div>
+          <p class="Ingredients-p">Fresh stalks bruised or minced to release fragrant, citrusy aroma.</p>
+        </li>
+        
+        <li class="Ingredients-text rice">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Coconut Sugar</h3>
+            <span class="Ingredients-letters">น้ำตาลมะพร้าว</span>
+          </div>
+          <p class="Ingredients-p">Gently sweet, caramel-like sugar typical in Thai cooking, balancing heat and citrus.</p>
+        </li>
+        
+        <li class="Ingredients-text sesame">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Galangal</h3>
+            <span class="Ingredients-letters">ข่า</span>
+          </div>
+          <p class="Ingredients-p">A zesty, aromatic root that adds bright, citrusy warmth typical of Thai cooking.</p>
+        </li>
+      </ul>
+    </article>
+
+    <!-- PRODUCTO 3: JAPAN -->
+    <article class="Ingredients japon">
+      <div class="Ingredients-img--japon">
+        <div class="Ingredients-titleflag">
+          <img class="Ingredients-flag" src="assets/japon.png" alt="japan flag">
+          <h2 class="Ingredients-h2 barriecito-regular">White Miso <br> Umami Sauce</h2>
+        </div>
+        <img class="Ingredients-img--img" src="assets/miso-sombra.png" alt="Miso bottle">
+      </div>
+
+      <ul class="Ingredients-column">
+        <li class="Ingredients-text soybeans">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">White Miso</h3>
+            <span class="Ingredients-letters">白味噌</span>
+          </div>
+          <p class="Ingredients-p">The heart of Japanese cuisine, providing a smooth, rich umami base.</p>
+        </li>
+        
+        <li class="Ingredients-text gochujang">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Soy Sauce</h3>
+            <span class="Ingredients-letters">醤油</span>
+          </div>
+          <p class="Ingredients-p">Adds depth, savoriness, and perfectly complements the miso flavor.</p>
+        </li>
+        
+        <li class="Ingredients-text garlic">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Mirin</h3>
+            <span class="Ingredients-letters">みりん</span>
+          </div>
+          <p class="Ingredients-p">A traditional Japanese sweet rice wine that delivers gentle sweetness and balance.</p>
+        </li>
+
+        <li class="Ingredients-text ginger">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Dashi</h3>
+            <span class="Ingredients-letters">だしの素</span>
+          </div>
+          <p class="Ingredients-p">A touch of classic Japanese umami from kombu and bonito, enhancing complexity.</p>
+        </li>
+        
+        <li class="Ingredients-text rice">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Rice Vinegar</h3>
+            <span class="Ingredients-letters">米酢</span>
+          </div>
+          <p class="Ingredients-p">Brings a subtle acidity to brighten flavors and harmonize the sauce.</p>
+        </li>
+        
+        <li class="Ingredients-text sesame">
+          <div class="Ingredients-title">
+            <h3 class="Ingredients-h3">Ginger</h3>
+            <span class="Ingredients-letters">生姜</span>
+          </div>
+          <p class="Ingredients-p">Adds freshness and a light, aromatic spice to enliven the umami.</p>
+        </li>
+      </ul>
+    </article>
+
+  </div>
+
+  <!-- LIGHTBOX ÚNICO PARA TODOS -->
+  <div class="Lightbox">
+    <div class="Lightbox-contenido">
+      <button class="Lightbox-cerrar">&times;</button>
+      <h3 class="Lightbox-title"></h3>
+      <span class="Lightbox-korean"></span>
+      <p class="Lightbox-descripcion"></p>
+    </div>
+  </div>
+
+  
+   
+</body>
+</html>
