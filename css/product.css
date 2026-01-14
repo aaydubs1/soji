@@ -197,9 +197,11 @@ line-height: 1.5;
 .Product-details { 
   grid-area: 3 / 11 / 6 / 15; /* Columnas 11-14 (4 columnas de ancho) */
    padding: clamp(1vw, 1.5rem, 2vw);
+  overflow: hidden;
 
 display: flex;
 flex-flow: column;
+
 }
 
 .Product{
@@ -207,7 +209,7 @@ flex-flow: column;
   flex-flow: column;
   gap: .5rem;
   overflow: hidden;
-  background-color:#fcbd1b;
+background-color:#fcbd1b;
   padding: 1rem;
 }
 .Product-list {
@@ -249,6 +251,7 @@ flex-flow: column;
     grid-template-columns: 1fr; /* Solo 1 columna */
     grid-template-rows: auto;
     padding: 1rem;
+    gap: 1rem;
   }
     .Product-image { grid-area: 1 / 1 / 2 / 2; }
   .Product-info { grid-area: 2 / 1 / 3 / 2;
@@ -257,13 +260,16 @@ flex-flow: column;
 }
   .Product-description { grid-area: 3 / 1 / 4 / 2; 
   padding: 0;}
-  .Product-details { grid-area: 4 / 1 / 5 / 2; }
+  .Product-details { grid-area: 4 / 1 / 5 / 2; 
+  background-color:#fcbd1b;}
   .Product-flag{
 width: 7rem;
 }
 .Product-image--img{
   width: 40%;
 }
-
+.Product{
+    padding:  1rem 0;
+}
 }
 
