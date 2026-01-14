@@ -254,9 +254,9 @@ gap: 1rem;
     padding: 0;
     gap: 1rem;
 }
-  .Product-description { grid-area: 3 / 1 / 4 / 2; }
+  .Product-description { grid-area: 3 / 1 / 4 / 2; 
+  padding: .5rem;}
   .Product-details { grid-area: 4 / 1 / 5 / 2; }
-
   .Product-flag{
 width: 7rem;
 }
