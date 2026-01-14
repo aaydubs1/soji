@@ -125,7 +125,7 @@ body {
 
 
 .Product-image--img {
-width: 80%;
+
 }
 
 /* Grid areas para desktop */
@@ -152,17 +152,18 @@ align-items: center;
 }
 
 .Product-flag{
-width: 8rem;
+width: 9rem;
 }
 .Product-title--wrapper{
 display: flex;
 gap: .5rem;
-
+justify-content: center;
+align-items: center;
 width: 100%;
 }
 .Product-title{
-     font-size: clamp(5vw, 3rem, 10vw);
- 
+     font-size: clamp(3vw, 2rem, 8vw);
+
 }
 
 .Product-buy{
@@ -221,6 +222,7 @@ gap: 1rem;
   opacity: 1;
 
 }
+
 .subtitle{
  
     font-weight: 500;
@@ -242,16 +244,25 @@ gap: 1rem;
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 954px) {
   .Product-grid {
     grid-template-columns: 1fr; /* Solo 1 columna */
     grid-template-rows: auto;
   }
     .Product-image { grid-area: 1 / 1 / 2 / 2; }
   .Product-info { grid-area: 2 / 1 / 3 / 2;
-  align-items:center; 
+
+    gap: 1rem;
 }
   .Product-description { grid-area: 3 / 1 / 4 / 2; }
   .Product-details { grid-area: 4 / 1 / 5 / 2; }
+
+  .Product-flag{
+width: 7rem;
+}
+.Product-image--img{
+  width: 40%;
+}
+
 }
 
