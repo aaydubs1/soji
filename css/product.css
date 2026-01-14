@@ -165,6 +165,7 @@ width: 100%;
 
 }
 
+
 .Product-buy{
     display: flex;
     align-items: center;
@@ -243,6 +244,16 @@ background-color:#fcbd1b;
 }
 .Product-svg{
   width: 1.5rem;
+}
+.Product-checkout--svg{
+  width: 1.5rem;
+}
+.Product-checkout{
+margin: 0.5rem;
+  display: flex;
+
+  align-items: center;
+  gap: .5rem;
 }
 
 
