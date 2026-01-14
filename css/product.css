@@ -1,0 +1,256 @@
+
+:root {
+  font-size : 100%;
+  font-family : system-ui, sans-serif;
+  scroll-behavior : smooth;
+}
+
+ * { -ms-overflow-style: none;  scrollbar-width: none;  } 
+ *::-webkit-scrollbar { display: none; }
+* , *::before , *::after {
+  margin : 0;
+  padding : 0;
+  border : 0;
+  box-sizing : border-box;
+  vertical-align : baseline;
+}
+*::before , *::after {
+  display : block;
+}
+img , picture , video , iframe , figure , canvas {
+  max-width : 100%;
+  display : block;
+  width : 100%;
+  height : initial;
+  object-fit : cover;
+  object-position : center center;
+}
+a {
+  display : block;
+  text-decoration : none;
+  color : inherit;
+  font :  inherit;
+}
+p a {
+  display : inline;
+}
+li , menu, summary {
+  list-style-type : none;
+}
+ol {
+  counter-reset : revert;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+  font :  inherit;
+  line-height :  1em;
+  text-decoration :  none;
+  color : inherit;
+  overflow-wrap : break-word;
+  text-wrap : pretty;
+}
+
+
+
+mark {
+  background-color : transparent;
+}
+blockquote::before , blockquote::after , q::before , q::after {
+  content : none;
+}
+form , input , textarea , select , button , label {
+  font :  inherit;
+  hyphens : auto;
+  background-color : transparent;
+  color : inherit;
+  display : block;
+  appearance : none;
+}
+fieldset {
+  border : none;
+}
+::placeholder {
+  color : unset;
+}
+button , label {
+  cursor : pointer;
+}
+table , tr , td , th , tbody , thead , tfoot {
+  border-collapse : collapse;
+  border-spacing : 0;
+  font : inherit;
+}
+svg {
+  width : 100%;
+  height : initial;
+  display : block;
+  fill : currentColor;
+}
+body {
+  min-height : 100vh;
+  line-height : 1.5em;
+  color : inherit;
+  hyphens : auto;
+  font-smooth : always;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+     font-family: "Montserrat", sans-serif;
+       font-optical-sizing: auto;
+
+}
+.barriecito-regular {
+  font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.Product-section{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+}
+
+.Product-grid {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: auto; /* deja que cada fila se ajuste al contenido */
+  gap: 0;
+  padding: 2rem; /* menos padding para reducir altura */
+  margin: auto;
+   max-width: 1500px;
+}
+
+
+.Product-image--img {
+  width: clamp(15vw, 35rem, 20vw);
+
+
+}
+
+/* Grid areas para desktop */
+.Product-image { 
+  grid-area: 1 / 1 / 6 / 5;  /* Columnas 1-4 (4 columnas de ancho) */
+display: flex;
+
+  border-radius: 5rem;
+   /* ocupa todo el div */
+
+}
+
+.Product-info { 
+   grid-area: 1 / 5 / 3 / 15;    /* Columnas 5-14 */
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+     padding: clamp(2vw, 3rem, 5vw);
+    gap: 5rem;
+    
+}
+
+.Product-flag{
+width: clamp(5vw, 6rem, 8vw);
+}
+.Product-title--wrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: .5rem;
+}
+.Product-title{
+     font-size: clamp(2vw, 3rem, 5vw);
+}
+.Product-subtitle{
+    font-size: clamp(1vw, 1.2rem, 2vw);
+    
+
+}
+.Product-buy{
+    display: flex;
+    align-items: center;
+    gap: clamp(1vw,2rem, 5vw);
+}
+.Product-price{
+
+     font-size: clamp(1vw,1.5rem, 5vw);
+}
+.Product-button{
+    background-color: #fcbd1b;
+    padding: 1rem;
+       font-size: clamp(1vw, 1.2rem, 2vw);
+}
+
+.Product-description { 
+   grid-area: 3 / 5 / 6 / 11;  /* Columnas 5-10 (6 columnas de ancho) */
+
+
+    border-top: 0;
+    border-right: 0;
+
+    padding: clamp(1vw, 2rem, 3vw);
+}
+.Product-p{
+line-height: 1.5;
+}
+
+.Product-details { 
+  grid-area: 3 / 11 / 6 / 15; /* Columnas 11-14 (4 columnas de ancho) */
+   padding: clamp(1vw, 1.5rem, 2vw);
+
+display: flex;
+flex-flow: column;
+gap: 1rem;
+}
+
+.Product{
+  display: flex;
+  flex-flow: column;
+  gap: .5rem;
+  overflow: hidden;
+}
+.Product-list {
+  transition: all 0.3s ease;
+  height: 0;           /* empieza cerrado */
+  opacity: 0;
+}
+
+.Product-list.display {
+  height:fit-content   ;    /* suficiente para la lista */
+  opacity: 1;
+
+}
+.subtitle{
+    font-size: clamp(1vw, 1.2rem, 2vw);
+    font-weight: 500;
+}
+.Product-desplegable{
+  cursor: pointer;
+   transition: all 0.3s ease;
+   text-align: left;
+}
+.Product-wrapper{
+  background-color: #fcbd1b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.Product-svg{
+  width: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .Product-grid {
+    grid-template-columns: 1fr; /* Solo 1 columna */
+    grid-template-rows: auto;
+  }
+    .Product-image { grid-area: 1 / 1 / 2 / 2; }
+  .Product-info { grid-area: 2 / 1 / 3 / 2; }
+  .Product-description { grid-area: 3 / 1 / 4 / 2; }
+  .Product-details { grid-area: 4 / 1 / 5 / 2; }
+}
+

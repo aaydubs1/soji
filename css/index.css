@@ -622,7 +622,7 @@ body {
 
 .Ingredients-wrapper {
 
-  height: 100vh;
+
   overflow: hidden;
   position: relative;
 
@@ -631,7 +631,7 @@ body {
 
 .Ingredients-carrousel {
   width: 300%;
-  height: 100%;
+
   display: flex;
   transition: transform .5s ease;
 
@@ -640,11 +640,10 @@ body {
 .Ingredients {
   width: calc(100% / 3);
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   background-color:#ee3b37;
-
-
 }
 
 .Ingredients-img {
@@ -715,24 +714,13 @@ color: #000000;
 
 
 
-.Ingredients-textFlex {
-  position: absolute;
-  width: 90vw;
-  display: flex;
-  flex-flow: row nowrap;
 
-
-
-
-
-
-}
 
 .Ingredients-column {
 
   display: flex;
-  flex-flow: column nowrap;
-  margin: 6rem 0 0 0;
+  flex-flow: row wrap;
+ overflow: hidden;
 
 }
 @media  (max-width: 886px) {
@@ -914,6 +902,10 @@ background-color: black;
   letter-spacing: .1rem;
   padding: 0 0 0 .5rem;
 color: white;
+}
+.Shop-h3:hover{
+  color:#fcbd1b;
+  scale: 1.05;
 }
 
 .Shop-price {
@@ -1325,7 +1317,7 @@ align-items: center;
 .Recepies {
   display: grid;
  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))  ;
-margin: auto 3rem;
+margin: 3rem 0 0 0;
  
 
   justify-content: center;
@@ -1622,3 +1614,4 @@ gap: 1rem;
  
 }
  
+
