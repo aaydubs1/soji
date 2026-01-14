@@ -11,7 +11,7 @@ if (buttonProduct) {
         const productId = section.dataset.id;
         const titleEl = section.querySelector('.Product-title');       // h1
         const priceEl = section.querySelector('.Product-price');       // span
-        const imgEl = section.querySelector('.Product-image--img img'); // img dentro del div
+        const imgEl = section.querySelector('.Product-image--img'); // img dentro del div
 
         const product = {
             id: productId || Date.now(),
