@@ -2,7 +2,6 @@
 
 //Passport book open
 
-const cover = document.querySelector(`.Passport-image--cover`)
 const firstPage = document.querySelector(`.Passport-image--firstpage`)
 const stamp = document.querySelectorAll(`.Passport-stamp`)
 const Trip = document.querySelectorAll(`.miniTrip`)

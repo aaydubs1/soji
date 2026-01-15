@@ -105,11 +105,11 @@ body {
 .Routes{
   display: flex;               
 flex-flow: row;
-
-
+  width: 100%;
+ min-height: 100vh;
   transition: all .5s ease;
 background-color: #000000;
-
+position: relative;
 
 
 }
@@ -122,9 +122,9 @@ width: fit-content;
 opacity: 0;
 color: #fcbd1b;
 pointer-events: none;
+  overflow: hidden;
 bottom:0;
 right: 0;
-
 }
 
 
@@ -141,7 +141,7 @@ justify-content: center;
 align-items: center;
 gap: .5rem;
   transition: all .4s ease;
-
+  overflow: hidden;
   max-width: 7rem ;
 }
 
@@ -305,13 +305,14 @@ left: 10vw;
 
 
 .miniTrip {
+  position: absolute;
+top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   display: none;           /* invisible por defecto */
   transition: opacity 0.5s ease;
-
 
 }
 
@@ -331,8 +332,10 @@ left: 10vw;
  display: block;           /* solo se muestra el activo */
 }
 .miniTrip-wrapper{
+ 
 
-  width: 100%;
+height: 100vh;
+  width: 90%;
 
   display: flex;
   margin: auto;
@@ -361,7 +364,7 @@ transition: all 1s ease 2.5s;
 .miniTrip-Recepies{
 
   width: 100vw;
-
+  top: 0;
 
  display: flex;
 justify-content: center;
@@ -371,7 +374,7 @@ align-items: center;
 .Recepies {
   display: grid;
  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))  ;
-margin: 3rem 0 0 0;
+margin: auto 3rem;
  
 
   justify-content: center;
@@ -386,7 +389,7 @@ margin: 3rem 0 0 0;
   align-items: center;
   padding: 1rem;
   border-radius: 0.5rem;
-
+  position: relative;
   transition: transform 0.5s ease;
 transform-origin: bottom;
 margin: 5rem 0 0 0;
@@ -416,24 +419,12 @@ color:#fcbd1b;
 }
 
 @media (max-width: 840px){
-body{
-    overflow: auto;
-}
-.Routes {
-  display: flex;
-  transition: all .5s ease;
-  background-color: #000000;
-  width: 100%;
 
+.miniTrip{
 
 }
+.miniTrip-wrapper{
 
-.miniTrip-Recepies {
-
-    margin: auto;
-  display: flex;
- 
-  overflow: hidden;
 
 }
   .Recepies{
@@ -450,7 +441,7 @@ margin: 3rem 0 0 0;
                 
 }
 .Passport-stamp{
-    width: clamp(4rem, 5vw, 5rem);
+    width: clamp(4rem, 5vw, 5rem) !important;
 }
 
 .Recepies-column{
@@ -483,7 +474,7 @@ width: 10rem !important;
 max-height: 8rem;
 }
 .Recepies-column:hover .Recepies-text--p {
-     /* ajusta según tu contenido */
+  max-height: fit-content;       /* ajusta según tu contenido */
   padding: 0.5rem 0;      /* solo cuando se despliega */
 }
 
@@ -551,4 +542,3 @@ border: 6px dashed #fcbd1b ;
   line-height: 1.2;
   letter-spacing: .1rem;
 }
-
