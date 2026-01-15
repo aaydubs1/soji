@@ -1,0 +1,402 @@
+
+:root {
+  font-size : 100%;
+  font-family : system-ui, sans-serif;
+  scroll-behavior : smooth;
+}
+
+ * { -ms-overflow-style: none;  scrollbar-width: none;  } 
+ *::-webkit-scrollbar { display: none; }
+* , *::before , *::after {
+  margin : 0;
+  padding : 0;
+  border : 0;
+  box-sizing : border-box;
+  vertical-align : baseline;
+}
+*::before , *::after {
+  display : block;
+}
+img , picture , video , iframe , figure , canvas {
+  max-width : 100%;
+  display : block;
+  width : 100%;
+  height : initial;
+  object-fit : cover;
+  object-position : center center;
+}
+a {
+  display : block;
+  text-decoration : none;
+  color : inherit;
+  font :  inherit;
+}
+p a {
+  display : inline;
+}
+li , menu, summary {
+  list-style-type : none;
+}
+ol {
+  counter-reset : revert;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+  font :  inherit;
+  line-height :  1em;
+  text-decoration :  none;
+  color : inherit;
+  overflow-wrap : break-word;
+  text-wrap : pretty;
+}
+
+
+
+mark {
+  background-color : transparent;
+}
+blockquote::before , blockquote::after , q::before , q::after {
+  content : none;
+}
+form , input , textarea , select , button , label {
+  font :  inherit;
+  hyphens : auto;
+  background-color : transparent;
+  color : inherit;
+  display : block;
+  appearance : none;
+}
+fieldset {
+  border : none;
+}
+::placeholder {
+  color : unset;
+}
+button , label {
+  cursor : pointer;
+}
+table , tr , td , th , tbody , thead , tfoot {
+  border-collapse : collapse;
+  border-spacing : 0;
+  font : inherit;
+}
+svg {
+  width : 100%;
+  height : initial;
+  display : block;
+  fill : currentColor;
+}
+body {
+  min-height : 100vh;
+  line-height : 1.5em;
+  color : inherit;
+  hyphens : auto;
+  font-smooth : always;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+     font-family: "Montserrat", sans-serif;
+       font-optical-sizing: auto;
+
+}
+
+/*Header*/
+
+.Header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  top: 0;
+  padding: 1rem 0;
+  z-index: 8;
+  position: fixed;
+  animation-delay: 4.1s;
+
+  transition: transform .4s ease;
+
+}
+
+.Header.invisible {
+  transform: translateY(-100%);
+
+}
+
+
+.Header-menu {
+  width: 4rem;
+  margin: 0 0 0 2rem;
+  padding: 0.5rem;
+  transition: all .3s ease;
+  transform-origin: top left;
+
+}
+
+.Header-nav {
+  background-color: #fcbd1b;
+  padding: 1rem 2rem 1rem 1rem;
+  margin: 0 1rem 0 2rem;
+
+  position: absolute;
+  left: 0;
+  top: 1rem;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+
+  transform: scaleY(0);
+  transform-origin: top left;
+  transition: all .6s ease;
+}
+
+.Header-menu:hover ~.Header-nav,
+.Header-nav:hover {
+  opacity: 1;
+
+  pointer-events: auto;
+  transform: scaleY(1);
+
+}
+
+.Header-menu:hover {
+  opacity: 0;
+
+}
+
+
+.Header-ul {
+  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+.Header-li {
+  font-size: 1.4rem;
+  transition: all .4s ease;
+}
+
+.Header-li:hover {
+  font-weight: 600;
+  transform: translateX(5px);
+  color: black;
+  background-color: rgb(255, 255, 255);
+
+
+}
+.Header-back{
+    display: none;
+}
+
+.Header-cart {
+  width: 4rem;
+  padding: 0.5rem;
+  margin: 0 2rem 0 0;
+
+  position: relative;
+
+}
+
+.Shop-cart {
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  margin: 1rem 2rem 0 0;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  visibility: hidden;
+
+  transition: transform .4s ease;
+}
+
+.Shop-cart.visible {
+  visibility: visible;
+
+}
+
+.Shop-cart.invisible {
+  transform: translateY(-100%);
+}
+
+.Cart-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem 0;
+}
+
+.Cart-list {
+  width: 12rem;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: .5rem;
+  padding: 0 0.5rem 0 0;
+}
+
+.Cart-item {
+  display: none;
+}
+
+.Cart-item.visible {
+  display: flex;
+}
+
+.Cart-text {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+
+
+}
+
+.Cart-total--text {
+
+  text-align: end;
+}
+
+.Cart-close--svg {
+  width: 2rem;
+}
+
+.Cart-span {
+  font-size: 1.6rem;
+}
+
+.Cart-item--image {
+
+  width: 60%;
+}
+
+.Cart-item--img {
+  width: 6rem;
+  padding: 0.5rem;
+  margin: auto;
+}
+
+.Cart-item--remove {
+  text-align: end;
+  font-size: 0.9rem;
+}
+
+.Cart-item--remove:hover {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.Cart-checkout {
+
+  border: 2px solid #fcbd1b;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  padding: 0.5rem;
+
+  transition: background-color .4s ease;
+}
+
+.Cart-checkout:hover {
+  background-color: #fcbd1b;
+
+}
+
+.Cart-checkout--svg {
+  width: 1rem;
+}
+
+
+.Header-cart:hover .Cart-svg--wheel1,
+.Header-cart:hover .Cart-svg--wheel2 {
+  animation: bounce .6s ease forwards;
+}
+
+.Header-cart:hover .Cart-svg--wheel2 {
+  animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+
+  100% {
+    transform: translateY(0);
+
+  }
+}
+
+
+@media(max-width: 450px){
+  .Header-nav {
+    position: fixed;    /* ya lo tenías */
+    top: 0;             /* aseguramos que empiece desde arriba */
+    left: 0;            /* aseguramos que empiece desde la izquierda */
+
+    width: 100%;        /* redundante pero seguro */
+    height: 100vh;      /* altura total de la pantalla */
+
+    padding: 2rem;      /* puedes ajustar */
+    margin: 0;          /* quitar cualquier margen que lo separe */
+
+    background-color: #000000;
+ 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  
+  }
+
+  
+.Header-ul {
+  text-align: left;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2rem;
+
+}
+
+.Header-li {
+  font-size: 3rem;
+  transition: all .4s ease;
+  color: #fcbd1b;
+}
+
+.Header-li:hover {
+  font-weight: 600;
+  transform: translateX(10px);
+
+  background-color: rgb(255, 255, 255);
+
+
+}
+.Header-span{
+
+}
+.Header-back{
+    display: flex;
+   justify-content: end;
+   align-items: center;
+   gap: .5rem;
+    color: #fcbd1b;
+ position: absolute;
+ bottom: 0;
+ padding: 2rem;
+width: 100%;
+
+}
+
+.Header-arrow{
+    width: 2rem;
+}
+
+}

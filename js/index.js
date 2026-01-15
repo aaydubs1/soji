@@ -2,51 +2,6 @@
 
 
 
-//Header translate escondido/aparece segu el scroll 
-// bottle efecto translate segun scroll
-const header = document.querySelector(`.Header`)
-
-const bottle = document.querySelector(`.Ingredients-img`)
-const bottlethai = document.querySelector(`.Ingredients-img--thailand`)
-const bottlejapon = document.querySelector(`.Ingredients-img--japon`)
-
-const ingredients = document.querySelector('.Ingredients-wrapper')
-
-
-let lastPosition = window.scrollY
-
-window.addEventListener(`scroll`, () => {
-    let actualPosition = window.scrollY
-
-
-    if (actualPosition > 400) {
-        bottle.classList.add(`visible`)
-        bottle.classList.remove(`visibleTranslateReverse`)
-    } else {
-        bottle.classList.remove(`visible`)
-        bottle.classList.add(`visibleTranslateReverse`)
-    }
-
-    if (actualPosition > 400) {
-        bottlethai.classList.add(`visible`)
-        bottlethai.classList.remove(`visibleTranslateReverse`)
-    } else {
-        bottlethai.classList.remove(`visible`)
-        bottlethai.classList.add(`visibleTranslateReverse`)
-    }
-
-    if (actualPosition > 400) {
-        bottlejapon.classList.add(`visible`)
-        bottlejapon.classList.remove(`visibleTranslateReverse`)
-    } else {
-        bottlejapon.classList.remove(`visible`)
-        bottlejapon.classList.add(`visibleTranslateReverse`)
-    }
-
-
-
-    lastPosition = actualPosition
-})
 
 
 
@@ -83,57 +38,7 @@ textIngredients.forEach((_, i) => {
 })
 
 'use strict';
-
-
-const carrousel = document.querySelector('.Ingredients-carrousel')
-const slides = document.querySelectorAll('.Ingredients')
-const btnNext = document.querySelector('.right')
-const btnPrev = document.querySelector('.left')
-
-//contador
-let counter = 0
-const numSlides = slides.length
-
-//ancho de la contenedora(300% si hay 3 slides)
-carrousel.style.width = `${100 * numSlides}%`
-
-//mover carrousel
-const moverCarrousel = () => {
-    carrousel.style.translate = `-${(100 / numSlides) * counter}%`
-}
-
-//siguiente
-const nextSlide = () => {
-    counter++
-    if (counter === numSlides) {
-        counter = 0;
-    }
-}
-
-//anterior
-const prevSlide = () => {
-    counter--
-    if (counter < 0) {
-        counter = numSlides - 1
-    }
-}
-//btnNext
-btnNext.addEventListener('click', () => {
-    nextSlide();
-    moverCarrousel();
-})
-//btnPrev
-btnPrev.addEventListener('click', () => {
-    prevSlide();
-    moverCarrousel();
-})
-
-
-
-btnNext.addEventListener('click', nextSlide)
-btnPrev.addEventListener('click', prevSlide)
-
-
+//añadir producto al carrito
 const cartClose = document.querySelector('.Cart-close')
 const cartMenu = document.querySelector('.Shop-cart')
 const cartIcon = document.querySelector('.Header-cart-button')
@@ -252,3 +157,36 @@ cards.forEach((_, i) => {
 
 });
 
+//carrousel story 
+
+
+const carruselImgs = document.querySelectorAll(`.Carrousel-img`)
+console.log(carruselImgs)
+const carruselWrapper = document.querySelector(`.Carrousel-wrapper`)
+console.log(carruselWrapper)
+
+
+let counter=0
+
+let numImage
+numImage = carruselImgs.length 
+console.log(numImage)
+
+carruselWrapper.style.width=`${100 * numImage}%`
+carruselWrapper.style.gridTemplateColumns = `repeat(${numImage},1fr)`
+
+
+
+function autoMove() {
+    counter++;
+
+    if (counter >= numImage) {
+        counter = 0;
+    }
+
+    carruselWrapper.style.translate = `-${(100 / numImage) * counter}%`;
+
+}
+
+// que se mueva cada 3 segundos
+setInterval(autoMove, 5000);
