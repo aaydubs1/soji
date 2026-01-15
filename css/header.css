@@ -117,19 +117,7 @@ background-color: transparent;
 }
 
 
-.Header-menu:hover ~.Header-nav,
-.Header-nav:hover {
-  opacity: 1;
 
-  pointer-events: auto;
-  transform: scaleY(1);
-
-}
-
-.Header-menu:hover {
-  opacity: 0;
-
-}
 .Header-menu {
 width: 4rem;
 visibility: hidden;
@@ -340,7 +328,7 @@ background-color: transparent;
     margin: 0;          /* quitar cualquier margen que lo separe */
 
     background-color: #000000;
- 
+
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -407,17 +395,10 @@ width: 100%;
     width: 2rem;
 }
 
-.Header-menu:hover ~.Header-nav,
-.Header-nav:hover {
-  opacity: 1;
 
-  pointer-events: auto;
+
+.Header-nav.open {
   transform: scaleY(1);
-
-}
-
-.Header-menu:hover {
-  opacity: 0;
 
 }
 
