@@ -376,31 +376,7 @@ color:#fcbd1b;
 }
 
 
-.scrolled-text {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-  gap: 1rem;
 
-}
-
-.Text-colours {
-transition: background-color 1s 1s, 
-            font-weight 1s 1s, 
-            box-shadow 1s 1s;
-          
-  display: inline-block;
-}
-
-.Text-colours.countryColours {
-  background-color: #fcbd1b;
-  font-weight: 600;
-  box-shadow:
-    inset 0 1px 2px rgba(0, 0, 0, 0.2),
-    inset 0 -1px 2px rgba(255, 255, 255, 0.7),
-    0 2px 4px rgba(0, 0, 0, 0.15);
-
-}
 .Routes{
   display: flex;               
 flex-flow: row;
@@ -613,6 +589,7 @@ top: 0;
   display: none;           /* invisible por defecto */
   transition: opacity 0.5s ease;
 
+margin: 4rem 0 0 0;
 }
 
 @keyframes fadeaway {
@@ -697,7 +674,7 @@ margin: 5rem 0 0 0;
 
 .Recepies-column.show{
   transform: scale(1.1);
-transform: translateY(-10%);
+transform: translateY(-1%);
 }
 
 .Recepies-column:hover .Recepies-text{
@@ -741,7 +718,7 @@ margin: 3rem 0 0 0;
                 
 }
 .Passport-stamp{
-    width: clamp(4rem, 5vw, 5rem) !important;
+    width: clamp(4rem, 5vw, 5rem);
 }
 
 .Recepies-column{
@@ -970,14 +947,20 @@ gap: 1rem;
  
 }
  
-
+.Story{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+width: 100%;
+}
 
 
 .Story-Carrousel{
+min-width: 70vh;
 
-height: 100vh;
-width: 50vw;
-border: 2rem solid black;
+width: 100%;
+
     box-shadow: 0 0 5rem rgba(0,0,0,0.2);
 
     position: relative;
@@ -988,14 +971,31 @@ border: 2rem solid black;
     transition: all .5s ease;
 
 }
-@media(max-width:412px){
+@media(max-width:1200px){
+  .Story{
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
   .Story-Carrousel{
-    height: auto;
-    width: 100%;
+   
+    min-width:auto;
     border: 0;
   }
 }
 
+@media(max-width:px){
+  .Story{
+  
+
+  }
+  
+  .Story-Carrousel{
+   
+    min-width:auto;
+    border: 0;
+  }
+}
 .Carrousel-img{
 
 
@@ -1008,25 +1008,72 @@ border: 2rem solid black;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+
 }
 .Carrousel-li{}
-.Carrousel-btn{
-    width: 1rem;
-    height: 1rem;
-    background-color: lightgrey;
-    border-radius: 50%;
 
-    cursor: pointer;
-    transition: transform .5s ease;
 
-    &:hover{
-        transform: scale(.9);
-    }
-    &:active{
-        transform: scale(1.1);
-    }
+.Story-About-us {
+
+  display: flex;
+justify-content: center;
+  align-items: center;
+
 }
 
-.Carrousel-btn.color{
-    background-color:#fcbd1b;
+.About-us-container {
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.About-us-heading {
+  font-family: 'Barriecito';
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-align: center;
+  color: #fcbd1b;
+}
+
+.About-us-tagline {
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.6;
+  font-style: italic;
+  color:white;
+font-weight: 100;
+}
+
+.About-us-story {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+
+.About-us-block {
+  flex: 1 1 300px;
+
+  padding: 2rem;
+background-color:#ee3b37;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.About-us-block p{
+  color: black;
+  line-height: 1.7rem;
+  font-weight: 500;
+}
+
+.About-us-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.About-us-subtitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #fcbd1b;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }

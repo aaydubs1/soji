@@ -5,37 +5,6 @@
 
 
 
-//When scroll hasta window bottom, Ingredients-arrow--svg add class .arrowOpacity
-
-
-const textIngredients = document.querySelectorAll(`.Ingredients-h3`)
-const IngredientsP = document.querySelectorAll(`.Ingredients-p`)
-const IngredientsTitle = document.querySelectorAll(`.Ingredients-title`)
-
-//Ingredients text
-textIngredients.forEach((_, i) => {
-    textIngredients[i].addEventListener(`click`, () => {
-        textIngredients.forEach((_, i) => {
-            textIngredients[i].classList.remove(`text-decoration`)
-            textIngredients[i].classList.remove(`hidden`)
-        })
-
-        IngredientsP.forEach((_, i) => {
-            IngredientsP[i].classList.remove(`visible`)
-        })
-
-        IngredientsTitle.forEach((_, i) => {
-            IngredientsTitle[i].classList.remove('end'); // quitar de todos
-        });
-
-        textIngredients[i].classList.add(`text-decoration`)
-        IngredientsP[i].classList.add(`visible`)
-        IngredientsTitle[i].classList.add(`end`)
-
-
-
-    })
-})
 
 'use strict';
 //añadir producto al carrito
@@ -69,50 +38,6 @@ cartItemRemove.forEach((_, i) => {
         cartItem[i].classList.remove(`visible`)
     })
 })
-
-//Passport book open
-
-const cover = document.querySelector(`.Passport-image--cover`)
-const firstPage = document.querySelector(`.Passport-image--firstpage`)
-const stamp = document.querySelectorAll(`.Passport-stamp`)
-const Trip = document.querySelectorAll(`.miniTrip`)
-const RoutesArrow = document.querySelector(`.Routes-arrow`)
-const titlePassport = document.querySelector(`.Passport-title`)
-
-stamp.forEach((_, i) => {
-    stamp[i].addEventListener(`click`, () => {
-        firstPage.classList.add(`closeBook`)
-        titlePassport.classList.add(`display`)
-
-        stamp.forEach((_, i) => {
-            stamp[i].classList.add(`visible`)
-        })
-        Trip.forEach((_, i) => {
-            Trip[i].classList.remove(`display`)
-        })
-        Trip[i].classList.add(`display`)
-        RoutesArrow.classList.add(`display`)
-
-
-
-    })
-})
-
-
-RoutesArrow.addEventListener(`click`, () => {
-    firstPage.classList.remove(`closeBook`)
-    titlePassport.classList.remove(`display`)
-
-    stamp.forEach((_, i) => {
-        stamp[i].classList.remove(`visible`)
-    })
-    Trip.forEach((_, i) => {
-        Trip[i].classList.remove(`display`)
-    })
-    RoutesArrow.classList.remove(`display`)
-
-})
-
 
 
 

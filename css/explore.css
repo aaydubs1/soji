@@ -1,0 +1,554 @@
+:root {
+  font-size : 100%;
+  font-family : system-ui, sans-serif;
+  scroll-behavior : smooth;
+}
+
+ * { -ms-overflow-style: none;  scrollbar-width: none;  } 
+ *::-webkit-scrollbar { display: none; }
+* , *::before , *::after {
+  margin : 0;
+  padding : 0;
+  border : 0;
+  box-sizing : border-box;
+  vertical-align : baseline;
+}
+*::before , *::after {
+  display : block;
+}
+img , picture , video , iframe , figure , canvas {
+  max-width : 100%;
+  display : block;
+  width : 100%;
+  height : initial;
+  object-fit : cover;
+  object-position : center center;
+}
+a {
+  display : block;
+  text-decoration : none;
+  color : inherit;
+  font :  inherit;
+}
+p a {
+  display : inline;
+}
+li , menu, summary {
+  list-style-type : none;
+}
+ol {
+  counter-reset : revert;
+}
+h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+  font :  inherit;
+  line-height :  1em;
+  text-decoration :  none;
+  color : inherit;
+  overflow-wrap : break-word;
+  text-wrap : pretty;
+}
+
+
+
+mark {
+  background-color : transparent;
+}
+blockquote::before , blockquote::after , q::before , q::after {
+  content : none;
+}
+form , input , textarea , select , button , label {
+  font :  inherit;
+  hyphens : auto;
+  background-color : transparent;
+  color : inherit;
+  display : block;
+  appearance : none;
+}
+fieldset {
+  border : none;
+}
+::placeholder {
+  color : unset;
+}
+button , label {
+  cursor : pointer;
+}
+table , tr , td , th , tbody , thead , tfoot {
+  border-collapse : collapse;
+  border-spacing : 0;
+  font : inherit;
+}
+svg {
+  width : 100%;
+  height : initial;
+  display : block;
+  fill : currentColor;
+}
+body {
+ 
+  line-height : 1.5em;
+  color : inherit;
+  overflow: hidden;
+  hyphens : auto;
+  font-smooth : always;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+     font-family: "Montserrat", sans-serif;
+       font-optical-sizing: auto;
+
+}
+.barriecito-regular{
+      font-family: "Barriecito", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.Routes{
+  display: flex;               
+flex-flow: row;
+
+
+  transition: all .5s ease;
+background-color: #000000;
+
+
+
+}
+
+
+.Routes-arrow{
+position: absolute;
+  transition: all .4s ease;
+width: fit-content;
+opacity: 0;
+color: #fcbd1b;
+pointer-events: none;
+bottom:0;
+right: 0;
+
+}
+
+
+
+
+
+.arrow-bar-left{
+}
+.Routes-arrow--wrapper{
+    transform: translateX(3vw);
+  display: grid;
+grid-template-columns: repeat(2,1fr);
+justify-content: center;
+align-items: center;
+gap: .5rem;
+  transition: all .4s ease;
+
+  max-width: 7rem ;
+}
+
+@media(max-width: 1513px){
+  .Routes-arrow--wrapper{
+    transform: translateX(4vw);
+  }
+}
+@media(max-width: 1202px){
+  .Routes-arrow--wrapper{
+    transform: translateX(5vw);
+  }
+}
+
+
+@media(max-width: 652px){
+  .Routes-arrow--wrapper{
+    transform: translateX(9vw);
+  }
+}
+
+@media(max-width: 452px){
+  .Routes-arrow--wrapper{
+    transform: translateX(11vw);
+  }
+}
+
+.Routes-arrow--wrapper:hover{
+  transform: translateX(-8px);
+}
+.Routes-arrow.display{
+opacity: 1;
+pointer-events: all;
+}
+
+.Routes-Passport {
+  width: 100%;
+  min-height: 100vh;
+opacity: 1;
+display: flex;
+flex-flow: column nowrap;
+justify-content: center;
+gap: 2rem;
+transition: all .5s ease;
+
+}
+.Passport.appear{
+  opacity: 1;
+
+}
+
+.Passport-title{
+color: #fcbd1b;
+width: 100%;
+padding: 1rem;
+align-items: center;
+justify-content: center;
+font-size: 3rem;
+color:#fcbd1b;
+text-align: center;
+
+
+opacity: 1;
+}
+
+.Passport-title.display{
+ opacity: 0;
+}
+
+.Passport-title--big {
+  font-size: 2.5rem; /* o clamp si quieres */
+  font-weight: 700;
+  display: block;
+  line-height: 1.4;
+}
+
+.Passport-title--small {
+  font-size: 1.6rem;
+  font-weight: 400;
+    display: block;
+letter-spacing: .3rem;
+}
+.Routes-logo{
+  width: 7rem;
+}
+
+.Passport-book {
+  display: flex;
+  justify-content: center;
+position: relative;
+
+}
+
+
+
+
+.Passport-image--firstpage {
+
+max-width: clamp(25rem, 50vw, 50rem);
+
+  transition: opacity .2s ease;
+  opacity: 1;
+}
+.Passport-image--firstpage.closeBook{
+  opacity: 0;
+  pointer-events: none;
+}
+@media(max-width:937px){
+  .Passport-image--firstpage{
+
+  }
+}
+@media(max-width:937px){
+  .Passport-image--firstpage{
+
+  }
+}
+
+.Passport-stamps {
+  width: 100%;
+
+  position: absolute;
+  top: 4vh;
+left: 10vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: .1rem;
+}
+
+.Passport-stamp {
+ width: clamp(3rem, 7vw, 8rem);;
+  transition: all .3s ease;
+  z-index: 3;
+     cursor: pointer;   
+}
+.Passport-stamp.visible{
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Passport-stamp:hover {
+  transform: scale(1.1);
+}
+
+.Passport-stamp--korea {
+  margin: 0 0 0 3vw;
+  transition: all .3s ease;
+}
+
+.Passport-stamp--japan {
+  margin: 0 5vw 0 0;
+}
+
+.Passport-stamp--thailand {
+  margin: 0 4vw 0 0;
+}
+
+.Routes-Trip {
+}
+
+
+.miniTrip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: none;           /* invisible por defecto */
+  transition: opacity 0.5s ease;
+
+
+}
+
+@keyframes fadeaway {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-6rem); 
+  }
+}
+
+.miniTrip.display {
+ display: block;           /* solo se muestra el activo */
+}
+.miniTrip-wrapper{
+
+  width: 100%;
+
+  display: flex;
+  margin: auto;
+}
+
+.Trip-p {
+  font-size: 2rem;
+  color: white;          /* cambia según país si quieres */
+  padding: 2rem;
+  position: absolute;
+  left: 20vw;
+  display: none;
+}
+.Trip-p.animation{
+animation: fadeaway 1s forwards 2.5s ;
+transition: all 1s ease 2.5s;
+
+}
+.miniTrip{
+
+
+
+
+}
+
+.miniTrip-Recepies{
+
+  width: 100vw;
+
+
+ display: flex;
+justify-content: center;
+align-items: center;
+ flex-direction: column;
+}
+.Recepies {
+  display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))  ;
+margin: 3rem 0 0 0;
+ 
+
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.Recepies-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  transition: transform 0.5s ease;
+transform-origin: bottom;
+margin: 5rem 0 0 0;
+  z-index: 3;
+}
+
+.Recepies-column.show{
+  transform: scale(1.1);
+transform: translateY(-1%);
+}
+
+.Recepies-column:hover .Recepies-text{
+  background-color: #fcbd1b;
+}
+.Recepies-column:hover .Recepies-text--p{
+  color:#ee3b37;
+  font-weight: 500;
+}
+
+
+.Recepies-title{
+  width: 100%;
+
+
+  font-size: clamp(1.5rem, 4rem, 4vw);
+color:#fcbd1b;
+}
+
+@media (max-width: 840px){
+body{
+    overflow: auto;
+}
+.Routes {
+  display: flex;
+  transition: all .5s ease;
+  background-color: #000000;
+  width: 100%;
+
+
+}
+
+.miniTrip-Recepies {
+
+    margin: auto;
+  display: flex;
+ 
+  overflow: hidden;
+
+}
+  .Recepies{
+display: flex;
+ flex-flow: column;
+
+margin: 3rem 0 0 0;
+
+}
+
+
+.Recepies-title{
+  position: static;
+                
+}
+.Passport-stamp{
+    width: clamp(4rem, 5vw, 5rem);
+}
+
+.Recepies-column{
+    flex-direction: column;
+    margin: 0;
+}
+.Recepies-img{
+width: 10rem !important;
+   margin: 0;                   /* quita margin-bottom negativo */
+           /* ya no flota sobre texto */
+    display: block;
+    justify-content: center; 
+}
+
+
+.Recepies-text--p{
+
+  overflow: hidden;
+  margin: 0;
+ 
+  line-height: 1.2;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.Recepies-text {
+   width: 14rem;               /* o clamp si quieres */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+max-height: 8rem;
+}
+.Recepies-column:hover .Recepies-text--p {
+     /* ajusta según tu contenido */
+  padding: 0.5rem 0;      /* solo cuando se despliega */
+}
+
+.Recepies-column:hover .Recepies-text {
+  max-height: 16rem;       /* ajusta según tu contenido */   /* solo cuando se despliega */
+}
+
+.Recepies-text--p{
+  font-size: 0.6rem !important;
+}
+.Recepies-text--h3{
+  font-size: 1.1rem !important;
+
+}
+}
+
+@media (max-width:1338px){
+
+  .Recepies-img{
+    width: 12rem !important;
+  }
+}
+
+
+
+
+.Recepies-img{
+display: flex; 
+justify-content: end; 
+margin-bottom: -3rem; 
+position: relative; 
+z-index: 1;
+transform: rotate(5deg);
+width: 18rem;
+border: 6px dashed #fcbd1b ;
+}
+.Recepies-text{
+
+  margin: 0;
+  background-color: #ee3b37;
+  border: 4px solid #fcbd1b;
+  color: black;
+  font-weight: 500;
+  padding:2rem 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+
+}
+.Recepies-text--h3{
+  font-weight: 700;
+  letter-spacing: .3rem;
+  text-align: left;
+  width: 100%;
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0 0;
+  line-height: 1.2;
+  color:black;
+}
+.Recepies-text--p{
+  text-align: left ;
+  line-height: 1.2;
+  letter-spacing: .1rem;
+}
+
