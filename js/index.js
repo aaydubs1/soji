@@ -11,7 +11,7 @@
 const cartClose = document.querySelector('.Cart-close')
 const cartMenu = document.querySelector('.Shop-cart')
 const cartIcon = document.querySelector('.Header-cart-button')
-
+const plusIcon = document.querySelectorAll(`.Shop-button--button`)
 
 cartIcon.addEventListener(`click`, () => {
     cartMenu.classList.add(`visible`)
@@ -21,23 +21,15 @@ cartClose.addEventListener(`click`, () => {
     cartMenu.classList.remove(`visible`)
 })
 
+plusIcon.forEach((_, i) => {
+plusIcon[i].addEventListener(`click`, () => {
+    cartMenu.classList.add(`visible`)
+})
+})
+
 const buttonPlus = document.querySelectorAll(`.Shop-button--button`)
 const cartItem = document.querySelectorAll(`.Cart-item`)
 const cartItemRemove = document.querySelectorAll(`.Cart-item--remove`)
-
-buttonPlus.forEach((_, i) => {
-    buttonPlus[i].addEventListener(`click`, () => {
-        cartItem[i].classList.add(`visible`)
-        cartMenu.classList.add(`visible`)
-        header.classList.remove(`invisible`)
-        cartMenu.classList.remove(`invisible`)
-    })
-})
-cartItemRemove.forEach((_, i) => {
-    cartItemRemove[i].addEventListener(`click`, () => {
-        cartItem[i].classList.remove(`visible`)
-    })
-})
 
 
 
