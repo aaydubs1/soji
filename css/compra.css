@@ -62,7 +62,7 @@ form , input , textarea , select , button , label {
   background-color : transparent;
   color : inherit;
   display : block;
-  appearance : none;
+
 }
 fieldset {
   border : none;
@@ -106,27 +106,15 @@ body {
   align-items: center;
   flex-direction: column;
 
-
 }
 
 /* TÍTULO CHECKOUT */
 .Checkout-title {
   font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 5px;
-  letter-spacing: .035rem;
-}
-
-/* TEXTO LOGIN */
-.Checkout-login {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-.Checkout-login a {
-  color: #000;
-  text-decoration: underline;
+  letter-spacing: .1rem;
+  padding: 2rem;
+  
 }
 
 /* WRAPPER DE DOS COLUMNAS */
@@ -137,6 +125,7 @@ body {
   gap: 2.5rem;
 
   padding: 2rem;
+
 }
 
 /* COLUMNA IZQUIERDA: FORMULARIO */
@@ -144,31 +133,49 @@ body {
   width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 35px;
+
 }
 
-.Form-section h3 {
-  font-size: 18px;
+.Form-section--h3 {
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin: .8rem 0;
+}
+.Form-section{
+  display: flex;
+  flex-flow: column;
+
+  gap: .5rem;
 }
 
 .Form-section input {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 12px;
+  padding: .9rem;
+  margin: 0 0 1rem 0;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 15px;
+  border-radius: .5rem;
+
 
 }
 
-.Form-section label {
-  display: block;
-  margin-bottom: 10px;
-  font-size: 15px;
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;
+  height: auto;
+  margin: 0; 
   cursor: pointer;
 }
+
+label {
+  display: flex;
+  align-items: center; 
+  gap: 1rem; 
+}
+
+
+
+
 
 .Form-consent {
   display: flex;

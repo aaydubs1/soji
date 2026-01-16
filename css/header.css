@@ -194,11 +194,11 @@ pointer-events: none;
   right: 0;
   top: 0;
 
-
+  
   padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
-  visibility: hidden;
+
       transform: scaleY(0);
   transform-origin: top left;
   transition: transform .4s ease;
@@ -221,35 +221,7 @@ pointer-events: none;
   align-items: center;
   margin: 0 0 1rem 0;
 }
-
-.Cart-list {
-  width: 12rem;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: .5rem;
-  padding: 0 0.5rem 0 0;
-}
-
-
-
-.Cart-item.visible {
-  display: flex;
-}
-
-.Cart-text {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-
-
-}
-
-.Cart-total--text {
-
-  text-align: end;
-}
-
-.Cart-close--svg {
+.Cart-close--svg{
   width: 2rem;
 }
 
@@ -257,28 +229,8 @@ pointer-events: none;
   font-size: 1.6rem;
 }
 
-.Cart-item--image {
 
-  width: 60%;
-}
-
-.Cart-item--img {
-  width: 6rem;
-  padding: 0.5rem;
-  margin: auto;
-}
-
-.Cart-item--remove {
-  text-align: end;
-  font-size: 0.9rem;
-  color:#fcbd1b;
-}
-.Cart-item--remove:hover {
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.Cart-checkout {
+.Header-cart--button {
     
   border: 2px solid #fcbd1b;
   display: flex;
@@ -289,14 +241,12 @@ pointer-events: none;
   transition: background-color .4s ease;
 }
 
-.Cart-checkout:hover {
+.Header-cart--button:hover {
   background-color: #fcbd1b;
 color: #ee3b37;
 }
 
-.Cart-checkout--svg {
-  width: 1rem;
-}
+
 
 
 .Header-cart:hover .Cart-svg--wheel1,
@@ -315,7 +265,7 @@ color: #ee3b37;
   }
 
   50% {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
   }
 
   100% {
@@ -430,10 +380,56 @@ width: 100%;
   transform: scaleY(1);
 
 }
+}
 
 
 
 
 
+.Cart-header-item {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .6rem 0;
+  border-bottom: 1px solid #fcbd1b ;
+}
 
+
+
+.Cart-header-img {
+  width: 3rem;
+
+}
+
+.Cart-header-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+}
+
+.Cart-header-title {
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.Cart-header-quantity {
+  font-size: .8rem;
+  color: black;
+}
+
+.Cart-header-price {
+  font-weight: 600;
+  font-size: .9rem;
+
+}
+
+.Cart-header-remove {
+
+  border: none;
+  color: black;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: .3rem;
 }

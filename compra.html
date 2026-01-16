@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
 
 </head>
-<script src="js/compra.js" defer></script>
+<script src="js/cart.js" defer></script>
+
 
 <body>
 
@@ -26,7 +27,6 @@
   <!-- MAIN -->
   <main class="Checkout-main">
     <h2 class="Checkout-title">CHECKOUT</h2>
-    <p class="Checkout-login">Already have an account? <a href="#">Log in</a></p>
 
     <div class="Checkout-wrapper">
 
@@ -36,7 +36,7 @@
 
           <!-- Información personal -->
           <div class="Form-section">
-            <h3>Personal Information</h3>
+            <h3 class="Form-section--h3" >Personal Information</h3 >
             <input type="text" placeholder="First name" required />
             <input type="text" placeholder="Last name" required />
             <input type="tel" placeholder="Phone number" required />
@@ -45,7 +45,7 @@
 
           <!-- Dirección -->
           <div class="Form-section">
-            <h3>Shipping Information</h3>
+            <h3 class="Form-section--h3" >Shipping Information</h3 >
             <input type="text" placeholder="Country / Region" required />
             <input type="text" placeholder="City" required />
             <input type="text" placeholder="Address" required />
@@ -53,20 +53,20 @@
           </div>
 
           <label class="Form-consent">
-            <input type="checkbox" required />
+            <input class="Form-section--checkbox" type="checkbox" required />
             I agree to data processing
           </label>
 
           <!-- Envío -->
           <div class="Form-section">
-            <h3>Delivery</h3>
-            <label><input type="radio" name="delivery" value="standard" checked /> Standard Delivery (5–7 days) – Free</label>
-            <label><input type="radio" name="delivery" value="express" /> Express Shipping (1–2 days) – $50.00</label>
+            <h3 class="Form-section--h3" >Delivery</h3 >
+            <label><input type="radio" name="delivery"  /> Standard Delivery (5–7 days) – Free</label>
+            <label><input type="radio" name="delivery"  /> Express Shipping (1–2 days) – $50.00</label>
           </div>
 
           <!-- Pago -->
           <div class="Form-section">
-            <h3>Payment</h3>
+            <h3 class="Form-section--h3" >Payment</h3 >
 
             <label><input type="radio" name="payment" value="card" checked /> Credit card</label>
             <input type="text" placeholder="Card number" required />
@@ -78,11 +78,6 @@
             <label><input type="radio" name="payment" value="applepay" /> Apple Pay</label>
           </div>
 
-          <label class="Form-consent">
-            <input type="checkbox" required />
-            I agree to data processing
-          </label>
-
           <button type="submit" class="Checkout-button">PAY AND PLACE ORDER</button>
         </form>
       </section>
@@ -90,7 +85,7 @@
       <!-- COLUMNA DERECHA: ARTÍCULOS DINÁMICOS -->
       <aside class="Cart-summary">
 
-        <h3>Shopping Bag</h3>
+        <h3 class="Form-section--h3" >Shopping Bag</h3 >
 
         <!-- AQUÍ SE INSERTAN TUS PRODUCTOS DINÁMICOS -->
         <section class="Cart-container" id="cartContainer"></section>
