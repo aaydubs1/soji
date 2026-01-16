@@ -108,7 +108,6 @@ body {
 background-color: transparent;
   top: 0;
   z-index: 8;
-  position: fixed;
 
   transition: transform .4s ease;
     color: #fcbd1b;

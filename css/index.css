@@ -320,6 +320,9 @@ background-color: black;
 
   transition: all .3s ease;
 }
+.Header{
+  padding: 0 !important;
+}
 
 .Shop-h3 {
 
@@ -880,72 +883,7 @@ opacity: 0;
   max-height: fit-content;
   opacity: 1;
 }
-.Footer{
-  background-color:#ee3b37;
-  width: 100%;
 
- display: flex;
- flex-flow: column nowrap;
- justify-content: center;
- align-items: center;
- padding: 1rem;
- gap: 1rem;
-}
-.Footer-grid{
-  width: 80%;
-  display: grid;
-grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  color: #fcbd1b;
-}
-.Footer-item{
-  display: flex;
-  flex-flow: column nowrap;
-
-  gap: 1rem;
-
-padding: 1rem;
-}
-
-.Footer-item--text{
-font-size: 1.5rem;
-font-weight: 500;
-color: #fcbd1b;
-}
-.Footer-item--madeby{
-font-size: 1rem;
-
-
-}
-.Footer-logo{
-  width: 3rem;
-
-}
-.Footer-social-links{
-
-    flex-flow: row nowrap;
-display: flex;
-gap: 1rem;
-
-}
-.Footer-social-link{
-  width: 1.5rem;
-
-}
-.Footer-text{
-  font-weight: 500;
-  font-size: 1rem;
-
-}
-.Footer-item--logo{
-
-}
-.Footer-copyright--p{
-  font-size: .9rem;
- 
-}
  
 .Story{
   display: flex;
@@ -1077,3 +1015,5 @@ background-color:#ee3b37;
   font-weight: 600;
   margin-bottom: 1rem;
 }
+
+

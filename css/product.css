@@ -103,13 +103,14 @@ body {
   font-style: normal;
 }
 
+.Product-main{
+
+}
 
 .Product-section{
 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+ 
    
 }
 
@@ -118,7 +119,7 @@ body {
   grid-template-columns: repeat(13, 1fr);
   grid-template-rows: auto; /* deja que cada fila se ajuste al contenido */
   gap: 0;
-  padding: 2rem; /* menos padding para reducir altura */
+  padding: 1rem;
   margin: auto;
    max-width: 1500px;
 }
@@ -136,7 +137,7 @@ justify-content: center;
 align-items: center;
   border-radius: 5rem;
    /* ocupa todo el div */
-
+padding: 2rem;
 }
 
 .Product-info { 
@@ -148,6 +149,7 @@ align-items: center;
     align-items: start;
      padding: clamp(2vw, 3rem, 5vw);
     gap: 5rem;
+    color: white;
     
 }
 
@@ -172,25 +174,41 @@ width: 100%;
     gap: clamp(1vw,2rem, 5vw);
 }
 .Product-price{
-
+  color: white;
+  font-weight: 500;
+  border-bottom: 1px rgb(255, 255, 255) solid ;
+  line-height: 1.2;
      font-size: clamp(1vw,1.5rem, 5vw);
 }
 .Product-button{
-    background-color: #fcbd1b;
-    padding: .5rem;
-    border-radius: 1rem;
 
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+  font-weight: 600;
+
+  transition: all .3s ease;
+  background-color:#ee3b37;
+color:#fcbd1b;
 }
 
+.Product-button:hover{
+  color:#ee3b37;
+  background-color: #fcbd1b;
+}
 .Product-description { 
    grid-area: 3 / 5 / 6 / 11;  /* Columnas 5-10 (6 columnas de ancho) */
 
     border-top: 0;
     border-right: 0;
     padding: clamp(1vw, 2rem, 3vw);
+ 
+
 }
 .Product-p{
 line-height: 1.5;
+font-size: 1.4rem;
+color: white;
+
 }
 
 .Product-details { 
@@ -205,7 +223,6 @@ flex-flow: column;
 .Product{
   display: flex;
   flex-flow: column;
-  gap: .5rem;
   overflow: hidden;
 background-color:#fcbd1b;
   padding: 1rem;
@@ -225,7 +242,7 @@ background-color:#fcbd1b;
 
 .subtitle{
  
-    font-weight: 500;
+    font-weight: 600;
 }
 .Product-desplegable{
   cursor: pointer;
@@ -241,16 +258,27 @@ background-color:#fcbd1b;
 }
 .Product-svg{
   width: 1.5rem;
+ 
 }
 .Product-checkout--svg{
   width: 1.5rem;
+
 }
 .Product-checkout{
-margin: 0.5rem;
+margin: 1rem 0;
   display: flex;
-
+  justify-content: center;
+  padding: 1rem;
   align-items: center;
   gap: .5rem;
+  background-color: #fcbd1b;
+  font-size: 1.3rem;
+
+  transition: all .3s ease;
+}
+.Product-checkout:hover{
+background-color: #ee3b37;
+color: white;
 }
 
 

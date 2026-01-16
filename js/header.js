@@ -10,9 +10,9 @@ headerMenu.addEventListener('click', () => {
   headerNav.classList.toggle('open'); // clase que activa transform: scaleY(1)
 });
 
-// Cuando se hace click en un li, cerramos menú
-headerTitles.forEach(li => {
-  li.addEventListener('click', () => {
+// Cuando se hace click en un headertitles, cerramos menú
+headerTitles.forEach((_,i) => {
+  headerTitles[i].addEventListener('click', () => {
     headerNav.classList.remove('open');
   });
 });
