@@ -162,6 +162,7 @@ body {
   transition: transform .4s ease;
   color: #fcbd1b;
   font-weight: 600;
+
 }
 
 /* =========================
@@ -180,6 +181,7 @@ body {
 .Header-nav{
   display: flex;
   margin: auto;
+    background-color: black;
 }
 
 .Header-ul {
