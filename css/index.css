@@ -344,6 +344,12 @@ body {
   transition: all .3s ease;
 }
 
+@media (max-width: 768px) {
+  .Shop-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Título del producto */
 .Shop-h2 {
   font-size: 1.3rem;
