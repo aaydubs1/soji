@@ -173,7 +173,11 @@ body {
   visibility: hidden;
   pointer-events: none;
   cursor: pointer;
+  background-color: black;
+
 }
+
+
 
 /* =========================
    NAVEGACIÓN PRINCIPAL HEADER
@@ -329,6 +333,7 @@ body {
     visibility:visible;
     pointer-events:all;
     color: #fcbd1b;
+   
   }
 
   .Header-ul {

@@ -322,24 +322,29 @@ body {
   padding: 4rem 2rem;
 }
 
-/* Artículo individual de producto */
 .Shop-article {
+
   display: flex;
   flex-flow: column nowrap;
+
   gap: 1rem;
 }
 
-/* Contenedor de imagen del producto */
 .Shop-image {
+
   position: relative;
   border-radius: .75rem;
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15),
     inset 0 -2px 4px rgba(255, 255, 255, 0.6);
   overflow: hidden;
+
 }
 
-/* Imagen del producto con efecto hover */
 .Shop-image--img {
+   width: 100%;
+  height: 100%;
+  object-fit: cover;
+
   transition: all .3s ease;
 }
 

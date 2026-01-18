@@ -158,6 +158,13 @@ body {
   color:#fcbd1b;
 }
 
+@media (max-width: 500px) {
+  .Checkout-title {
+    font-size: 2.5rem;
+   margin: 0 0 0 2rem;
+  }
+}
+
 /* WRAPPER DE DOS COLUMNAS */
 .Checkout-wrapper {
   display: flex;
