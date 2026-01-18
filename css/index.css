@@ -347,7 +347,9 @@ body {
 @media (max-width: 768px) {
   .Shop-grid {
     grid-template-columns: 1fr;
+    width: 70%;
   }
+
 }
 
 /* Título del producto */
