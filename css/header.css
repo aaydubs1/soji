@@ -1,10 +1,15 @@
-
+/* =========================
+   RESET Y VARIABLES BASE
+========================= */
 :root {
   font-size : 100%;
   font-family : system-ui, sans-serif;
   scroll-behavior : smooth;
 }
 
+/* =========================
+   RESET GENERAL Y ELEMENTOS BASE
+========================= */
  * { -ms-overflow-style: none;  scrollbar-width: none;  } 
  *::-webkit-scrollbar { display: none; }
 * , *::before , *::after {
@@ -49,8 +54,6 @@ h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , e
   text-wrap : pretty;
 }
 
-
-
 mark {
   background-color : transparent;
 }
@@ -85,6 +88,10 @@ svg {
   display : block;
   fill : currentColor;
 }
+
+/* =========================
+   BODY Y TIPOGRAFÍA
+========================= */
 body {
   min-height : 100vh;
   line-height : 1.5em;
@@ -95,37 +102,83 @@ body {
   -moz-osx-font-smoothing : grayscale;
      font-family: "Montserrat", sans-serif;
        font-optical-sizing: auto;
-
 }
 
-/*Header*/
 
+/* =======================================================
+ * header.css
+ * Interacciones:
+ *   - Header fijo en la parte superior
+ *   - Menú hamburguesa responsive
+ *   - Panel del carrito con animación y hover
+ * Datos:
+ *   - Contenedores principales: Header, Header-nav, Header-menu, Header-cart
+ *   - Elementos interactivos: links del menú, botones del carrito, menú hamburguesa
+ *   - Estados visuales: hover, transform, transition, visibility, scale
+ * Estructura:
+ *   - HEADER PRINCIPAL:
+ *       * Contenedor flex con justify-content: space-between
+ *       * Colores y tipografía definidos
+ *   - MENÚ HAMBURGUESA:
+ *       * Oculto en desktop
+ *       * Visible y clickeable en mobile
+ *   - NAVEGACIÓN PRINCIPAL:
+ *       * Lista horizontal en desktop, vertical en mobile
+ *       * Hover sobre links con desplazamiento y cambio de color
+ *       * Botón "back" para cerrar menú en mobile
+ *   - CARRITO HEADER Y PANEL:
+ *       * Botón del carrito con animación de ruedas al hover
+ *       * Panel flotante con productos, inicialmente oculto
+ *       * Clases para mostrar/ocultar panel: .visible
+ *   - ELEMENTOS DEL PANEL DEL CARRITO:
+ *       * Contenedor de cada item con imagen, info, título, cantidad, precio y botón eliminar
+ *       * Flex y gap para orden visual
+ *       * Hover y transiciones para botones
+ *   - ANIMACIONES:
+ *       * Keyframes bounce para las ruedas del carrito
+ *       * Retraso en animación para efecto escalonado
+ *   - RESPONSIVE HEADER (<=540px):
+ *       * Menú vertical a pantalla completa
+ *       * Transform: scaleY(0) oculto y scaleY(1) visible
+ *       * Ajuste de fuentes y tamaños de elementos
+ * Funciones / CSS especiales:
+ *   - Flex y grid para layout
+ *   - Transiciones y transform para hover y animaciones
+ *   - Media queries para diseño responsivo
+ * =======================================================
+ */
+
+/* =========================
+   HEADER PRINCIPAL
+========================= */
 .Header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: start;
-background-color: transparent;
+  background-color: transparent;
   top: 0;
   z-index: 8;
   transition: transform .4s ease;
-    color: #fcbd1b;
-    font-weight: 600;
-
+  color: #fcbd1b;
+  font-weight: 600;
 }
 
-
-
+/* =========================
+   MENÚ HAMBURGUESA HEADER
+========================= */
 .Header-menu {
-width: 4rem;
-visibility: hidden;
-pointer-events: none;
+  width: 4rem;
+  visibility: hidden;
+  pointer-events: none;
+  cursor: pointer;
 }
 
-
+/* =========================
+   NAVEGACIÓN PRINCIPAL HEADER
+========================= */
 .Header-nav{
-    display: flex;
-
+  display: flex;
   margin: auto;
 }
 
@@ -145,47 +198,20 @@ pointer-events: none;
   color: black;
   background-color: rgb(255, 255, 255);
 }
+
 .Header-back{
-    display: none;
+  display: none;
 }
 
-.Cart-header-item {
-  display: flex;
-  justify-content: space-between;
-  padding: .5rem 0;
-  border-bottom: 1px solid #eee;
-}
-
-.Cart-header-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.Cart-header-title {
-  font-weight: 600;
-}
-
-.Cart-header-quantity {
-  font-size: .9rem;
-  color: #777;
-}
-
-.Cart-header-price {
-  font-weight: 600;
-}
-
-
-
-
-
+/* =========================
+   CARRITO HEADER Y PANEL
+========================= */
 .Header-cart {
   width: 4rem;
   padding: 0.5rem;
   margin: 0 1rem 0 0;
   position: relative;
-
 }
-
 
 .Shop-cart {
   background-color:#ee3b37;
@@ -193,28 +219,18 @@ pointer-events: none;
   position: fixed;
   right: 0;
   top: 0;
-
-  
   padding: 1rem;
   display: flex;
   flex-flow: column nowrap;
-
-      transform: scaleY(0);
-  transform-origin: top left;
-  transition: transform .4s ease;
+  visibility: hidden;
 }
-
-.Shop-cart.visible {
+.Shop-cart.visible{
   visibility: visible;
-      transform: scaleY(1);
- 
-
 }
 
-.Shop-cart.invisible {
-  transform: scaleY(0);
-}
-
+/* =========================
+   PANEL DEL CARRITO Y ELEMENTOS
+========================= */
 .Cart-div {
   display: flex;
   justify-content: space-between;
@@ -229,26 +245,23 @@ pointer-events: none;
   font-size: 1.6rem;
 }
 
-
 .Header-cart--button {
-    
   border: 2px solid #fcbd1b;
   display: flex;
   justify-content: center;
   gap: .5rem;
   padding: 0.5rem;
-
   transition: background-color .4s ease;
 }
 
 .Header-cart--button:hover {
   background-color: #fcbd1b;
-color: #ee3b37;
+  color: #ee3b37;
 }
 
-
-
-
+/* =========================
+   ANIMACIONES DEL CARRITO
+========================= */
 .Header-cart:hover .Cart-svg--wheel1,
 .Header-cart:hover .Cart-svg--wheel2 {
   animation: bounce .6s ease forwards;
@@ -261,131 +274,103 @@ color: #ee3b37;
 @keyframes bounce {
   0% {
     transform: translateY(0);
-
   }
-
   50% {
     transform: translateY(-2px);
   }
-
   100% {
     transform: translateY(0);
-
   }
 }
 
-
-
-
-
+/* =========================
+   RESPONSIVE HEADER (<= 540px)
+========================= */
 @media(max-width: 540px){
-    .Header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-background-color: transparent;
-  top: 0;
-  padding: 1rem 0;
-  z-index: 8;
-  position: fixed;
-  animation-delay: 4.1s;
+  .Header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    top: 0;
+    padding: 1rem 0;
+    position: fixed;
+    animation-delay: 4.1s;
+    transition: transform .4s ease;
 
-  transition: transform .4s ease;
-
-}
+  }
 
   .Header-nav {
-    position: fixed;    /* ya lo tenías */
-    top: 0;             /* aseguramos que empiece desde arriba */
-    left: 0;            /* aseguramos que empiece desde la izquierda */
-
-    width: 100%;        /* redundante pero seguro */
-    height: 100vh;      /* altura total de la pantalla */
-
-    padding: 2rem;      /* puedes ajustar */
-    margin: 0;          /* quitar cualquier margen que lo separe */
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 2rem;
+    margin: 0;
     background-color: #000000;
-
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-  
-      transform: scaleY(0);
-  transform-origin: top left;
-  transition: all .6s ease;
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition: all .6s ease;
   }
-.Header-menu {
-  width: 4rem;
-  margin: 0 0 0 1rem;
-  padding: 0.5rem;
-  transition: all .3s ease;
-  transform-origin: top left;
-
-  visibility:visible;
-pointer-events:all;
-color: #fcbd1b;
-}
-
-
-
-  
-.Header-ul {
-  text-align: left;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 2rem;
-
-}
-
-.Header-li {
-  font-size: 3rem;
-  transition: all .4s ease;
-  color: #fcbd1b;
-}
-
-.Header-li:hover {
-  font-weight: 600;
-  transform: translateX(10px);
-
-  background-color: rgb(255, 255, 255);
-
-
-}
-.Header-span{
-
-}
-.Header-back{
-    display: flex;
-   justify-content: end;
-   align-items: center;
-   gap: .5rem;
+  .Header-menu {
+    width: 4rem;
+    margin: 0 0 0 1rem;
+    padding: 0.5rem;
+    transition: all .3s ease;
+    transform-origin: top left;
+    visibility:visible;
+    pointer-events:all;
     color: #fcbd1b;
- position: absolute;
- bottom: 0;
- padding: 2rem;
-width: 100%;
+  }
 
-}
+  .Header-ul {
+    text-align: left;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
 
-.Header-arrow{
+  .Header-li {
+    font-size: 3rem;
+    transition: all .4s ease;
+  }
+
+  .Header-li:hover {
+    font-weight: 600;
+    transform: translateX(10px);
+    background-color: rgb(255, 255, 255);
+  }
+
+  .Header-back{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: .5rem;
+    color: #fcbd1b;
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    width: 100%;
+  }
+
+  .Header-arrow{
     width: 2rem;
+  }
+
+  .Header-nav.open {
+    transform: scaleY(1);
+  }
 }
 
-
-
-.Header-nav.open {
-  transform: scaleY(1);
-
-}
-}
-
-
-
-
-
+/* =========================
+   PANEL DEL CARRITO (RESPONSIVE)
+========================= */
 .Cart-header-item {
   display: flex;
   align-items: center;
@@ -394,11 +379,8 @@ width: 100%;
   border-bottom: 1px solid #fcbd1b ;
 }
 
-
-
 .Cart-header-img {
   width: 3rem;
-
 }
 
 .Cart-header-info {
@@ -406,7 +388,6 @@ width: 100%;
   display: flex;
   flex-direction: column;
   gap: .5rem;
-
 }
 
 .Cart-header-title {
@@ -422,11 +403,9 @@ width: 100%;
 .Cart-header-price {
   font-weight: 600;
   font-size: .9rem;
-
 }
 
 .Cart-header-remove {
-
   border: none;
   color: black;
   font-size: 1rem;

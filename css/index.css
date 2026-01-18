@@ -1,3 +1,6 @@
+/* ==========================
+   RESET Y BASE: Variables globales y estilos normalizados
+   ========================== */
 :root {
   font-size: 100%;
   font-family: system-ui, sans-serif;
@@ -8,7 +11,7 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
- background-color: #000000;
+  background-color: #000000;
 }
 
 * {
@@ -28,11 +31,6 @@ html, body {
   border: 0;
   box-sizing: border-box;
   vertical-align: baseline;
-}
-
-*::before,
-*::after {
-  display: block;
 }
 
 img,
@@ -70,25 +68,9 @@ ol {
   counter-reset: revert;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-span,
-a,
-strong,
-blockquote,
-i,
-b,
-u,
-em,
-pre,
-code,
-mark,
-del {
+h1, h2, h3, h4, h5, h6,
+p, span, a, strong, blockquote,
+i, b, u, em, pre, code, mark, del {
   font: inherit;
   line-height: 1em;
   text-decoration: none;
@@ -96,8 +78,6 @@ del {
   overflow-wrap: break-word;
   text-wrap: pretty;
 }
-
-
 
 mark {
   background-color: transparent;
@@ -156,6 +136,9 @@ svg {
   fill: currentColor;
 }
 
+/* =========================
+   TIPOGRAFÍA Y FUENTES
+   ========================= */
 body {
   min-height: 100vh;
   line-height: 1.5em;
@@ -166,14 +149,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-
 }
 
-.satisfy-regular {
-  font-family: "Satisfy", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+/* =======================================================
+ * index.css
+ * Interacciones:
+ *   - Navegación fija en Header
+ *   - Hero con video de fondo y call-to-action animado
+ *   - Galería de productos con hover y botón agregar
+ *   - Accordion FAQ (mostrar/ocultar respuestas)
+ *   - Carrusel Story (galería con transición)
+ *   - Sección About Us con hover en bloques
+ * Datos:
+ *   - Contenedores principales: Header, Intro, Shop, FAQ, Story, About Us
+ *   - Elementos interactivos: botones, links, acordeón FAQ, hover de productos, carrusel
+ *   - Estados visuales: hover, transform, transition, opacity, show/hide
+ * Estructura:
+ *   - HEADER:
+ *       * Navegación fija
+ *   - INTRO:
+ *       * Sección Hero
+ *       * Video de fondo
+ *       * Contenido central (logo, texto, CTA)
+ *   - SHOP:
+ *       * Grid responsivo de productos
+ *       * Artículo con imagen, título, precio y botón
+ *       * Hover sobre imagen y botón
+ *   - FAQ:
+ *       * Contenedor de preguntas
+ *       * Accordion: mostrar/ocultar respuesta
+ *   - STORY:
+ *       * Carrusel de galería
+ *       * Contenedor y wrapper para scroll horizontal
+ *   - ABOUT US:
+ *       * Contenedor principal
+ *       * Bloques de historia con hover
+ *       * Subtítulos y taglines
+ * Funciones / CSS especiales:
+ *   - Uso de flex y grid para layouts complejos
+ *   - Transiciones y transform para hover y animaciones
+ *   - Media queries para responsivo
+ *   - clamp() para tamaños adaptativos
+ * =======================================================
+ */
+
+
+/* ==========================
+   FUENTES PERSONALIZADAS: Tipografías importadas
+   ========================== */
 
 .barriecito-regular {
   font-family: "Barriecito", system-ui;
@@ -181,24 +204,36 @@ body {
   font-style: normal;
 }
 
+/* ==========================
+   HEADER: Navegación fija
+   ========================== */
+.Header {
+  padding: 0 !important;
+  position: fixed !important;
+}
 
-
+/* ==========================
+   INTRO: Sección Hero con video de fondo
+   ========================== */
 .Intro {
   position: relative;
   height: 100vh;
-
 }
 
-.Intro-video{
+/* Video de fondo del hero */
+.Intro-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .Intro-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
+/* Contenido superpuesto sobre el video */
 .Intro-article {
   position: absolute;
   inset: 0;
@@ -206,51 +241,47 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 2;
-}
-
-
-.Intro-article {
   transition: all 1s ease;
 }
 
-
-
+/* Contenedor centralizado del contenido */
 .Intro-article--wrapper {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-
 }
 
-
+/* Párrafo descriptivo del hero */
 .Intro-p {
   line-height: 1.7;
   letter-spacing: .8rem;
   font-weight: 600;
   text-align: center;
   font-size: 1.6rem;
-  color:#fcbd1b;
+  color: #fcbd1b;
 }
 
+/* Logo del hero */
 .Intro-logo {
-   width: min(35rem, 80vw)
+  width: min(35rem, 80vw);
 }
 
+/* Span destacado del hero */
 .Intro-span {
   font-size: 2rem;
   font-weight: 700;
-  
 }
 
+/* Texto en negrita fuerte */
 .b {
   font-weight: 800;
   letter-spacing: .2rem;
 }
 
+/* Botón call-to-action del hero */
 .Intro-button {
   padding: 1rem;
-
   text-align: center;
   font-weight: 600;
   font-size: 1.2rem;
@@ -261,29 +292,26 @@ body {
   color: rgb(0, 0, 0);
 }
 
-
-
-
-
-
-
-.Ingredients-wrapper {
-
-
-  overflow: hidden;
-  position: relative;
-
-
-}
-
+/* ==========================
+   SHOP: Galería de productos
+   ========================== */
 .Shop {
-  min-height: 100vh;
   width: 100%;
   display: flex;
-background-color: black;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: black;
 }
 
+/* Título de la sección Shop */
+.Shop-title {
+  color: #fcbd1b;
+  font-size: 3rem;
+}
 
+/* Grid responsive de productos */
 .Shop-grid {
   width: 80%;
   max-width: 1200px;
@@ -292,63 +320,57 @@ background-color: black;
   gap: 1rem;
   margin: auto;
   padding: 4rem 2rem;
-
 }
 
+/* Artículo individual de producto */
 .Shop-article {
-
   display: flex;
   flex-flow: column nowrap;
-
   gap: 1rem;
 }
 
+/* Contenedor de imagen del producto */
 .Shop-image {
-
   position: relative;
   border-radius: .75rem;
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15),
     inset 0 -2px 4px rgba(255, 255, 255, 0.6);
   overflow: hidden;
-
 }
 
+/* Imagen del producto con efecto hover */
 .Shop-image--img {
-   width: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
-
   transition: all .3s ease;
 }
-.Header{
-  padding: 0 !important;
-  position: fixed !important;
-}
 
-.Shop-h3 {
-
+/* Título del producto */
+.Shop-h2 {
   font-size: 1.3rem;
   letter-spacing: .1rem;
   padding: 0 0 0 .5rem;
-color: white;
+  color: white;
 }
-.Shop-h3:hover{
-  color:#fcbd1b;
+
+.Shop-h2:hover {
+  color: #fcbd1b;
   scale: 1.05;
 }
 
+/* Precio del producto */
 .Shop-price {
   padding: 0 0 0 .5rem;
   width: 4.5rem;
   font-size: 1.3rem;
   padding: .3rem;
-  background-color:#fcbd1b;
-
+  background-color: #fcbd1b;
 }
 
+/* Contenedor del botón agregar */
 .Shop-button {
   width: 100%;
-
   position: absolute;
   bottom: 0;
   right: 0;
@@ -357,617 +379,148 @@ color: white;
 }
 
 .Shop-button--button {
-background-color: black;
-color:#fcbd1b;
+  background-color: black;
+  color: #fcbd1b;
   font-weight: 700;
   padding: 0.5rem;
   text-align: center;
   font-size: 3rem;
-
   transition: all .3s ease;
 }
 
 .Shop-button--button:hover {
-  background-color:#fcbd1b;
-  color:#000000;
+  background-color: #fcbd1b;
+  color: #000000;
   transform: scale(1.15);
 }
 
 .Shop-image--img:hover {
   transform: translateY(-5vh);
   scale: 3;
-
 }
 
-
-
-.Routes{
-  display: flex;               
-flex-flow: row;
+/* =========================
+   FAQ (Preguntas Frecuentes)
+   ========================= */
+.Faq {
   width: 100%;
- min-height: 100vh;
-  transition: all .5s ease;
-background-color: #000000;
-position: relative;
-
-
-}
-
-
-.Routes-arrow{
-position: absolute;
-  transition: all .4s ease;
-width: fit-content;
-opacity: 0;
-color: #fcbd1b;
-pointer-events: none;
-  overflow: hidden;
-bottom:0;
-right: 0;
-}
-
-
-
-
-
-.arrow-bar-left{
-}
-.Routes-arrow--wrapper{
-    transform: translateX(3vw);
+  background-color: black;
+  margin: 3rem 0 0 0;
   display: grid;
-grid-template-columns: repeat(2,1fr);
-justify-content: center;
-align-items: center;
-gap: .5rem;
-  transition: all .4s ease;
-  overflow: hidden;
-  max-width: 7rem ;
-}
-
-@media(max-width: 1513px){
-  .Routes-arrow--wrapper{
-    transform: translateX(4vw);
-  }
-}
-@media(max-width: 1202px){
-  .Routes-arrow--wrapper{
-    transform: translateX(5vw);
-  }
-}
-
-
-@media(max-width: 652px){
-  .Routes-arrow--wrapper{
-    transform: translateX(9vw);
-  }
-}
-
-@media(max-width: 452px){
-  .Routes-arrow--wrapper{
-    transform: translateX(11vw);
-  }
-}
-
-.Routes-arrow--wrapper:hover{
-  transform: translateX(-8px);
-}
-.Routes-arrow.display{
-opacity: 1;
-pointer-events: all;
-}
-
-.Routes-Passport {
-  width: 100%;
-  min-height: 100vh;
-opacity: 1;
-display: flex;
-flex-flow: column nowrap;
-justify-content: center;
-gap: 2rem;
-transition: all .5s ease;
-
-}
-.Passport.appear{
-  opacity: 1;
-
-}
-
-.Passport-title{
-color: #fcbd1b;
-width: 100%;
-padding: 1rem;
-align-items: center;
-justify-content: center;
-font-size: 3rem;
-color:#fcbd1b;
-text-align: center;
-
-
-opacity: 1;
-}
-
-.Passport-title.display{
- opacity: 0;
-}
-
-.Passport-title--big {
-  font-size: 2.5rem; /* o clamp si quieres */
-  font-weight: 700;
-  display: block;
-  line-height: 1.4;
-}
-
-.Passport-title--small {
-  font-size: 1.6rem;
-  font-weight: 400;
-    display: block;
-letter-spacing: .3rem;
-}
-.Routes-logo{
-  width: 7rem;
-}
-
-.Passport-book {
-  display: flex;
-  justify-content: center;
-position: relative;
-
-}
-
-
-
-
-.Passport-image--firstpage {
-
-max-width: clamp(25rem, 50vw, 50rem);
-
-  transition: opacity .2s ease;
-  opacity: 1;
-}
-.Passport-image--firstpage.closeBook{
-  opacity: 0;
-  pointer-events: none;
-}
-@media(max-width:937px){
-  .Passport-image--firstpage{
-
-  }
-}
-@media(max-width:937px){
-  .Passport-image--firstpage{
-
-  }
-}
-
-.Passport-stamps {
-  width: 100%;
-
-  position: absolute;
-  top: 4vh;
-left: 10vw;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  gap: .1rem;
-}
-
-.Passport-stamp {
- width: clamp(3rem, 7vw, 8rem);;
-  transition: all .3s ease;
-  z-index: 3;
-     cursor: pointer;   
-}
-.Passport-stamp.visible{
-  opacity: 0;
-  pointer-events: none;
-}
-
-.Passport-stamp:hover {
-  transform: scale(1.1);
-}
-
-.Passport-stamp--korea {
-  margin: 0 0 0 3vw;
-  transition: all .3s ease;
-}
-
-.Passport-stamp--japan {
-  margin: 0 5vw 0 0;
-}
-
-.Passport-stamp--thailand {
-  margin: 0 4vw 0 0;
-}
-
-.Routes-Trip {
-}
-
-
-.miniTrip {
-  position: absolute;
-top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: none;           /* invisible por defecto */
-  transition: opacity 0.5s ease;
-
-margin: 4rem 0 0 0;
-}
-
-@keyframes fadeaway {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-6rem); 
-  }
-}
-
-.miniTrip.display {
- display: block;           /* solo se muestra el activo */
-}
-.miniTrip-wrapper{
- 
-
-height: 100vh;
-  width: 90%;
-
-  display: flex;
-  margin: auto;
-}
-
-.Trip-p {
-  font-size: 2rem;
-  color: white;          /* cambia según país si quieres */
-  padding: 2rem;
-  position: absolute;
-  left: 20vw;
-  display: none;
-}
-.Trip-p.animation{
-animation: fadeaway 1s forwards 2.5s ;
-transition: all 1s ease 2.5s;
-
-}
-.miniTrip{
-
-
-
-
-}
-
-.miniTrip-Recepies{
-
-  width: 100vw;
-  top: 0;
-
- display: flex;
-justify-content: center;
-align-items: center;
- flex-direction: column;
-}
-.Recepies {
-  display: grid;
- grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))  ;
-margin: 3rem 0 0 0;
- 
-
-  justify-content: center;
-  align-items: center;
-
-}
-
-
-.Recepies-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  position: relative;
-  transition: transform 0.5s ease;
-transform-origin: bottom;
-margin: 5rem 0 0 0;
-  z-index: 3;
-}
-
-.Recepies-column.show{
-  transform: scale(1.1);
-transform: translateY(-1%);
-}
-
-.Recepies-column:hover .Recepies-text{
-  background-color: #fcbd1b;
-}
-.Recepies-column:hover .Recepies-text--p{
-  color:#ee3b37;
-  font-weight: 500;
-}
-
-
-.Recepies-title{
-  width: 100%;
-
-top: 3rem;
-position: absolute;
-  font-size: clamp(1.5rem, 4rem, 4vw);
-color:#fcbd1b;
-}
-
-@media (max-width: 840px){
-
-.miniTrip{
-
-}
-.miniTrip-wrapper{
-
-
-}
-  .Recepies{
-display: flex;
- flex-flow: column;
-
-margin: 3rem 0 0 0;
-
-}
-
-
-.Recepies-title{
-  position: static;
-                
-}
-.Passport-stamp{
-    width: clamp(4rem, 5vw, 5rem);
-}
-
-.Recepies-column{
-    flex-direction: column;
-    margin: 0;
-}
-.Recepies-img{
-width: 10rem !important;
-   margin: 0;                   /* quita margin-bottom negativo */
-           /* ya no flota sobre texto */
-    display: block;
-    justify-content: center; 
-}
-
-
-.Recepies-text--p{
-
-  overflow: hidden;
-  margin: 0;
- 
-  line-height: 1.2;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-.Recepies-text {
-   width: 14rem;               /* o clamp si quieres */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-max-height: 8rem;
-}
-.Recepies-column:hover .Recepies-text--p {
-  max-height: fit-content;       /* ajusta según tu contenido */
-  padding: 0.5rem 0;      /* solo cuando se despliega */
-}
-
-.Recepies-column:hover .Recepies-text {
-  max-height: 16rem;       /* ajusta según tu contenido */   /* solo cuando se despliega */
-}
-
-.Recepies-text--p{
-  font-size: 0.6rem !important;
-}
-.Recepies-text--h3{
-  font-size: 1.1rem !important;
-
-}
-}
-
-@media (max-width:1338px){
-
-  .Recepies-img{
-    width: 12rem !important;
-  }
-}
-
-
-
-
-.Recepies-img{
-display: flex; 
-justify-content: end; 
-margin-bottom: -3rem; 
-position: relative; 
-z-index: 1;
-transform: rotate(5deg);
-width: 18rem;
-border: 6px dashed #fcbd1b ;
-}
-.Recepies-text{
-
-  margin: 0;
-  background-color: #ee3b37;
-  border: 4px solid #fcbd1b;
-  color: black;
-  font-weight: 500;
-  padding:2rem 1rem 1rem 1rem;
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  gap: 0.5rem;
-  position: relative;
-
-}
-.Recepies-text--h3{
-  font-weight: 700;
-  letter-spacing: .3rem;
-  text-align: left;
-  width: 100%;
-  font-size: 1.4rem;
-  margin: 1.5rem 0 0 0;
-  line-height: 1.2;
-  color:black;
-}
-.Recepies-text--p{
-  text-align: left ;
-  line-height: 1.2;
-  letter-spacing: .1rem;
-}
-
-
-.Faq{
-  width: 100%;
-background-color:black;
-margin: 3rem 0 0 0;
-  display:grid;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   padding: 2rem;
+}
 
- 
+@media (max-width: 500px) {
+  .Faq {
+    margin: 10rem 0 0 0;
+  }
 }
-@media(max-width:500px){
-.Faq{
-   margin: 10rem 0 0 0;
-}
-}
-.Faq-h2{
-  font-size: clamp(1.5rem ,2rem, 2.5rem);
- color: #fcbd1b;
-font-weight: 600;
 
+/* Título de la sección FAQ */
+.Faq-h2 {
+  font-size: clamp(1.5rem, 2rem, 2.5rem);
+  color: #fcbd1b;
+  font-weight: 600;
 }
-.Faq-questions{
+
+/* Contenedor de las preguntas */
+.Faq-questions {
   display: flex;
   flex-flow: column;
   gap: 1rem;
-  background-color:#fcbd1b;
+  background-color: #fcbd1b;
   padding: 2rem;
 }
-.Faq-question--title{
-  font-size: 1.3rem;
-  font-weight: 500;
-  cursor: pointer;
 
-}
-
-.Faq-question{
-
+/* Pregunta individual del accordion */
+.Faq-question {
   display: flex;
   flex-flow: column nowrap;
   gap: .5rem;
-
   overflow: hidden;
   color: black;
-  
 }
-.Faq-question--answer{
-line-height: 2;
-  max-height: 0;
-opacity: 0;
-  transition: all .5s ease;
-  color:black;
 
+/* Título de la pregunta (clickeable) */
+.Faq-question--title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
 }
-.Faq-question--answer.show{
+
+/* Respuesta de la pregunta (animada) */
+.Faq-question--answer {
+  line-height: 2;
+  max-height: 0;
+  opacity: 0;
+  transition: all .5s ease;
+  color: black;
+}
+
+/* Respuesta mostrada del accordion */
+.Faq-question--answer.show {
   max-height: fit-content;
   opacity: 1;
 }
 
- 
-.Story{
+/* ==========================
+   STORY: Carrusel de galería
+   ========================== */
+.Story {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-width: 100%;
+  width: 100%;
 }
 
-
-.Story-Carrousel{
-min-width: 70vh;
-
-width: 100%;
-
-    box-shadow: 0 0 5rem rgba(0,0,0,0.2);
-
-    position: relative;
-    overflow: hidden;
+/* Carrousel con sombra de galería */
+.Story-Carrousel {
+  min-width: 70vh;
+  width: 100%;
+  box-shadow: 0 0 5rem rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
 }
-.Carrousel-wrapper{
-    display:grid;
-    transition: all .5s ease;
 
+/* Contenedor con transición del carrousel */
+.Carrousel-wrapper {
+  display: grid;
+  transition: all .5s ease;
 }
-@media(max-width:1200px){
-  .Story{
+
+@media (max-width: 1200px) {
+  .Story {
     flex-wrap: wrap;
     gap: 3rem;
   }
-  
-  .Story-Carrousel{
-   
-    min-width:auto;
+  .Story-Carrousel {
+    min-width: auto;
     border: 0;
   }
 }
 
-@media(max-width:px){
-  .Story{
-  
-
-  }
-  
-  .Story-Carrousel{
-   
-    min-width:auto;
-    border: 0;
-  }
-}
-.Carrousel-img{
-
-
-}
-.Carrousel-ul{
-    padding: 1rem;
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-
-}
-.Carrousel-li{}
-
-
+/* ==========================
+   ABOUT US: Sección sobre nosotros
+   ========================== */
 .Story-About-us {
-
   display: flex;
-justify-content: center;
+  justify-content: center;
   align-items: center;
-
 }
 
+/* Contenedor principal de about us */
 .About-us-container {
   width: 80%;
-
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
+/* Encabezado de la sección about us */
 .About-us-heading {
   font-family: 'Barriecito';
   font-size: clamp(2rem, 4vw, 4rem);
@@ -975,31 +528,34 @@ justify-content: center;
   color: #fcbd1b;
 }
 
+/* Tagline descriptivo */
 .About-us-tagline {
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   text-align: center;
   margin-top: 1rem;
   line-height: 1.6;
   font-style: italic;
-  color:white;
-font-weight: 100;
+  color: white;
+  font-weight: 100;
 }
 
+/* Contenedor de bloques de historia */
 .About-us-story {
   display: flex;
   flex-flow: row wrap;
   gap: 2rem;
 }
 
+/* Bloque individual de la historia */
 .About-us-block {
   flex: 1 1 300px;
-
   padding: 2rem;
-background-color:#ee3b37;
+  background-color: #ee3b37;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.About-us-block p{
+
+.About-us-block p {
   color: black;
   line-height: 1.7rem;
   font-weight: 500;
@@ -1010,11 +566,10 @@ background-color:#ee3b37;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
+/* Subtítulo de los bloques about us */
 .About-us-subtitle {
   font-size: clamp(1.5rem, 3vw, 2rem);
   color: #fcbd1b;
   font-weight: 600;
   margin-bottom: 1rem;
 }
-
-

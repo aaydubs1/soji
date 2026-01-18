@@ -85,6 +85,9 @@ svg {
   display : block;
   fill : currentColor;
 }
+/* ==========================
+   Body y tipografías personalizadas
+   ========================== */
 body {
   min-height : 100vh;
   line-height : 1.5em;
@@ -103,17 +106,40 @@ body {
   font-style: normal;
 }
 
-.Product-main{
 
-}
+/* =======================================================
+ * Interacciones:
+ *   - Hover en botón de checkout cambia color de fondo y texto
+ *   - Listas desplegables de características (Product-list) con transición
+ *   - Subtítulos clicables que abren/cerran listas
+ *   - Responsivo: grid se adapta a 1 columna en pantallas <954px
+ * Datos:
+ *   - Contenedores principales: Product-section, Product-grid
+ *   - Elementos de producto: imagen, info, descripción, detalles, flags
+ *   - Componentes interactivos: Product-list, Product-wrapper, Product-checkout
+ * Estructura:
+ *   - General: flex y grid para layout
+ *   - Product-grid: define columnas, filas y gap
+ *   - Product-info: título, precio, botón, flex-flow column
+ *   - Product-description / Product-details: grid-area y padding
+ *   - Product-list: desplegable con transition y control de altura/opacidad
+ *   - Responsive: media query ajusta grid y layout en tablet/móvil
+ * Funciones / CSS especiales:
+ *   - Uso de grid-template-columns y grid-area para layout preciso
+ *   - clamp() para tamaños adaptativos de fuente y padding
+ *   - transition en Product-list y Product-checkout para animaciones suaves
+ * ======================================================= */
+
 
 .Product-section{
 
     display: flex;
- 
    
 }
 
+/* ==========================
+   Grid principal del producto
+   ========================== */
 .Product-grid {
   display: grid;
   grid-template-columns: repeat(13, 1fr);
@@ -122,11 +148,6 @@ body {
   padding: 1rem;
   margin: auto;
    max-width: 1500px;
-}
-
-
-.Product-image--img {
-
 }
 
 /* Grid areas para desktop */
@@ -140,6 +161,9 @@ align-items: center;
 padding: 2rem;
 }
 
+/* ==========================
+   Información del producto (título, precio, botón)
+   ========================== */
 .Product-info { 
    grid-area: 1 / 5 / 3 / 15;    /* Columnas 5-14 */
 
@@ -153,26 +177,43 @@ padding: 2rem;
     
 }
 
+/* ==========================
+   Bandera/etiqueta del producto
+   ========================== */
 .Product-flag{
 width: 9rem;
 }
+
+/* ==========================
+   Contenedor del título
+   ========================== */
 .Product-title--wrapper{
 display: flex;
 gap: .5rem;
 align-items: center;
 width: 100%;
 }
+
+/* ==========================
+   Título del producto
+   ========================== */
 .Product-title{
      font-size: clamp(3vw, 2rem, 8vw);
 
 }
 
-
+/* ==========================
+   Contenedor de precio y botón de compra
+   ========================== */
 .Product-buy{
     display: flex;
     align-items: center;
     gap: clamp(1vw,2rem, 5vw);
 }
+
+/* ==========================
+   Precio del producto
+   ========================== */
 .Product-price{
   color: white;
   font-weight: 500;
@@ -180,21 +221,19 @@ width: 100%;
   line-height: 1.2;
      font-size: clamp(1vw,1.5rem, 5vw);
 }
+
+/* ==========================
+   Botón de compra
+   ========================== */
 .Product-button{
 
-    padding: .5rem 1rem;
-    border-radius: 1rem;
-  font-weight: 600;
-
-  transition: all .3s ease;
-  background-color:#ee3b37;
-color:#fcbd1b;
 }
 
-.Product-button:hover{
-  color:#ee3b37;
-  background-color: #fcbd1b;
-}
+
+
+/* ==========================
+   Descripción del producto
+   ========================== */
 .Product-description { 
    grid-area: 3 / 5 / 6 / 11;  /* Columnas 5-10 (6 columnas de ancho) */
 
@@ -204,6 +243,10 @@ color:#fcbd1b;
  
 
 }
+
+/* ==========================
+   Párrafo de descripción
+   ========================== */
 .Product-p{
 line-height: 1.5;
 font-size: 1.4rem;
@@ -211,6 +254,9 @@ color: white;
 
 }
 
+/* ==========================
+   Detalles del producto (características)
+   ========================== */
 .Product-details { 
   grid-area: 3 / 11 / 6 / 15; /* Columnas 11-14 (4 columnas de ancho) */
    padding: clamp(1vw, 1.5rem, 2vw);
@@ -220,6 +266,9 @@ display: flex;
 flex-flow: column;
 }
 
+/* ==========================
+   Componente Product: contenedor del listado desplegable
+   ========================== */
 .Product{
   display: flex;
   flex-flow: column;
@@ -227,28 +276,47 @@ flex-flow: column;
 background-color:#fcbd1b;
   padding: 1rem;
 }
+
+/* ==========================
+   Lista desplegable de características
+   ========================== */
 .Product-list {
   transition: all 0.3s ease;
   height: 0;           /* empieza cerrado */
   opacity: 0;
   line-height: 1.3;
+  display: none
 }
 
+/* ==========================
+   Lista desplegable: estado visible
+   ========================== */
 .Product-list.display {
   height:fit-content   ;    /* suficiente para la lista */
   opacity: 1;
-
+  display: block;
 }
 
+/* ==========================
+   Subtítulo de características
+   ========================== */
 .subtitle{
  
     font-weight: 600;
 }
+
+/* ==========================
+   Elemento desplegable
+   ========================== */
 .Product-desplegable{
   cursor: pointer;
    transition: all 0.3s ease;
    text-align: left;
 }
+
+/* ==========================
+   Contenedor del desplegable
+   ========================== */
 .Product-wrapper{
 
   display: flex;
@@ -256,14 +324,26 @@ background-color:#fcbd1b;
   justify-content: space-between;
   cursor: pointer;
 }
+
+/* ==========================
+   SVG del desplegable
+   ========================== */
 .Product-svg{
   width: 1.5rem;
  
 }
+
+/* ==========================
+   SVG del carrito de compras
+   ========================== */
 .Product-checkout--svg{
   width: 1.5rem;
 
 }
+
+/* ==========================
+   Botón de checkout
+   ========================== */
 .Product-checkout{
 margin: 1rem 0;
   display: flex;
@@ -281,7 +361,9 @@ background-color: #ee3b37;
 color: white;
 }
 
-
+/* ==========================
+   Media queries: responsivo para tablet/móvil
+   ========================== */
 @media (max-width: 954px) {
   .Product-grid {
     grid-template-columns: 1fr; /* Solo 1 columna */

@@ -169,6 +169,31 @@ body {
 
 }
 
+/* =======================================================
+ * marquee.css
+ * Interacciones:
+ *   - Animación continua de desplazamiento horizontal (marquee)
+ *   - Puntos decorativos antes de cada ítem
+ * Datos:
+ *   - Contenedor principal: marquee-wrapper
+ *   - Ítems individuales: marquee-item
+ *   - Animación definida en @keyframes scroll
+ * Estructura:
+ *   - Contenedor: overflow hidden y padding
+ *   - Ítems: display flex, gap, white-space nowrap
+ *   - Pseudo-elemento ::before para puntos decorativos
+ *   - Animación: scroll horizontal infinita
+ * Funciones / CSS especiales:
+ *   - @keyframes scroll para mover los ítems
+ *   - transform: translateX() en la animación
+ *   - ::before con transform: translateY(-50%) para centrar verticalmente
+ * ======================================================= */
+
+
+/* ==========================
+Marquee: contenedor principal
+========================== */
+
 .marquee-wrapper{
 background-color: #ee3b37;
   overflow: hidden;
@@ -178,6 +203,10 @@ background-color: #ee3b37;
 
 }
 
+/* ==========================
+Marquee: animación y disposición de los ítems
+========================== */
+
 .marquee{
   display: flex;
 
@@ -185,7 +214,9 @@ background-color: #ee3b37;
   white-space: nowrap;
   animation: scroll 15s linear infinite;
 }
-
+/* ==========================
+Marquee: estilo de cada ítem
+========================== */
 .marquee-item{
   color: white;
   font-size: 1rem;
@@ -197,10 +228,13 @@ background-color: #ee3b37;
   white-space: nowrap; 
 }
 
+/* ==========================
+Marquee: punto decorativo antes de cada ítem
+========================== */
+
 .marquee-item::before{
   content: "";
-  width: 6px;
-  height: 6px;
+  width: .4rem;
   background: #fff;
   border-radius: 50%;
   position: absolute;
@@ -209,6 +243,9 @@ background-color: #ee3b37;
   transform: translateY(-50%);
 }
 
+/* ==========================
+Animación para el marquee
+========================== */
 @keyframes scroll {
   from {
     transform: translateX(0);

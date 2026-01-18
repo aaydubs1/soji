@@ -1,218 +1,330 @@
 :root {
-  font-size : 100%;
-  font-family : system-ui, sans-serif;
-  scroll-behavior : smooth;
+  font-size: 100%;
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
 }
 
- * { -ms-overflow-style: none;  scrollbar-width: none;  } 
- *::-webkit-scrollbar { display: none; }
-* , *::before , *::after {
-  margin : 0;
-  padding : 0;
-  border : 0;
-  box-sizing : border-box;
-  vertical-align : baseline;
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-*::before , *::after {
-  display : block;
+
+*::-webkit-scrollbar {
+  display: none;
 }
-img , picture , video , iframe , figure , canvas {
-  max-width : 100%;
-  display : block;
-  width : 100%;
-  height : initial;
-  object-fit : cover;
-  object-position : center center;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
 }
+
+*::before,
+*::after {
+  display: block;
+}
+
+img,
+picture,
+video,
+iframe,
+figure,
+canvas {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: initial;
+  object-fit: cover;
+  object-position: center center;
+}
+
 a {
-  display : block;
-  text-decoration : none;
-  color : inherit;
-  font :  inherit;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
 }
+
 p a {
-  display : inline;
+  display: inline;
 }
-li , menu, summary {
-  list-style-type : none;
+
+li,
+menu,
+summary {
+  list-style-type: none;
 }
+
 ol {
-  counter-reset : revert;
+  counter-reset: revert;
 }
-h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
-  font :  inherit;
-  line-height :  1em;
-  text-decoration :  none;
-  color : inherit;
-  overflow-wrap : break-word;
-  text-wrap : pretty;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em,
+pre,
+code,
+mark,
+del {
+  font: inherit;
+  line-height: 1em;
+  text-decoration: none;
+  color: inherit;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
 }
 
 
 
 mark {
-  background-color : transparent;
+  background-color: transparent;
 }
-blockquote::before , blockquote::after , q::before , q::after {
-  content : none;
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: none;
 }
-form , input , textarea , select , button , label {
-  font :  inherit;
-  hyphens : auto;
-  background-color : transparent;
-  color : inherit;
-  display : block;
-  appearance : none;
+
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  appearance: none;
 }
+
 fieldset {
-  border : none;
+  border: none;
 }
+
 ::placeholder {
-  color : unset;
+  color: unset;
 }
-button , label {
-  cursor : pointer;
+
+button,
+label {
+  cursor: pointer;
 }
-table , tr , td , th , tbody , thead , tfoot {
-  border-collapse : collapse;
-  border-spacing : 0;
-  font : inherit;
+
+table,
+tr,
+td,
+th,
+tbody,
+thead,
+tfoot {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: inherit;
 }
+
 svg {
-  width : 100%;
-  height : initial;
-  display : block;
-  fill : currentColor;
+  width: 100%;
+  height: initial;
+  display: block;
+  fill: currentColor;
 }
+
 body {
- 
-  line-height : 1.5em;
-  color : inherit;
+
+  line-height: 1.5em;
+  color: inherit;
   overflow: hidden;
-  hyphens : auto;
-  font-smooth : always;
-  -webkit-font-smoothing : antialiased;
-  -moz-osx-font-smoothing : grayscale;
-     font-family: "Montserrat", sans-serif;
-       font-optical-sizing: auto;
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
 
 }
-.barriecito-regular{
-      font-family: "Barriecito", system-ui;
+
+.barriecito-regular {
+  font-family: "Barriecito", system-ui;
   font-weight: 400;
   font-style: normal;
 }
-.Routes{
-  display: flex;               
-flex-flow: row;
+
+/* =======================================================
+ * Interacciones:
+ *   - Pasaporte interactivo con páginas y sellos clicables
+ *   - Flecha de volver atrás con animación y aparición según estado
+ *   - Mini trips descriptivos con animación fade
+ *   - Grid de recetas con hover que resalta columna y texto
+ * Datos:
+ *   - Contenedores principales: Routes, Routes-Passport, Passport-book, miniTrip, miniTrip-Recepies, Recepies
+ *   - Elementos interactivos: Passport-stamp, flecha de back, hover en Recepies-column
+ *   - Estados visuales: hover, opacity, transform, scale, display, pointer-events
+ * Estructura:
+ *   - ROUTES:
+ *       * Contenedor general de la sección, flex row, fondo negro
+ *       * Flecha de volver atrás: absoluta, aparece según clase .display, con transform responsive
+ *   - PASAPORTE:
+ *       * Passport-book centrado
+ *       * Página inicial (firstpage) con transición de opacity
+ *       * Sellos (stamps) posicionados con absolute, hover con scale
+ *       * MiniTrip: contenedor de información de viaje, oculto por defecto y visible con clase
+ *   - MINI TRIP:
+ *       * Texto descriptivo absoluto y animado con fadeaway
+ *       * Wrapper flexible centrado
+ *   - GRID DE RECETAS:
+ *       * Contenedor Recepies: display grid auto-fit, responsive
+ *       * Cada columna de receta (Recepies-column) con hover que escala y levanta
+ *       * Imagen de la receta con rotación y borde dashed
+ *       * Contenedor de texto (Recepies-text) con fondo rojo, borde dorado, padding
+ *       * Título de la receta (Recepies-text--h3) y descripción (Recepies-text--p)
+ * Funciones / CSS especiales:
+ *   - Uso de flexbox y grid para layout complejo
+ *   - Transform, scale y translate para interacciones visuales
+ *   - Transiciones en hover y cambios de opacity
+ *   - Media queries para responsive (<840px y <1338px)
+ * =======================================================
+ */
+
+
+/* =========================
+   SECCION RUTA DE SABORES
+========================= */
+
+.Routes {
+  display: flex;
+  flex-flow: row;
   width: 100%;
- min-height: 100vh;
+  min-height: 100vh;
   transition: all .5s ease;
-background-color: #000000;
-position: relative;
+  background-color: #000000;
+  position: relative;
 
 
 }
 
-
-.Routes-arrow{
-position: absolute;
+.Routes-arrow {
+  position: absolute;
   transition: all .4s ease;
-width: fit-content;
-opacity: 0;
-color: #fcbd1b;
-pointer-events: none;
+  width: fit-content;
+  opacity: 0;
+  color: #fcbd1b;
+  pointer-events: none;
   overflow: hidden;
-bottom:0;
-right: 0;
+  bottom: 0;
+  right: 0;
 }
+/* =========================
+   FLECHA DE VOLVER ATRÁS
+========================= */
 
-
-
-
-
-.arrow-bar-left{
-}
-.Routes-arrow--wrapper{
-    transform: translateX(3vw);
+.Routes-arrow--wrapper {
+  transform: translateX(3vw);
   display: grid;
-grid-template-columns: repeat(2,1fr);
-justify-content: center;
-align-items: center;
-gap: .5rem;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
   transition: all .4s ease;
   overflow: hidden;
-  max-width: 7rem ;
+  max-width: 7rem;
 }
 
-@media(max-width: 1513px){
-  .Routes-arrow--wrapper{
+@media(max-width: 1513px) {
+  .Routes-arrow--wrapper {
     transform: translateX(4vw);
   }
 }
-@media(max-width: 1202px){
-  .Routes-arrow--wrapper{
+
+@media(max-width: 1202px) {
+  .Routes-arrow--wrapper {
     transform: translateX(5vw);
   }
 }
 
 
-@media(max-width: 652px){
-  .Routes-arrow--wrapper{
+@media(max-width: 652px) {
+  .Routes-arrow--wrapper {
     transform: translateX(9vw);
   }
 }
 
-@media(max-width: 452px){
-  .Routes-arrow--wrapper{
+@media(max-width: 452px) {
+  .Routes-arrow--wrapper {
     transform: translateX(11vw);
   }
 }
 
-.Routes-arrow--wrapper:hover{
+.Routes-arrow--wrapper:hover {
   transform: translateX(-8px);
 }
-.Routes-arrow.display{
-opacity: 1;
-pointer-events: all;
+
+.Routes-arrow.display {
+  opacity: 1;
+  pointer-events: all;
 }
+
+/* =========================
+   PASAPORTE
+========================= */
 
 .Routes-Passport {
   width: 100%;
   min-height: 100vh;
-opacity: 1;
-display: flex;
-flex-flow: column nowrap;
-justify-content: center;
-gap: 2rem;
-transition: all .5s ease;
+  opacity: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  gap: 2rem;
+  transition: all .5s ease;
 
 }
-.Passport.appear{
+
+.Passport.appear {
   opacity: 1;
 
 }
 
-.Passport-title{
-color: #fcbd1b;
-width: 100%;
-padding: 1rem;
-align-items: center;
-justify-content: center;
-font-size: 3rem;
-color:#fcbd1b;
-text-align: center;
+.Passport-title {
+  color: #fcbd1b;
+  width: 100%;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #fcbd1b;
+  text-align: center;
 
 
-opacity: 1;
+  opacity: 1;
 }
 
-.Passport-title.display{
- opacity: 0;
+.Passport-title.display {
+  opacity: 0;
 }
 
 .Passport-title--big {
-  font-size: 2.5rem; /* o clamp si quieres */
+  font-size: 2.5rem;
+  /* o clamp si quieres */
   font-weight: 700;
   display: block;
   line-height: 1.4;
@@ -221,17 +333,18 @@ opacity: 1;
 .Passport-title--small {
   font-size: 1.6rem;
   font-weight: 400;
-    display: block;
-letter-spacing: .3rem;
+  display: block;
+  letter-spacing: .3rem;
 }
-.Routes-logo{
+
+.Routes-logo {
   width: 7rem;
 }
 
 .Passport-book {
   display: flex;
   justify-content: center;
-position: relative;
+  position: relative;
 
 }
 
@@ -240,24 +353,15 @@ position: relative;
 
 .Passport-image--firstpage {
 
-max-width: clamp(25rem, 50vw, 50rem);
+  max-width: clamp(25rem, 50vw, 50rem);
 
   transition: opacity .2s ease;
   opacity: 1;
 }
-.Passport-image--firstpage.closeBook{
+
+.Passport-image--firstpage.closeBook {
   opacity: 0;
   pointer-events: none;
-}
-@media(max-width:937px){
-  .Passport-image--firstpage{
-
-  }
-}
-@media(max-width:937px){
-  .Passport-image--firstpage{
-
-  }
 }
 
 .Passport-stamps {
@@ -265,7 +369,7 @@ max-width: clamp(25rem, 50vw, 50rem);
 
   position: absolute;
   top: 4vh;
-left: 10vw;
+  left: 10vw;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -273,12 +377,14 @@ left: 10vw;
 }
 
 .Passport-stamp {
- width: clamp(3rem, 7vw, 8rem);;
+  width: clamp(3rem, 7vw, 8rem);
+  ;
   transition: all .3s ease;
   z-index: 3;
-     cursor: pointer;   
+  cursor: pointer;
 }
-.Passport-stamp.visible{
+
+.Passport-stamp.visible {
   opacity: 0;
   pointer-events: none;
 }
@@ -300,13 +406,11 @@ left: 10vw;
   margin: 0 4vw 0 0;
 }
 
-.Routes-Trip {
-}
 
 
 .miniTrip {
   position: absolute;
-top: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -315,75 +419,68 @@ top: 0;
   transition: opacity 0.5s ease;
 
 }
-
-@keyframes fadeaway {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translateX(-6rem); 
-  }
-}
-
 .miniTrip.display {
- display: block;           /* solo se muestra el activo */
+  display: block;
 }
-.miniTrip-wrapper{
- 
 
-height: 100vh;
+.miniTrip-wrapper {
+
+
+  height: 100vh;
   width: 90%;
 
   display: flex;
   margin: auto;
 }
 
+/* =========================
+   TEXTO DESCRIPTIVO DE CADA MINI TRIP
+========================= */
 .Trip-p {
   font-size: 2rem;
-  color: white;          /* cambia según país si quieres */
+  color: white;
   padding: 2rem;
   position: absolute;
   left: 20vw;
   display: none;
 }
-.Trip-p.animation{
-animation: fadeaway 1s forwards 2.5s ;
-transition: all 1s ease 2.5s;
 
-}
-.miniTrip{
-
-
-
+.Trip-p.animation {
+  animation: fadeaway 1s forwards 2.5s;
+  transition: all 1s ease 2.5s;
 
 }
 
-.miniTrip-Recepies{
+
+.miniTrip-Recepies {
 
   width: 100vw;
   top: 0;
 
 
- display: flex;
-justify-content: center;
-align-items: center;
- flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+/* =========================
+   GRID DE RECETAS
+========================= */
 .Recepies {
   display: grid;
- grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr))  ;
-margin: auto 3rem;
- 
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  margin: auto 3rem;
+
 
   justify-content: center;
   align-items: center;
 
 }
 
-
+/* =========================
+   COLUMNA DE CADA RECETA
+========================= */
 .Recepies-column {
   display: flex;
   flex-direction: column;
@@ -392,136 +489,65 @@ margin: auto 3rem;
   border-radius: 0.5rem;
   position: relative;
   transition: transform 0.5s ease;
-transform-origin: bottom;
-margin: 5rem 0 0 0;
+  transform-origin: bottom;
+  margin: 5rem 0 0 0;
   z-index: 3;
 
 }
 
-.Recepies-column.show{
+.Recepies-column.show {
   transform: scale(1.1);
-transform: translateY(-10%);
-z-index: 4;
+  transform: translateY(-10%);
+  z-index: 4;
 }
 
-.Recepies-column:hover .Recepies-text{
+.Recepies-column:hover .Recepies-text {
   background-color: #fcbd1b;
 }
-.Recepies-column:hover .Recepies-text--p{
-  color:#ee3b37;
+
+.Recepies-column:hover .Recepies-text--p {
+  color: #ee3b37;
   font-weight: 500;
 }
 
 
-.Recepies-title{
+/* =========================
+   TÍTULO DE LA SECCIÓN DE RECETAS
+========================= */
+.Recepies-title {
   width: 100%;
 
-top: 3rem;
-position: absolute;
+  top: 3rem;
+  position: absolute;
   font-size: clamp(1.5rem, 4rem, 4vw);
-color:#fcbd1b;
+  color: #fcbd1b;
 }
 
-@media (max-width: 840px){
-
-.miniTrip{
-
-}
-.miniTrip-wrapper{
-
-
-}
-  .Recepies{
-
-
-
-
-
-}
-
-
-.Recepies-title{
-      
-}
-.Passport-stamp{
-    width: clamp(4rem, 5vw, 5rem) !important;
-}
-
-.Recepies-column{
-    flex-direction: column;
-    margin: 0;
-}
-.Recepies-img{
-width: 10rem !important;
-   margin: 0;                   /* quita margin-bottom negativo */
-           /* ya no flota sobre texto */
-    display: block;
-    justify-content: center; 
-}
-
-
-.Recepies-text--p{
-
-  overflow: hidden;
-  margin: 0;
- 
-  line-height: 1.2;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-}
-.Recepies-text {
-   width: 14rem;               /* o clamp si quieres */
+/* =========================
+   IMAGEN DE LA RECETA
+========================= */
+.Recepies-img {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-max-height: 8rem;
-}
-.Recepies-column:hover .Recepies-text--p {
-  max-height: fit-content;       /* ajusta según tu contenido */
-  padding: 0.5rem 0;      /* solo cuando se despliega */
-}
-
-.Recepies-column:hover .Recepies-text {
-  max-height: 16rem;       /* ajusta según tu contenido */   /* solo cuando se despliega */
+  justify-content: end;
+  margin-bottom: -3rem;
+  position: relative;
+  z-index: 1;
+  transform: rotate(5deg);
+  width: 18rem;
+  border: 6px dashed #fcbd1b;
 }
 
-.Recepies-text--p{
-  font-size: 0.6rem !important;
-}
-.Recepies-text--h3{
-  font-size: 1.1rem !important;
-
-}
-}
-
-@media (max-width:1338px){
-
-  .Recepies-img{
-    width: 12rem !important;
-  }
-}
-
-
-
-
-.Recepies-img{
-display: flex; 
-justify-content: end; 
-margin-bottom: -3rem; 
-position: relative; 
-z-index: 1;
-transform: rotate(5deg);
-width: 18rem;
-border: 6px dashed #fcbd1b ;
-}
-.Recepies-text{
+/* =========================
+   CONTENEDOR DE TEXTO DE LA RECETA
+========================= */
+.Recepies-text {
 
   margin: 0;
   background-color: #ee3b37;
   border: 4px solid #fcbd1b;
   color: black;
   font-weight: 500;
-  padding:2rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
 
@@ -530,7 +556,11 @@ border: 6px dashed #fcbd1b ;
   position: relative;
 
 }
-.Recepies-text--h3{
+
+/* =========================
+   TÍTULO DE LA RECETA
+========================= */
+.Recepies-text--h3 {
   font-weight: 700;
   letter-spacing: .3rem;
   text-align: left;
@@ -538,10 +568,78 @@ border: 6px dashed #fcbd1b ;
   font-size: 1.4rem;
   margin: 1.5rem 0 0 0;
   line-height: 1.2;
-  color:black;
+  color: black;
 }
-.Recepies-text--p{
-  text-align: left ;
+
+/* =========================
+   DESCRIPCIÓN DE LA RECETA
+========================= */
+.Recepies-text--p {
+  text-align: left;
   line-height: 1.2;
   letter-spacing: .1rem;
+}
+
+
+@media (max-width: 840px) {
+
+  .Passport-stamp {
+    width: clamp(4rem, 5vw, 5rem);
+  }
+
+  .Recepies-column {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .Recepies-img {
+    width: 10rem;
+    display: block;
+    justify-content: center;
+  }
+
+
+  .Recepies-text--p {
+
+    overflow: hidden;
+    margin: 0;
+
+    line-height: 1.2;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .Recepies-text {
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    max-height: 8rem;
+  }
+
+  .Recepies-column:hover .Recepies-text--p {
+    padding: 0.5rem 0;
+   
+  }
+
+  .Recepies-column:hover .Recepies-text {
+    max-height: 16rem;
+
+  }
+
+  .Recepies-text--p {
+    font-size: 0.6rem;
+  }
+
+  .Recepies-text--h3 {
+    font-size: 1.1rem;
+
+  }
+}
+
+@media (max-width:1338px) {
+
+  .Recepies-img {
+    width: 12rem;
+  }
 }

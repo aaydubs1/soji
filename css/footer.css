@@ -1,9 +1,15 @@
+/* =========================
+   RESET Y VARIABLES BASE
+========================= */
 :root {
   font-size : 100%;
   font-family : system-ui, sans-serif;
   scroll-behavior : smooth;
 }
 
+/* =========================
+   RESET GENERAL Y ELEMENTOS BASE
+========================= */
  * { -ms-overflow-style: none;  scrollbar-width: none;  } 
  *::-webkit-scrollbar { display: none; }
 * , *::before , *::after {
@@ -48,8 +54,6 @@ h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , e
   text-wrap : pretty;
 }
 
-
-
 mark {
   background-color : transparent;
 }
@@ -84,6 +88,10 @@ svg {
   display : block;
   fill : currentColor;
 }
+
+/* =========================
+   BODY Y TIPOGRAFÍA
+========================= */
 body {
   min-height : 100vh;
   line-height : 1.5em;
@@ -94,15 +102,45 @@ body {
   -moz-osx-font-smoothing : grayscale;
      font-family: "Montserrat", sans-serif;
        font-optical-sizing: auto;
-
 }
 
+/* =======================================================
+ * Interacciones:
+ *   - Hover opcional en enlaces y redes sociales (si se añade)
+ *   - Layout flexible y responsive mediante grid y flexbox
+ * Datos:
+ *   - Contenedores principales: Footer, Footer-grid
+ *   - Elementos interactivos: enlaces sociales, logo (posible hover)
+ *   - Estados visuales: hover, color, gap, padding
+ * Estructura:
+ *   - FOOTER:
+ *       * Contenedor principal: fondo rojo, flex column, centrado
+ *   - GRID DEL FOOTER:
+ *       * Grid responsivo con auto-fit, mínimo 14rem por columna
+ *       * Centrado horizontal y vertical, gap entre columnas
+ *   - ITEMS DEL FOOTER:
+ *       * Footer-item: contenedor flex column para cada bloque
+ *       * Footer-item--text: títulos de sección con tamaño grande y color dorado
+ *       * Footer-item--madeby: texto secundario
+ *       * Footer-logo: tamaño del logo
+ *   - REDES SOCIALES DEL FOOTER:
+ *       * Footer-social-links: contenedor flex row, gap entre iconos
+ *       * Footer-social-link: tamaño de cada icono social
+ *   - COPYRIGHT:
+ *       * Footer-copyright--p: texto con tamaño pequeño
+ * Funciones / CSS especiales:
+ *   - Uso de flex y grid para layout responsive
+ *   - Espaciado y tipografía consistente con el branding
+ * =======================================================
+ */
 
 
+/* =========================
+   FOOTER PRINCIPAL
+========================= */
 .Footer{
   background-color:#ee3b37;
   width: 100%;
-
  display: flex;
  flex-flow: column nowrap;
  justify-content: center;
@@ -110,6 +148,10 @@ body {
  padding: 1rem;
  gap: 1rem;
 }
+
+/* =========================
+   GRID DEL FOOTER
+========================= */
 .Footer-grid{
   width: 80%;
   display: grid;
@@ -119,13 +161,15 @@ justify-content: center;
   gap: 2rem;
   color: #fcbd1b;
 }
+
+/* =========================
+   ITEMS DEL FOOTER
+========================= */
 .Footer-item{
   display: flex;
   flex-flow: column nowrap;
-
   gap: 1rem;
-
-padding: 1rem;
+  padding: 1rem;
 }
 
 .Footer-item--text{
@@ -135,33 +179,33 @@ color: #fcbd1b;
 }
 .Footer-item--madeby{
 font-size: 1rem;
-
-
 }
 .Footer-logo{
   width: 3rem;
-
 }
-.Footer-social-links{
 
+/* =========================
+   REDES SOCIALES DEL FOOTER
+========================= */
+.Footer-social-links{
     flex-flow: row nowrap;
 display: flex;
 gap: 1rem;
-
 }
 .Footer-social-link{
   width: 1.5rem;
-
 }
+
 .Footer-text{
   font-weight: 500;
   font-size: 1rem;
-
 }
 .Footer-item--logo{
-
 }
+
+/* =========================
+   COPYRIGHT DEL FOOTER
+========================= */
 .Footer-copyright--p{
   font-size: .9rem;
- 
 }

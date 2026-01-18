@@ -1,4 +1,43 @@
-<!DOCTYPE html>
+<!--
+==========================================================
+  ESTRUCTURA GENERAL de index
+==========================================================
+2. Encabezado (Header)
+   - Logo de la marca
+   - Menú de navegación principal
+   - Carrito de compras / iconos de usuario
+
+3. Contenido principal (Main)
+   3.1 Sección de introducción (Intro)
+       - Video o imagen destacada
+       - Logo e información breve
+   3.2 Sección de productos / Shop
+       - Imagen del producto
+       - Título e información
+       - Controles de compra (+)
+       - Precio
+       - Descripción
+       - Detalles desplegables (Ingredientes, Nutrición, Envío)
+       - Enlace a checkout
+   3.3 Sección de historia / Story
+       - Carrousel de imágenes
+       - Misión, viaje y promesa de la marca
+   3.4 Sección de recetas / Ingredients / Routes
+       - MiniTrips por país (Korea, Japan, Thailand)
+       - Recetas asociadas a cada sabor
+       - Imagen y descripción de cada receta
+   3.5 Sección de preguntas frecuentes (FAQ)
+       - Preguntas y respuestas sobre productos, almacenamiento y uso
+
+4. Pie de página (Footer)
+   - Copia y logo
+   - Enlaces de navegación
+   - Redes sociales
+   - Copyright
+
+==========================================================
+-->
+
 <html lang="en">
 
 <head>
@@ -17,17 +56,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+  <script src="js/index.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/header.js" defer></script>
+  <script src="js/explore.js" defer></script>
+
 </head>
-<script src="js/index.js" defer></script>
-<script src="js/cart.js" defer></script>
-<script src="js/header.js" defer></script>
-<script src="js/explore.js" defer></script>
-<script src="js/compra.js" defer></script>
+
 <body>
 
+  <!-- ===== HEADER ===== -->
+     <!-- Contiene: logo, menú de navegación, icono de carrito y botón de volver -->
   <header class="Header">
     <div class="Header-menu">
-      <img src="assets/menu.svg" alt="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+      </svg>
     </div>
     <nav class="Header-nav">
       <ul class="Header-ul">
@@ -36,10 +82,12 @@
         <li class="Header-li"><a href="#Story" class="Header-a">Our Story</a></li>
       </ul>
       <div class="Header-back">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Header-arrow" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-</svg>
-  <span class="Header-span">Go back</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Header-arrow"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+        </svg>
+        <span class="Header-span">Go back</span>
       </div>
     </nav>
 
@@ -65,9 +113,7 @@
               fill="#fcbd1b"></path>
           </g>
         </svg>
-        <div>
 
-        </div>
 
       </button>
       <div class="Shop-cart Cart">
@@ -83,52 +129,60 @@
         </div>
 
         <div id="cartHeaderList">
-       
+
         </div>
-             <a href="compra.html" class="Header-cart--button"> Checkout </a>
+        <a href="compra.html" class="Header-cart--button"> Checkout </a>
 
       </div>
     </div>
   </header>
+  <!-- ===== MAIN ===== -->
   <main>
+    <!-- ===== INTRO ===== -->
+         <!-- Video de presentación y logo con mensaje de marca -->
     <div class="Intro">
       <div class="Intro-video">
-        <video src="assets/video-wok.webm" autoplay muted loop playsinline>
+        <video src="assets/Video.Wok.webm" autoplay muted loop playsinline>
         </video>
       </div>
 
-      <article class="Intro-article">
+      <div class="Intro-article">
         <div class="Intro-article--wrapper">
           <div class="Intro-logo">
-            <img src="assets/logo-contorno.png" alt="logo">
+            <img src="assets/logo-contorno.png" alt="logo" loading="lazy">
           </div>
 
           <p class="Intro-p">
-            Soy Sauces Inspired by
-            <br><b class="b">Street Food Flavors</b>
+            <strong>Soy Sauces</strong> Inspired by
+            <br><mark class="b">Street Food Flavors</mark>
           </p>
         </div>
-      </article>
+      </div>
     </div>
 
 
-<!--Grid de compra los productos-->
-  
-    <section id="buy" class="Shop">
 
+
+    <!-- ===== SECCIÓN DE PRODUCTOS (SHOP) ===== -->
+    <!-- Contiene lista de productos con: -->
+    <!-- - Imagen / video del producto -->
+    <!-- - Nombre y enlace al detalle -->
+    <!-- - Precio y botón de añadir al carrito -->
+    <section id="buy" class="Shop">
+      <h1 class="Shop-title barriecito-regular">Shop our sauces</h1>
       <ul class="Shop-grid">
         <li>
           <article class="Shop-article" data-id="001">
             <div class="Shop-image">
-              <img src="assets/shop-cart-gochu.png" class="Shop-image--img" alt="product 1">
+              <img src="assets/shop-cart-gochu.webp" class="Shop-image--img" alt="gochu product" loading="lazy">
               <div class="Shop-button">
                 <button class="Shop-button--button">+</button>
               </div>
             </div>
-            <h3 class="Shop-h3">
-                 <a href="gochu.html">Gochu flavour Soy Sauce</a>
-              
-</h3>
+            <h2 class="Shop-h2">
+              <a href="gochu.html">Gochu flavour Soy Sauce</a>
+
+            </h2>
             <span class="Shop-price">6.99€</span>
 
           </article>
@@ -136,28 +190,31 @@
         <li>
           <article class="Shop-article" data-id="002">
             <div class="Shop-image">
-              <img src="assets/shop-cart-sweetchili.png" class="Shop-image--img" alt="product 1">
+              <img src="assets/shop-cart-sweetchili.webp" class="Shop-image--img" alt=" sweetchili product"
+                loading="lazy">
               <div class="Shop-button">
                 <button class="Shop-button--button">+</button>
               </div>
             </div>
-            <h3 class="Shop-h3">
-                      <a href="sweet-chili.html"> Sweet Chili & Lime Soy Sauce</a></h3>
+            <h2 class="Shop-h2">
+              <a href="sweet-chili.html"> Sweet Chili & Lime Soy Sauce</a>
+            </h2>
             <span class="Shop-price">6.99€</span>
 
           </article>
         </li>
         <li>
-          <article class="Shop-article" data-id="003">
+          <article class="Shop-article" data-id="002">
             <div class="Shop-image">
-              <img src="assets/shop-cart-miso.png" class="Shop-image--img" alt="product 1">
+              <img src="assets/shop-cart-miso.webp" class="Shop-image--img" alt="miso product" loading="lazy">
               <div class="Shop-button">
                 <button class="Shop-button--button">+</button>
               </div>
             </div>
-            <h3 class="Shop-h3">
-             <a href="miso.html">  White Miso Soy Sauce</a></h3>
-            
+            <h2 class="Shop-h2">
+              <a href="miso.html"> White Miso Soy Sauce</a>
+            </h2>
+
             <span class="Shop-price">6.99€</span>
           </article>
         </li>
@@ -166,49 +223,58 @@
 
 
     <!--Porque nosotros-->
-    <div id="Story"class="Story">
+    <!-- ===== STORY SECTION ===== -->
+     <!-- Carrousel de imágenes + misión, viaje y promesa de la marca -->
+    <div id="Story" class="Story">
 
-    <div class="Story-Carrousel">
+      <div class="Story-Carrousel">
 
         <div class="Carrousel-wrapper">
-            <img src="assets/soji-story1.svg" alt="0" class="Carrousel-img">
-            <img src="assets/soji-story2.svg" alt="1" class="Carrousel-img">
-            <img src="assets/soji-story3.svg" alt="1" class="Carrousel-img">
-            <img src="assets/soji-story5.svg" alt="2" class="Carrousel-img">
-            <img src="assets/soji-story4.svg" alt="2" class="Carrousel-img">
+          <img src="assets/soji-story1.svg" alt="Carrousel image" class="Carrousel-img" loading="lazy">
+          <img src="assets/soji-story2.svg" alt="Carrousel image" class="Carrousel-img" loading="lazy">
+          <img src="assets/soji-story3.svg" alt="Carrousel image" class="Carrousel-img" loading="lazy">
+          <img src="assets/soji-story5.svg" alt="Carrousel image" class="Carrousel-img" loading="lazy">
+          <img src="assets/soji-story4.svg" alt="Carrousel image" class="Carrousel-img" loading="lazy">
         </div>
 
 
-    </div>
-<section class="Story-About-us">
-  <div class="About-us-container">
-    <div class="About-us-intro">
-      <h2 class="About-us-heading">Discover the True Taste of Asia</h2>
-      <p class="About-us-tagline">We’re not just selling sauces. We’re bringing authentic flavors from the markets and kitchens of Asia directly to your table.</p>
-    </div>
 
-    <div class="About-us-story">
-      <div class="About-us-block">
-        <h3 class="About-us-subtitle">Our Mission</h3>
-        <p>We want to change the way Asian sauces are experienced worldwide. Every bottle carries the real flavors, no shortcuts, no compromises.</p>
       </div>
+      <section class="Story-About-us">
+        <div class="About-us-container">
+          <div class="About-us-intro">
+            <h2 class="About-us-heading"><mark>Discover the True Taste of Asia</mark></h2>
+            <p class="About-us-tagline">We’re not just selling sauces. <em>We’re bringing authentic flavors from the
+                markets and kitchens of Asia directly to your table.</em></p>
+          </div>
 
-      <div class="About-us-block">
-        <h3 class="About-us-subtitle">Our Journey</h3>
-        <p>We traveled across Asia, visiting local restaurants and bustling markets, tasting, learning, and discovering what makes the cuisine truly unforgettable.</p>
-      </div>
+          <div class="About-us-story">
+            <div class="About-us-block">
+              <h3 class="About-us-subtitle"><strong>Our Mission</strong></h3>
+              <p>We want to change the way Asian sauces are experienced worldwide. Every bottle carries the <mark>real
+                  flavors</mark>, no shortcuts, no compromises.</p>
+            </div>
 
-      <div class="About-us-block">
-        <h3 class="About-us-subtitle">Our Promise</h3>
-        <p>From our small brand to your kitchen, we bring the authentic taste of Asia with passion, craft, and care for every dish.</p>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="About-us-block">
+              <h3 class="About-us-subtitle"><strong>Our Journey</strong></h3>
+              <p>We traveled across Asia, visiting local restaurants and bustling markets, tasting, learning, and
+                discovering what makes the cuisine truly <em>unforgettable</em>.</p>
+            </div>
+
+            <div class="About-us-block">
+              <h3 class="About-us-subtitle"><strong>Our Promise</strong></h3>
+              <p>From our small brand to your kitchen, we bring the <mark>authentic taste of Asia</mark> with passion,
+                craft, and care for every dish.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
 
     <!--Grid de recetas-->
+    <!-- ===== INGREDIENTS/ROUTES SECTION ===== -->
+     <!-- Mini trips por país con recetas relacionadas a cada sabor de salsa -->
     <div class="Routes" id="ingredients">
 
 
@@ -222,7 +288,8 @@
 
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/korean-chicken.jpg" alt="foto"></div>
+                    <div class="Recepies-img--img"><img src="assets/korean-chicken.webp" alt="korean-chicken"
+                        loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Yangnyeom<br> 양념치킨</h3>
@@ -234,7 +301,7 @@
                 </li>
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/bibimbap.jpg" alt=""></div>
+                    <div class="Recepies-img--img"><img src="assets/bibimbap.webp" alt="bibimbap" loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Bibimbap <br> 비빔밥</h3>
@@ -245,7 +312,7 @@
                 </li>
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/teoboki.jpg" alt=""></div>
+                    <div class="Recepies-img--img"><img src="assets/teoboki.webp" alt="teoboki" loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Tteokbokki<br>떡볶이</h3>
@@ -265,10 +332,9 @@
               <h2 class="Recepies-title">Recepies for <br><strong class="barriecito-regular">White Miso Flavour</strong>
               </h2>
               <ul class="Recepies">
-                <!-- Copiar exactamente las 3 recetas de Korea o cambiar nombres/imágenes si quieres -->
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/eggplant.jpg" alt="foto"></div>
+                    <div class="Recepies-img--img"><img src="assets/eggplant.webp" alt="eggplant" loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Eggplant <br>
@@ -279,7 +345,7 @@
                 </li>
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/ramen.jpg" alt=""></div>
+                    <div class="Recepies-img--img"><img src="assets/ramen.webp" alt="ramen" loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Ramen <br>ラーメン</h3>
@@ -289,7 +355,7 @@
                 </li>
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/tempura.jpg" alt=""></div>
+                    <div class="Recepies-img--img"><img src="assets/tempura.webp" alt="tempura" loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Tempura <br>天ぷら</h3>
@@ -310,25 +376,28 @@
               <ul class="Recepies">
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/stirfry.jpg" alt="foto"></div>
+                    <div class="Recepies-img--img"><img src="assets/stirfry.webp" alt="stirfry" loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Thai Stir-Fry <br> ผัดกะเพรา</h3>
-                    <p class="Recepies-text--p">A stir-fry where the sauce coats meat or tofu with bold, aromatic flavors and a perfect balance of heat and savoriness. </p>
+                    <p class="Recepies-text--p">A stir-fry where the sauce coats meat or tofu with bold, aromatic
+                      flavors and a perfect balance of heat and savoriness. </p>
                   </div>
                 </li>
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/thaicurry.jpg" alt=""></div>
+                    <div class="Recepies-img--img"><img src="assets/thaicurry.webp" alt="thai curry" loading="lazy">
+                    </div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Thai Green Curry <br> แกงเขียวหวาน</h3>
-                    <p class="Recepies-text--p">A creamy coconut curry where the sauce enriches chicken or vegetables with balanced spiciness, aromatic warmth, and deep umami.</p>
+                    <p class="Recepies-text--p">A creamy coconut curry where the sauce enriches chicken or vegetables
+                      with balanced spiciness, aromatic warmth, and deep umami.</p>
                   </div>
                 </li>
                 <li class="Recepies-column">
                   <div class="Recepies-img">
-                    <div class="Recepies-img--img"><img src="assets/tomyum.jpg" alt=""></div>
+                    <div class="Recepies-img--img"><img src="assets/tomyum.webp" alt="tomyum" loading="lazy"></div>
                   </div>
                   <div class="Recepies-text">
                     <h3 class="Recepies-text--h3">Tom Yum Soup <br> ต้มยำ</h3>
@@ -354,65 +423,71 @@
 
         <div class="Passport-book">
 
-         
-              <img src="assets/pasaporte-paginas.png" alt="passport" class="Passport-image--firstpage">
-              <div class="Passport-stamps">
-                <img src="assets/sello-corea.svg" alt="korea stamp" class="Passport-stamp Passport-stamp--korea">
-                <img src="assets/sello-japon.svg" alt="japan stamp" class="Passport-stamp Passport-stamp--japan">
-                <img src="assets/sello-tailandia.svg" alt="thailand stamp"
-                  class="Passport-stamp Passport-stamp--thailand">
-              </div>
-            </div>
+
+          <img src="assets/pasaporte-paginas.png" alt="passport" class="Passport-image--firstpage">
+          <div class="Passport-stamps">
+            <img src="assets/sello-corea.svg" alt="korea stamp" class="Passport-stamp Passport-stamp--korea">
+            <img src="assets/sello-japon.svg" alt="japan stamp" class="Passport-stamp Passport-stamp--japan">
+            <img src="assets/sello-tailandia.svg" alt="thailand stamp" class="Passport-stamp Passport-stamp--thailand">
           </div>
-             <button class="Routes-arrow">
-              <div class="Routes-arrow--wrapper">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="arrow-bar-left"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5" />
-        </svg>
-        <span class="arrow">Go back</span>
-              </div>
-       
-      </button>
         </div>
-   
+      </div>
+      <div class="Routes-arrow">
+        <button class="Routes-arrow--wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="arrow-bar-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5" />
+          </svg>
+          <span class="arrow">Go back</span>
+        </button>
+
       </div>
     </div>
 
-
-
- <div class="Faq">
-      <h2 class="Faq-h2">Frequently Asked Questions</h2>
+    <!-- ===== FAQ SECTION ===== -->
+        <!-- Listado de preguntas y respuestas sobre los productos -->
+    <div class="Faq">
+      <h2 class="Faq-h2"><mark>Frequently Asked Questions</mark></h2>
       <div class="Faq-questions">
         <div class="Faq-question">
-          <h3 class="Faq-question--title">Are Soji sauces gluten-free?</h3>
-          <p class="Faq-question--answer">Yes, all Soji sauces are crafted to be gluten-free, ensuring they are safe for
+          <h3 class="Faq-question--title">Are Soji sauces <strong>gluten-free</strong>?</h3>
+          <p class="Faq-question--answer"><mark>Yes</mark>, all Soji sauces are crafted to be gluten-free, ensuring they
+            are safe for
             those with gluten sensitivities or celiac disease.</p>
         </div>
         <div class="Faq-question">
-          <h3 class="Faq-question--title">How should I store Soji sauces?</h3>
-          <p class="Faq-question--answer">For optimal freshness, store Soji sauces in a cool, dry place before opening.
-            After opening, refrigerate and use within one month for the best flavor.</p>
+          <h3 class="Faq-question--title">How should I <strong>store</strong> Soji sauces?</h3>
+          <p class="Faq-question--answer">For optimal freshness, store Soji sauces in a <mark>cool, dry place</mark>
+            before opening.
+            After opening, <em>refrigerate and use within one month</em> for the best flavor.</p>
         </div>
         <div class="Faq-question">
-          <h3 class="Faq-question--title">Can I use Soji sauces in cooking?</h3>
-          <p class="Faq-question--answer">Absolutely! Soji sauces are versatile and can be used as marinades, dipping
-            sauces, or flavor enhancers in various dishes.</p>
+          <h3 class="Faq-question--title">Can I use Soji sauces in <strong>cooking</strong>?</h3>
+          <p class="Faq-question--answer"><mark>Absolutely!</mark> Soji sauces are versatile and can be used as
+            <em>marinades, dipping
+              sauces, or flavor enhancers</em> in various dishes.</p>
         </div>
         <div class="Faq-question">
-          <h3 class="Faq-question--title">How spicy is Soji?</h3>
+          <h3 class="Faq-question--title">How <strong>spicy</strong> is Soji?</h3>
           <p class="Faq-question--answer">Spice levels vary by country:
-<br>
-Korea: deep, fermented heat
-<br>
-Thailand: bright, fast, balanced spice
-<br>
-Japan: umami-forward and subtle</p>
+            <br>
+            <mark>Korea:</mark> deep, fermented heat
+            <br>
+            <mark>Thailand:</mark> bright, fast, balanced spice
+            <br>
+            <mark>Japan:</mark> umami-forward and subtle
+          </p>
         </div>
       </div>
-
+    </div>
   </main>
+  <!-- ===== FOOTER ===== -->
+     <!-- Contiene: -->
+  <!-- - Información de la marca y logo -->
+  <!-- - Enlaces de navegación internos -->
+  <!-- - Iconos de redes sociales -->
+  <!-- - Copyright -->
   <footer class="Footer">
     <div class="Footer-grid">
       <div class="Footer-item Footer-item--copy">
@@ -427,8 +502,8 @@ Japan: umami-forward and subtle</p>
       </div>
       <div class="Footer-item Footer-item--links">
         <a href="#ingredients" class="Footer-link">Ingredients</a>
-        <a href="#flavors" class="Footer-link">Shop</a>
-        <a href="#flavors" class="Footer-link">Our Story</a>
+        <a href="#buy" class="Footer-link">Shop</a>
+        <a href="#Story" class="Footer-link">Our Story</a>
       </div>
       <div class="Footer-item Footer-item--social">
         <div class="Footer-social--h4"> Social</div>
@@ -455,7 +530,6 @@ Japan: umami-forward and subtle</p>
         </div>
       </div>
 
-    </div>
     </div>
     <div class="Footer-copyright">
       <p class="Footer-copyright--p">

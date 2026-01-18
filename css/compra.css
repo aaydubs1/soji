@@ -48,8 +48,6 @@ h1 , h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , e
   text-wrap : pretty;
 }
 
-
-
 mark {
   background-color : transparent;
 }
@@ -97,10 +95,53 @@ body {
 
 }
 
+/* =======================================================
+ * Interacciones:
+ *   - Formulario de checkout con campos de usuario
+ *   - Consentimiento (checkbox) y botones interactivos
+ *   - Resumen del carrito con productos dinámicos
+ *   - Promocode y botón de aplicar
+ * Datos:
+ *   - Contenedores principales: Checkout-page, Checkout-main, Checkout-wrapper, Checkout-form, Cart-summary
+ *   - Elementos interactivos: inputs, checkbox, radio, botones, eliminar producto
+ *   - Estados visuales: hover, transition, focus
+ * Estructura:
+ *   - CHECKOUT PAGE:
+ *       * Fondo negro para toda la página
+ *   - CONTENEDOR PRINCIPAL (MAIN):
+ *       * Flex vertical centrado
+ *       * Contiene título y wrapper de columnas
+ *   - TÍTULO CHECKOUT:
+ *       * Texto grande, color dorado (#fcbd1b), padding
+ *   - WRAPPER DE DOS COLUMNAS:
+ *       * Flex horizontal con gap
+ *       * Ajuste responsive a columna en pantallas <900px
+ *   - COLUMNA IZQUIERDA: FORMULARIO
+ *       * Flex vertical
+ *       * Secciones con títulos (h3) y campos de input
+ *       * Inputs con padding, color de fondo y borde redondeado
+ *       * Checkbox y radio con estilo y cursor pointer
+ *       * Consentimiento con texto e ítems alineados
+ *       * Botón principal con hover y transición
+ *   - COLUMNA DERECHA: RESUMEN DEL CARRITO
+ *       * Fondo dorado (#fcbd1b) y padding
+ *       * Contenedor de productos dinámicos
+ *       * Cada producto: imagen, info, título, fila precio+cantidad, botón eliminar
+ *       * Promocode: input y botón aplicar
+ * Funciones / CSS especiales:
+ *   - Uso de flexbox para layout de columnas y filas
+ *   - Transiciones en hover y botones
+ *   - Media query para responsive (<900px)
+ * =======================================================
+ */
+
+
+.Checkout-page{
+
+}
 /* CONTENEDOR PRINCIPAL DEL MAIN */
 .Checkout-main {
-  width: 100%;
-
+  width: 100%;  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,11 +151,11 @@ body {
 
 /* TÍTULO CHECKOUT */
 .Checkout-title {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 500;
   letter-spacing: .1rem;
   padding: 2rem;
-  
+  color:#fcbd1b;
 }
 
 /* WRAPPER DE DOS COLUMNAS */
@@ -122,7 +163,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 4rem;
 
   padding: 2rem;
 
@@ -154,8 +195,8 @@ body {
   margin: 0 0 1rem 0;
   border: 1px solid #ddd;
   border-radius: .5rem;
-
-
+  background-color: #fcbd1b;
+  color: black;
 }
 
 
@@ -165,12 +206,14 @@ input[type="radio"] {
   height: auto;
   margin: 0; 
   cursor: pointer;
+
 }
 
 label {
   display: flex;
   align-items: center; 
   gap: 1rem; 
+
 }
 
 
@@ -180,44 +223,52 @@ label {
 .Form-consent {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  margin-top: -10px;
+  gap: .6rem;
+  font-size: .9rem;
+
 }
 
 /* BOTÓN PRINCIPAL */
 .Checkout-button {
   width: 100%;
-  padding: 16px;
-  background: #000;
-  color: #fff;
+  padding: 1rem;
+  background-color: #fcbd1b;
+  color: black;
   border: none;
-  font-size: 16px;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+  letter-spacing: .04rem;
+  margin: .5rem 0 0 0;
   cursor: pointer;
-  margin-top: 10px;
+   border-radius: .5rem;
+}
+
+.Checkout-button:hover{
+  background-color: black;
+  color: #fcbd1b;
+  border: 1px solid #fcbd1b;
 }
 
 /* COLUMNA DERECHA: RESUMEN DEL CARRITO */
 .Cart-summary {
   width: 40%;
-
+  background-color: #fcbd1b;
   padding: 25px;
-  border-radius: 6px;
+  border-radius: .4rem;
 }
 
 .Cart-summary h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 1.2rem;
 }
 
 /* AQUÍ SE INSERTAN TUS PRODUCTOS DINÁMICOS */
 .Cart-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-bottom: 25px;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+
 }
 
 /* PROMOCODE */
@@ -227,31 +278,19 @@ label {
   margin-bottom: 20px;
 }
 
-.Cart-promo input {
+.Cart-promo  {
   flex: 1;
-  padding: 12px;
+  padding: .75rem;
   border: 1px solid #ccc;
 
 }
 
 .Cart-promo button {
-  padding: 12px 18px;
+  padding: .75rem 1rem;
   background: #000;
   color: #fff;
   border: none;
   cursor: pointer;
-}
-
-/* TOTALES */
-.Cart-totals p {
-  font-size: 15px;
-  margin: 6px 0;
-}
-
-.Cart-totals strong {
-  font-size: 18px;
-  display: block;
-  margin-top: 10px;
 }
 
 /* RESPONSIVE */
@@ -270,60 +309,56 @@ label {
 .Cart-item {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 15px 0;
+  gap: 1rem;
+  padding: 1rem 0;
   border-bottom: 1px solid #e5e5e5;
 }
 
 /* IMAGEN MÁS PEQUEÑA */
 .Cart-item-img {
-  width: 70px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 4px;
+  width: 3.5rem;
+
 }
 
 /* INFORMACIÓN DEL PRODUCTO */
 .Cart-item-info {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 1rem;
 }
 
 .Cart-item-title {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 600;
-  margin: 0;
+
   color: #111;
 }
 
 /* FILA DE PRECIO + CANTIDAD */
 .Cart-item--info-row2 {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
+
 }
 
 .Cart-item-price {
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
   color: #000;
 }
 
 .Cart-item-quantity {
-  font-size: 14px;
+  font-size: 1rem;
   color: #555;
 }
 
 /* BOTÓN ELIMINAR */
 .Cart-remove-button {
-  background: none;
-  border: none;
   color: #b00;
-  font-size: 14px;
+  font-size: .8rem;
   cursor: pointer;
-  padding: 5px;
+
   transition: 0.2s ease;
 }
 

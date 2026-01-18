@@ -1,6 +1,24 @@
+<!--
+Descripción: Este archivo HTML contiene la página de producto del sitio web, mostrando un producto individual, su información y el pie de página.
+Estructura general:
+- Banner promocional (marquee)
+- Encabezado (Header) con menú y navegación
+- Contenido principal (Main) con:
+  - Sección de producto
+    - Imagen / Video
+    - Información y título
+    - Controles de compra
+    - Descripción del producto
+    - Detalles desplegables (Ingredientes, Nutrición, Envío)
+    - Enlace a checkout
+- Pie de página (Footer) con:
+  - Copia y logo
+  - Enlaces de navegación
+  - Redes sociales
+  - Copyright
+-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,29 +35,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+
+  <script src="js/product.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/header.js" defer></script>
 </head>
-<script src="js/product.js" defer></script>
-<script src="js/cart.js" defer></script>
-<script src="js/header.js" defer></script>
+
 
 <body>
-     <div class="marquee-wrapper">
-      <div class="marquee">
-        <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
-        <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
-        <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
-        <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
-      </div>
+  <div class="marquee-wrapper">
+    <div class="marquee">
+      <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
+      <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
+      <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
+      <span class="marquee-item">Take any 3 Soji Sauces and enjoy free shipping</span>
     </div>
+  </div>
   <header class="Header">
     <div class="Header-menu">
-      <img src="assets/menu.svg" alt="menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+      </svg>
     </div>
     <nav class="Header-nav">
       <ul class="Header-ul">
         <li class="Header-li"><a href="index.html#ingredients" class="Header-a">Ingredients</a></li>
-<li class="Header-li"><a href="index.html#flavors" class="Header-a">Shop</a></li>
-<li class="Header-li"><a href="index.html#story" class="Header-a">Our Story</a></li>
+        <li class="Header-li"><a href="index.html#buy" class="Header-a">Shop</a></li>
+        <li class="Header-li"><a href="index.html#Story" class="Header-a">Our Story</a></li>
       </ul>
       <div class="Header-back">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Header-arrow"
@@ -50,9 +74,7 @@
         <span class="Header-span">Go back</span>
       </div>
     </nav>
-    
   </header>
-
 
   <main class="Product-main">
 
@@ -60,22 +82,22 @@
     <section class="Product-section" data-id="002">
       <div class="Product-grid">
         <div class="Product-image">
-          <video autoplay loop src="assets/sweet-chili-video.webm" alt="Gochu flavour Soy Sauce" class="Product-image--img">
+          <video autoplay loop src="assets/sweet-chili-video.webm" class="Product-image--img"></video>
         </div>
         <div class="Product-info">
 
           <div class="Product-title--wrapper">
-            <img class="Product-flag" src="assets/tailandia.png" alt="thailand flag">
+            <img class="Product-flag" src="assets/tailandia.webp" alt="thailand flag">
             <div class="Product-titles">
               <h1 class="Product-title barriecito-regular">Sweet Chili & Lime flavour</h1>
               <h2 class="Product-subtitle">Thai Soy Sauce</h2>
             </div>
           </div>
-        <div class="Product-buy">
+          <div class="Product-buy">
             <span class="Product-price">6.99€</span>
-            <button class="Product-remove">−</button> 
-               <span class="Product-counter"></span>
-            <button class="Product-button">+</button> 
+            <button class="Product-remove">−</button>
+            <span class="Product-counter"></span>
+            <button class="Product-button">+</button>
           </div>
         </div>
         <div class="Product-description">
@@ -199,7 +221,6 @@
         </div>
       </div>
 
-    </div>
     </div>
     <div class="Footer-copyright">
       <p class="Footer-copyright--p">

@@ -1,28 +1,66 @@
+<!--
+- Contenido principal (Main) con:
+  - Título de la página
+  - Contenedor principal con dos columnas:
+    - Columna izquierda: Formulario de checkout
+      - Información personal
+      - Dirección
+      - Consentimiento de datos
+      - Método de envío
+      - Método de pago
+      - Botón de pago
+    - Columna derecha: Resumen de carrito dinámico
+      - Lista de productos en el carrito
+-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/compra.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Tauri&display=swap"
-        rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout </title>
+  <link rel="stylesheet" href="css/compra.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&family=Tauri&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
 
+  <script src="js/cart.js" defer></script>
+  <script src="js/header.js"></script>
 </head>
-<script src="js/cart.js" defer></script>
 
 
 <body>
 
-
-    <div class="Checkout-page">
+  <header class="Header">
+    <div class="Header-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+      </svg>
+    </div>
+    <nav class="Header-nav">
+      <ul class="Header-ul">
+        <li class="Header-li"><a href="index.html#ingredients" class="Header-a">Ingredients</a></li>
+        <li class="Header-li"><a href="index.html#buy" class="Header-a">Shop</a></li>
+        <li class="Header-li"><a href="index.html#Story" class="Header-a">Our Story</a></li>
+      </ul>
+      <div class="Header-back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="Header-arrow"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+        </svg>
+        <span class="Header-span">Go back</span>
+      </div>
+    </nav>
+  </header>
 
   <!-- MAIN -->
   <main class="Checkout-main">
@@ -36,46 +74,46 @@
 
           <!-- Información personal -->
           <div class="Form-section">
-            <h3 class="Form-section--h3" >Personal Information</h3 >
-            <input type="text" placeholder="First name" required />
-            <input type="text" placeholder="Last name" required />
-            <input type="tel" placeholder="Phone number" required />
-            <input type="email" placeholder="Email" required />
+            <h3 class="Form-section--h3">Personal Information</h3>
+            <input type="text" placeholder="First name" required >
+            <input type="text" placeholder="Last name" required >
+            <input type="tel" placeholder="Phone number" required >
+            <input type="email" placeholder="Email" required >
           </div>
 
           <!-- Dirección -->
           <div class="Form-section">
-            <h3 class="Form-section--h3" >Shipping Information</h3 >
-            <input type="text" placeholder="Country / Region" required />
-            <input type="text" placeholder="City" required />
-            <input type="text" placeholder="Address" required />
-            <input type="text" placeholder="Zip / Postal code" required />
+            <h3 class="Form-section--h3">Shipping Information</h3>
+            <input type="text" placeholder="Country / Region" required >
+            <input type="text" placeholder="City" required >
+            <input type="text" placeholder="Address" required >
+            <input type="text" placeholder="Zip / Postal code" required >
           </div>
 
           <label class="Form-consent">
-            <input class="Form-section--checkbox" type="checkbox" required />
+            <input class="Form-section--checkbox" type="checkbox" required >
             I agree to data processing
           </label>
 
           <!-- Envío -->
           <div class="Form-section">
-            <h3 class="Form-section--h3" >Delivery</h3 >
-            <label><input type="radio" name="delivery"  /> Standard Delivery (5–7 days) – Free</label>
-            <label><input type="radio" name="delivery"  /> Express Shipping (1–2 days) – $50.00</label>
+            <h3 class="Form-section--h3">Delivery</h3>
+            <label><input type="radio" name="delivery" > Standard Delivery (5–7 days) – Free</label>
+            <label><input type="radio" name="delivery" > Express Shipping (1–2 days) – $50.00</label>
           </div>
 
           <!-- Pago -->
           <div class="Form-section">
-            <h3 class="Form-section--h3" >Payment</h3 >
+            <h3 class="Form-section--h3">Payment</h3>
 
-            <label><input type="radio" name="payment" value="card" checked /> Credit card</label>
-            <input type="text" placeholder="Card number" required />
-            <input type="text" placeholder="Cardholder name" required />
-            <input type="text" placeholder="Expiration date (MM/YY)" required />
-            <input type="text" placeholder="CVV" required />
+            <label><input type="radio" name="payment" value="card" checked > Credit card</label>
+            <input type="text" placeholder="Card number" required >
+            <input type="text" placeholder="Cardholder name" required >
+            <input type="text" placeholder="Expiration date (MM/YY)" required >
+            <input type="text" placeholder="CVV" required >
 
-            <label><input type="radio" name="payment" value="paypal" /> PayPal</label>
-            <label><input type="radio" name="payment" value="applepay" /> Apple Pay</label>
+            <label><input type="radio" name="payment" value="paypal" > PayPal</label>
+            <label><input type="radio" name="payment" value="applepay" > Apple Pay</label>
           </div>
 
           <button type="submit" class="Checkout-button">PAY AND PLACE ORDER</button>
@@ -85,18 +123,13 @@
       <!-- COLUMNA DERECHA: ARTÍCULOS DINÁMICOS -->
       <aside class="Cart-summary">
 
-        <h3 class="Form-section--h3" >Shopping Bag</h3 >
+        <h3 class="Form-section--h3">Shopping Bag</h3>
 
-        <!-- AQUÍ SE INSERTAN TUS PRODUCTOS DINÁMICOS -->
+        <!-- AQUÍ SE INSERTAN LOS PRODUCTOS DINÁMICOS -->
         <section class="Cart-container" id="cartContainer"></section>
 
-      
-        <!-- TOTALES -->
-        <div class="Cart-totals">
-          <p>Shipping: Free</p>
-          <p>Discount: $0.00</p>
-          <p><strong>Total: $0.00</strong></p>
-        </div>
+
+
 
       </aside>
     </div>
