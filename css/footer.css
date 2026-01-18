@@ -159,7 +159,7 @@ grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
 justify-content: center;
   align-items: center;
   gap: 2rem;
-  color: #fcbd1b;
+  color: black;
 }
 
 /* =========================
@@ -175,7 +175,7 @@ justify-content: center;
 .Footer-item--text{
 font-size: 1.5rem;
 font-weight: 500;
-color: #fcbd1b;
+color:black;
 }
 .Footer-item--madeby{
 font-size: 1rem;
