@@ -340,9 +340,6 @@ body {
 
 /* Imagen del producto con efecto hover */
 .Shop-image--img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   transition: all .3s ease;
 }
 
